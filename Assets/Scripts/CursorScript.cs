@@ -5,28 +5,35 @@ public class CursorScript : MonoBehaviour
 {
 	[SerializeField] private Animator anims;
 	[SerializeField] private RuntimeAnimatorController[] cursorAnimations;
-	[SerializeField] private Image visuals;
+//	[SerializeField] private Image visuals;
 
 	private void Awake()
 	{
 		anims = GetComponent<Animator>();
-		visuals = GetComponent<Image>();
+		//visuals = GetComponent<Image>();
 
-		Cursor.visible = false;
+		//Cursor.visible = false;
 	}
 
 	private void Update()
 	{
 		transform.position = Input.mousePosition;
 
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			anims.SetBool("Interact", true);
-		}
-		if (Input.GetKeyUp(KeyCode.Space))
-		{
-			anims.SetBool("Interact", false);
-		}
+		//if (Input.GetKeyDown(KeyCode.Space))
+		//{
+		//	anims.SetBool("Interact", true);
+		//}
+		//if (Input.GetKeyUp(KeyCode.Space))
+		//{
+		//	anims.SetBool("Interact", false);
+		//}
+
+
+	}
+
+	public void SetInteractAnim(bool works)
+	{
+		anims.SetBool("Interact", works);
 	}
 
 	public void SetCursor(PlayerAction cursor)

@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public enum PlayerAction
 {
@@ -9,33 +10,58 @@ public enum PlayerAction
 
 public class InteractionManager : MonoBehaviour
 {
+	public static InteractionManager instance { get; private set; }
 
 	[SerializeField] private PlayerAction currentAction;
 
 	[SerializeField] private CursorScript cursor;
+
+	[SerializeField] private int hoverCount = 0;
+
+	private void Awake()
+	{
+		instance = this;
+	}
 
 	private void Start()
 	{
 		ChangeActionLook();
 	}
 
-	private void Update()
+	public PlayerAction GetCurrentAction()
 	{
-		
+		return currentAction;
 	}
 
-	public void UsePlayerAction()
+	public void IsPossibleToInteract()
 	{
-		switch (currentAction)
+		cursor.SetInteractAnim(true);
+		hoverCount++;
+
+	}
+
+	public void NotPossibleToInteract()
+	{
+		hoverCount = Mathf.Max(0, hoverCount - 1);
+		if (hoverCount <= 0)
 		{
-			case PlayerAction.LOOK:
-				break;
-			case PlayerAction.TOUCH:
-				break;
-			case PlayerAction.MOVE:
-				break;
+			cursor.SetInteractAnim(false);
 		}
 	}
+
+	//public void UsePlayerAction()
+	//{
+	//	switch (currentAction)
+	//	{
+	//		case PlayerAction.LOOK:
+	//			break;
+	//		case PlayerAction.TOUCH:
+	//			break;
+	//		case PlayerAction.MOVE:
+	//			GameManager.instance.ForcePlayerMovement(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+	//			break;
+	//	}
+	//}
 
 	public void ChangeActionLook()
 	{

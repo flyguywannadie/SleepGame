@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private List<UndoableAction> actionStack;
 
+	[SerializeField] private PlayerScript player;
+
 	private void Awake()
 	{
 		instance = this;
@@ -17,6 +19,7 @@ public class GameManager : MonoBehaviour
 	public void AddActionToStack(UndoableAction a)
 	{
 		actionStack.Add(a);
+		a.Execute();
 	}
 
 	public void UndoAction()
@@ -46,5 +49,10 @@ public class GameManager : MonoBehaviour
 	public void QuitGame()
 	{
 		Application.Quit();
+	}
+
+	public void ForcePlayerMovement(Vector3 pos)
+	{
+		player.MoveTo(pos);
 	}
 }
