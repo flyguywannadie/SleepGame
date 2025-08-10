@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
 
 	public void UndoAction()
 	{
+		DialogueManager.instance.CloseDialogueUndo();
+
 		if (actionStack.Count <= 0)
 		{
 			return;
@@ -49,10 +51,5 @@ public class GameManager : MonoBehaviour
 	public void QuitGame()
 	{
 		Application.Quit();
-	}
-
-	public void ForcePlayerMovement(Vector3 pos)
-	{
-		player.MoveTo(pos);
 	}
 }

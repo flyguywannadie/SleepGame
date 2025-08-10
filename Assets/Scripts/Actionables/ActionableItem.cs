@@ -2,19 +2,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ActionableItem : MonoBehaviour, IPointerEnterHandler
+public class ActionableItem : MonoBehaviour
 {
 	[SerializeField] protected string actionName = "Base Action ";
 	[SerializeField] protected PlayerAction expectedAction;
 
 	public virtual void Execute()
 	{
-		Debug.Log("Exected");
 	}
 
 	public virtual void Undo()
 	{
-		Debug.Log("Undone");
 	}
 
 	public virtual bool AreActionsCorrect()
@@ -31,11 +29,11 @@ public class ActionableItem : MonoBehaviour, IPointerEnterHandler
 
 	private void OnMouseOver()
 	{
-		if (Input.GetMouseButtonDown(0))
+		if (Input.GetMouseButtonDown(0) && InteractionManager.instance.AreActionsEnabled())
 		{
 			if (AreActionsCorrect())
 			{
-				Debug.Log(name + " gaming2");
+				//Debug.Log(name + " gaming2");
 				DoTheAction();
 			}
 		}
@@ -55,10 +53,5 @@ public class ActionableItem : MonoBehaviour, IPointerEnterHandler
 		{
 			InteractionManager.instance.NotPossibleToInteract();
 		}
-	}
-
-	public void OnPointerEnter(PointerEventData eventData)
-	{
-		Debug.Log(name + " gaming");
 	}
 }

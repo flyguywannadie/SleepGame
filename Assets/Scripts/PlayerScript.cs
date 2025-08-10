@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+	public static PlayerScript instance { get; private set; }
+
 	[SerializeField] private List<Sprite> headSprites;
 	[SerializeField] private SpriteRenderer head;
 	[SerializeField] private Animator anims;
@@ -15,6 +17,11 @@ public class PlayerScript : MonoBehaviour
 	private bool moving = false;
 	private bool animMove = true;
 
+	private void Awake()
+	{
+		instance = this;
+	}
+
 	private void Start()
 	{
 		goToPos = transform.position;
@@ -22,6 +29,11 @@ public class PlayerScript : MonoBehaviour
 
 	private void Update()
 	{
+		if (!InteractionManager.instance.AreActionsEnabled())
+		{
+			return;
+		}
+
 		Vector3 look = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
 		float distance = Vector3.Distance(transform.position, goToPos);
@@ -29,6 +41,7 @@ public class PlayerScript : MonoBehaviour
 		{
 			animMove = false;
 			moving = false;
+			transform.position = goToPos;
 		} else if (moving)
 		{
 			look = goToPos - transform.position;
@@ -76,16 +89,15 @@ public class PlayerScript : MonoBehaviour
 		animMove = false;
 	}
 
-	public void MoveTo(Vector3 pos)
+	public void ForcePlayerMovement(Vector3 pos)
 	{
-		goToPos = new Vector3(pos.x, pos.y, 0);
+		goToPos = new Vector3(pos.x, pos.y, transform.position.z);
 		if (!moving)
 		{
 			undoLocations.Add(transform.position);
-			GameManager.instance.AddActionToStack(new UndoableAction(StartMove, UndoMove));
+			GameManager.instance.AddActionToStack(new UndoableAction("Player Movement",StartMove, UndoMove));
 		}
 	}
-
 
 	public void StartMove()
 	{
@@ -104,5 +116,15 @@ public class PlayerScript : MonoBehaviour
 		goToPos = transform.position;
 		undoLocations.RemoveAt(index);
 		anims.Play("Idle");
+	}
+
+	public void PlayUniqueAnimation(string anim)
+	{
+		anims.Play(anim);
+	}
+
+	public Vector3 GetPlayerPos()
+	{
+		return transform.position;
 	}
 }

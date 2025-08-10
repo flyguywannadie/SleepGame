@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 public enum PlayerAction
 {
@@ -18,6 +17,8 @@ public class InteractionManager : MonoBehaviour
 
 	[SerializeField] private int hoverCount = 0;
 
+	private bool interactionEnabled;
+
 	private void Awake()
 	{
 		instance = this;
@@ -26,6 +27,7 @@ public class InteractionManager : MonoBehaviour
 	private void Start()
 	{
 		ChangeActionLook();
+		Invoke("EnableInteractions", 2.0f);
 	}
 
 	public PlayerAction GetCurrentAction()
@@ -37,7 +39,6 @@ public class InteractionManager : MonoBehaviour
 	{
 		cursor.SetInteractAnim(true);
 		hoverCount++;
-
 	}
 
 	public void NotPossibleToInteract()
@@ -47,6 +48,23 @@ public class InteractionManager : MonoBehaviour
 		{
 			cursor.SetInteractAnim(false);
 		}
+	}
+
+	public bool AreActionsEnabled()
+	{
+		return interactionEnabled;
+	}
+
+	public void EnableInteractions()
+	{
+		interactionEnabled = true;
+		cursor.ShowCursor();
+	}
+
+	public void DisableInteractions()
+	{
+		interactionEnabled = false;
+		cursor.HideCursor();
 	}
 
 	//public void UsePlayerAction()

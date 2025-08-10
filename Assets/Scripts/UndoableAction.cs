@@ -22,7 +22,6 @@ public class UndoableAction
 		undoActions = undo;
 	}
 
-
 	public virtual void Execute()
     {
 		Debug.Log(name + " was Executed");

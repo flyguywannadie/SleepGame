@@ -5,12 +5,12 @@ public class CursorScript : MonoBehaviour
 {
 	[SerializeField] private Animator anims;
 	[SerializeField] private RuntimeAnimatorController[] cursorAnimations;
-//	[SerializeField] private Image visuals;
+	[SerializeField] private Image visuals;
 
 	private void Awake()
 	{
 		anims = GetComponent<Animator>();
-		//visuals = GetComponent<Image>();
+		visuals = GetComponent<Image>();
 
 		//Cursor.visible = false;
 	}
@@ -39,5 +39,15 @@ public class CursorScript : MonoBehaviour
 	public void SetCursor(PlayerAction cursor)
 	{
 		anims.runtimeAnimatorController = cursorAnimations[(int)cursor];
+	}
+
+	public void HideCursor()
+	{
+		visuals.enabled = false;
+	}
+
+	public void ShowCursor()
+	{
+		visuals.enabled = true;
 	}
 }
