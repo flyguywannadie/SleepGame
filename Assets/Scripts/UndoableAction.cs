@@ -32,4 +32,9 @@ public class UndoableAction
 		Debug.Log(name + " was Undone");
 		undoActions.Invoke();
 	}
+
+	public string GetName()
+	{
+		return name;
+	}
 }

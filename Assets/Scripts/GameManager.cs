@@ -7,9 +7,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
 
-    [SerializeField] private List<UndoableAction> actionStack;
+	[SerializeField] private bool MainMenu;
 
+    [SerializeField] private List<UndoableAction> actionStack;
 	[SerializeField] private PlayerScript player;
+	[SerializeField] private PauseManager pauseManager;
+	[SerializeField] private CameraScript camManager;
 
 	private void Awake()
 	{
@@ -37,9 +40,27 @@ public class GameManager : MonoBehaviour
 
 	public void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Z))
+		if (MainMenu)
 		{
-			UndoAction();
+			return;
+		}
+
+		if (!pauseManager.IsGamePaused())
+		{
+			if (Input.GetKeyDown(KeyCode.Z))
+			{
+				UndoAction();
+			}
+			if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Tab))
+			{
+				PauseGame();
+			}
+		} else
+		{
+			if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Tab))
+			{
+				UnpauseGame();
+			}
 		}
 	}
 
@@ -51,5 +72,20 @@ public class GameManager : MonoBehaviour
 	public void QuitGame()
 	{
 		Application.Quit();
+	}
+
+	public void PauseGame()
+	{
+		pauseManager.PauseGame();
+	}
+
+	public void UnpauseGame()
+	{
+		pauseManager.UnpauseGame();
+	}
+
+	public void SetCameraTrack(CameraTrack track)
+	{
+		camManager.SetCameraTrack(track);
 	}
 }

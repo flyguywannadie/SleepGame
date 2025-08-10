@@ -27,7 +27,7 @@ public class InteractionManager : MonoBehaviour
 	private void Start()
 	{
 		ChangeActionLook();
-		Invoke("EnableInteractions", 2.0f);
+		//Invoke("EnableInteractions", 2.0f);
 	}
 
 	public PlayerAction GetCurrentAction()

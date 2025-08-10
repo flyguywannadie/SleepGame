@@ -4,6 +4,6 @@ public class FloorAction : ActionableItem
 {
 	public override void DoTheAction()
 	{
-		PlayerScript.instance.ForcePlayerMovement(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+		PlayerScript.instance.MovePlayer(Camera.main.ScreenToWorldPoint(Input.mousePosition));
 	}
 }

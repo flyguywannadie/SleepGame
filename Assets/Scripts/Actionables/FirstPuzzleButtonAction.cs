@@ -14,7 +14,7 @@ public class FirstPuzzleButtonAction : ActionableItem
 	{
 		if (Vector2.Distance(PlayerScript.instance.GetPlayerPos(), animLineupLocation.position) > 0.01f)
 		{
-			PlayerScript.instance.ForcePlayerMovement(animLineupLocation.position);
+			PlayerScript.instance.ForceMovementIntoAction(animLineupLocation.position, new UndoableAction("ButtonPress", Execute, Undo));
 			return;
 		}
 		PlayerScript.instance.PlayActionAnimation("ButtonPress", new UndoableAction(actionName, Execute, Undo));

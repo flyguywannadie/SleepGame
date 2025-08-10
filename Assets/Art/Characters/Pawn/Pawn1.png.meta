@@ -297,8 +297,8 @@ TextureImporter:
       name: PawnBlank
       rect:
         serializedVersion: 2
-        x: 138
-        y: 99
+        x: 162
+        y: 11
         width: 143
         height: 124
       alignment: 0
@@ -319,8 +319,8 @@ TextureImporter:
       name: PawnOpenHand
       rect:
         serializedVersion: 2
-        x: 303
-        y: 105
+        x: 247
+        y: 142
         width: 92
         height: 84
       alignment: 0
@@ -341,8 +341,8 @@ TextureImporter:
       name: PawnCloseHand
       rect:
         serializedVersion: 2
-        x: 407
-        y: 110
+        x: 373
+        y: 157
         width: 69
         height: 62
       alignment: 0
@@ -363,12 +363,12 @@ TextureImporter:
       name: PawnBackCloseHand
       rect:
         serializedVersion: 2
-        x: 396
-        y: 34
+        x: 133
+        y: 151
         width: 69
         height: 62
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -377,6 +377,28 @@ TextureImporter:
       bones: []
       spriteID: 4ff0e29663f31f74a9f666cdd085e333
       internalID: -1391896835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PawnEyeClose
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 12
+        width: 143
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a01a565dbb8642f42bc4ffb42a7bf5d5
+      internalID: -250418487
       vertices: []
       indices: 
       edges: []
@@ -399,6 +421,7 @@ TextureImporter:
       PawnBlank: 397596834
       PawnBody: 2112692279
       PawnCloseHand: 2130614928
+      PawnEyeClose: -250418487
       PawnFLeft: -645603761
       PawnFRight: 1926251950
       PawnFront: -652131573

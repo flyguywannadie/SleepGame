@@ -1,22 +1,13 @@
 fileFormatVersion: 2
-guid: a940d6a26e5d62846831ece037190f7d
+guid: 7b42de4f04229b6468d062fe1577beea
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8184026256146021399
-    second: Room1Objects_0
+      213: -7687099872303317765
+    second: Pause6_0
   - first:
-      213: 8452933935702710954
-    second: Room1Objects_1
-  - first:
-      213: 4634184763525558230
-    second: Room1Objects_2
-  - first:
-      213: 7492536608113302303
-    second: Room1Objects_3
-  - first:
-      213: 2917674258422285107
-    second: Room1Objects_4
+      213: -459509527340218657
+    second: Pause6_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -58,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -87,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -125,133 +116,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Room1Objects_0
+      name: Pause6_0
       rect:
         serializedVersion: 2
-        x: 100
-        y: 930
-        width: 103
-        height: 99
+        x: 0
+        y: 522
+        width: 1920
+        height: 558
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9e342f91b7f7c6e80800000000000000
-      internalID: -8184026256146021399
+      spriteID: bfcf866e46fe15590800000000000000
+      internalID: -7687099872303317765
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Room1Objects_1
+      name: Pause6_1
       rect:
         serializedVersion: 2
-        x: 253
-        y: 926
-        width: 103
-        height: 99
+        x: 0
+        y: 0
+        width: 1920
+        height: 517
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aaa976301aade4570800000000000000
-      internalID: 8452933935702710954
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Room1Objects_2
-      rect:
-        serializedVersion: 2
-        x: 1123
-        y: 53
-        width: 168
-        height: 726
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6dfe77d4d7eef4040800000000000000
-      internalID: 4634184763525558230
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Room1Objects_3
-      rect:
-        serializedVersion: 2
-        x: 1364
-        y: 18
-        width: 174
-        height: 774
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f1b14311956daf760800000000000000
-      internalID: 7492536608113302303
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Room1Objects_4
-      rect:
-        serializedVersion: 2
-        x: 1620
-        y: 19
-        width: 174
-        height: 774
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 333cf8f8749ad7820800000000000000
-      internalID: 2917674258422285107
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DoorSide
-      rect:
-        serializedVersion: 2
-        x: 760
-        y: 35
-        width: 294
-        height: 790
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5d08732fa82c26d4aa607151811042f2
-      internalID: 1625516585
+      spriteID: fd68afbf48e7f99f0800000000000000
+      internalID: -459509527340218657
       vertices: []
       indices: 
       edges: []
@@ -260,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 159df0200e63d6244b0ce7ce7124e03c
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -270,12 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      DoorSide: 1625516585
-      Room1Objects_0: -8184026256146021399
-      Room1Objects_1: 8452933935702710954
-      Room1Objects_2: 4634184763525558230
-      Room1Objects_3: 7492536608113302303
-      Room1Objects_4: 2917674258422285107
+      Pause6_0: -7687099872303317765
+      Pause6_1: -459509527340218657
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
