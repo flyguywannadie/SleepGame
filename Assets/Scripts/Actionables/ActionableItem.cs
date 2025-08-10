@@ -29,9 +29,9 @@ public class ActionableItem : MonoBehaviour
 
 	private void OnMouseOver()
 	{
-		if (Input.GetMouseButtonDown(0) && InteractionManager.instance.AreActionsEnabled())
+		if (AreActionsCorrect())
 		{
-			if (AreActionsCorrect())
+			if (Input.GetMouseButtonDown(0) && InteractionManager.instance.AreActionsEnabled())
 			{
 				//Debug.Log(name + " gaming2");
 				DoTheAction();
@@ -49,9 +49,6 @@ public class ActionableItem : MonoBehaviour
 
 	private void OnMouseExit()
 	{
-		if (AreActionsCorrect())
-		{
-			InteractionManager.instance.NotPossibleToInteract();
-		}
+		InteractionManager.instance.NotPossibleToInteract();
 	}
 }

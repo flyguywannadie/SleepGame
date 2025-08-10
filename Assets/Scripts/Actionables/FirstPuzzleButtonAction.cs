@@ -12,12 +12,12 @@ public class FirstPuzzleButtonAction : ActionableItem
 
 	public override void DoTheAction()
 	{
-		if (Vector2.Distance(PlayerScript.instance.GetPlayerPos(), animLineupLocation.position) > 0.1f)
+		if (Vector2.Distance(PlayerScript.instance.GetPlayerPos(), animLineupLocation.position) > 0.01f)
 		{
 			PlayerScript.instance.ForcePlayerMovement(animLineupLocation.position);
 			return;
 		}
-		base.DoTheAction();
+		PlayerScript.instance.PlayActionAnimation("ButtonPress", new UndoableAction(actionName, Execute, Undo));
 	}
 
 	public override bool AreActionsCorrect()
@@ -34,18 +34,7 @@ public class FirstPuzzleButtonAction : ActionableItem
 		buttonImage.sprite = buttonPressed;
 		pressed = true;
 
-		switch(whichButton)
-		{
-			case 0:
-				mainPuzzle.FirstButton();
-				break;
-			case 1:
-				mainPuzzle.SecondButton();
-				break;
-			case 2:
-				mainPuzzle.ThirdButton();
-				break;
-		}
+		mainPuzzle.Button(whichButton);
 	}
 
 	public override void Undo()
@@ -53,17 +42,6 @@ public class FirstPuzzleButtonAction : ActionableItem
 		buttonImage.sprite = buttonUnpressed;
 		pressed = false;
 
-		switch (whichButton)
-		{
-			case 0:
-				mainPuzzle.FirstButtonUndo();
-				break;
-			case 1:
-				mainPuzzle.SecondButtonUndo();
-				break;
-			case 2:
-				mainPuzzle.ThirdButtonUndo();
-				break;
-		}
+		mainPuzzle.ButtonUndo(whichButton);
 	}
 }

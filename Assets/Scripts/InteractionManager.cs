@@ -17,7 +17,7 @@ public class InteractionManager : MonoBehaviour
 
 	[SerializeField] private int hoverCount = 0;
 
-	private bool interactionEnabled;
+	[SerializeField] private bool interactionEnabled;
 
 	private void Awake()
 	{

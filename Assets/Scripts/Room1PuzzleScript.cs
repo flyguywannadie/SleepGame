@@ -4,33 +4,33 @@ public class Room1PuzzleScript : MonoBehaviour
 {
 	[SerializeField] private Animator doorAnims;
 
-	public void FirstButton()
+	public void Button(int which)
 	{
-		
+		Debug.Log("Button " + which + " Pressed");
+
+		switch (which)
+		{
+			case 0:
+				break;
+			case 1:
+				break;
+			case 2:
+				break;
+		}
 	}
 
-	public void FirstButtonUndo()
+	public void ButtonUndo(int which)
 	{
+		Debug.Log("Button " + which + " Undone");
 
-	}
-
-	public void SecondButton()
-	{
-
-	}
-
-	public void SecondButtonUndo()
-	{
-
-	}
-
-	public void ThirdButton()
-	{
-
-	}
-
-	public void ThirdButtonUndo()
-	{
-
+		switch (which)
+		{
+			case 0:
+				break;
+			case 1:
+				break;
+			case 2:
+				break;
+		}
 	}
 }

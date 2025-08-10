@@ -12,6 +12,8 @@ public class PlayerScript : MonoBehaviour
 	[SerializeField] private Vector3 goToPos;
 	[SerializeField] private List<Vector3> undoLocations;
 
+	private UndoableAction animationAction;
+
 	private float moveSpeed = 1;
 
 	private bool moving = false;
@@ -37,7 +39,7 @@ public class PlayerScript : MonoBehaviour
 		Vector3 look = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
 		float distance = Vector3.Distance(transform.position, goToPos);
-		if (moving && distance <= 0.1f)
+		if (moving && distance <= 0.01f)
 		{
 			animMove = false;
 			moving = false;
@@ -118,9 +120,21 @@ public class PlayerScript : MonoBehaviour
 		anims.Play("Idle");
 	}
 
-	public void PlayUniqueAnimation(string anim)
+	public void PlayActionAnimation(string anim, UndoableAction action)
 	{
+		animationAction = action;
 		anims.Play(anim);
+		InteractionManager.instance.DisableInteractions();
+	}
+
+	public void ActionAnimationDone()
+	{
+		InteractionManager.instance.EnableInteractions();
+	}
+
+	public void DoAnimationAction()
+	{
+		GameManager.instance.AddActionToStack(animationAction);
 	}
 
 	public Vector3 GetPlayerPos()
