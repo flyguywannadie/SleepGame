@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3d537baa8029b0d40b264fffc1a6330f
+guid: b3293f233db510f4f9d54059bcc1351d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4307378007268850688
-    second: 007_0
+      213: 8870803298562949731
+    second: TouchAction_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,7 +101,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 007_0
+      name: TouchAction_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 6
-        width: 54
-        height: 80
+        x: 13
+        y: 5
+        width: 75
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 00cf694e971e6cb30800000000000000
-      internalID: 4307378007268850688
+      spriteID: 362453bb99c6b1b70800000000000000
+      internalID: 8870803298562949731
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      007_0: 4307378007268850688
+      TouchAction_0: 8870803298562949731
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -29,26 +29,36 @@ public class ActionableItem : MonoBehaviour
 
 	private void OnMouseOver()
 	{
-		if (AreActionsCorrect())
+		if (AreActionsCorrect() && InteractionManager.instance.AreActionsEnabled())
 		{
-			if (Input.GetMouseButtonDown(0) && InteractionManager.instance.AreActionsEnabled())
+			bool doaction = false;
+
+			if (InteractionManager.instance.IsUsingItem())
 			{
-				//Debug.Log(name + " gaming2");
+				doaction = Input.GetMouseButtonUp(0);
+			}
+			else
+			{
+				doaction = Input.GetMouseButtonDown(0);
+			}
+
+			if (doaction)
+			{
 				DoTheAction();
 			}
 		}
 	}
 
-	private void OnMouseEnter()
-	{
-		if (AreActionsCorrect())
-		{
-			InteractionManager.instance.IsPossibleToInteract();
-		}
-	}
+	//private void OnMouseEnter()
+	//{
+	//	if (AreActionsCorrect())
+	//	{
+	//		InteractionManager.instance.IsPossibleToInteract();
+	//	}
+	//}
 
-	private void OnMouseExit()
-	{
-		InteractionManager.instance.NotPossibleToInteract();
-	}
+	//private void OnMouseExit()
+	//{
+	//	InteractionManager.instance.NotPossibleToInteract();
+	//}
 }

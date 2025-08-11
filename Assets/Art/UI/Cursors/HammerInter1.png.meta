@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3d537baa8029b0d40b264fffc1a6330f
+guid: b893a7265d684de4c999984d0fed5e96
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4307378007268850688
-    second: 007_0
+      213: -4738662246036589127
+    second: HammerInter1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -101,7 +101,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 007_0
+      name: HammerInter1_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 6
-        width: 54
-        height: 80
+        x: 5
+        y: 7
+        width: 88
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 00cf694e971e6cb30800000000000000
-      internalID: 4307378007268850688
+      spriteID: 9b53f623bc3ec3eb0800000000000000
+      internalID: -4738662246036589127
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      007_0: 4307378007268850688
+      HammerInter1_0: -4738662246036589127
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

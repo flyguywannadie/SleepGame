@@ -1,3 +1,4 @@
+using System.Buffers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,8 +28,22 @@ public class CursorScript : MonoBehaviour
 		//{
 		//	anims.SetBool("Interact", false);
 		//}
+		bool works = false;
 
+		Collider2D hit = Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+		if (hit != null)
+		{
+			ActionableItem[] actionItem = hit.gameObject.GetComponents<ActionableItem>();
+			foreach (ActionableItem item in actionItem)
+			{
+				if (item.AreActionsCorrect())
+				{
+					works = true;
+				}
+			}
+		} 
 
+		SetInteractAnim(works);
 	}
 
 	public void SetInteractAnim(bool works)
