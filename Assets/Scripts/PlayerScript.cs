@@ -12,6 +12,9 @@ public class PlayerScript : MonoBehaviour
 	[SerializeField] private Vector3 goToPos;
 	[SerializeField] private List<Vector3> undoLocations;
 
+	[SerializeField] private AudioClip moveSound;
+	[SerializeField] private AudioClip slideSound;
+
 	private UndoableAction animationAction;
 	private UndoableAction forcedAction;
 
@@ -116,6 +119,17 @@ public class PlayerScript : MonoBehaviour
 	{
 		animMove = true;
 		moveSpeed = speed;
+		//GameManager.instance.PlaySound(moveSound);
+	}
+
+	public void HopSound()
+	{
+		GameManager.instance.PlaySound(moveSound);
+	}
+
+	public void SlideSound()
+	{
+		GameManager.instance.PlaySound(slideSound);
 	}
 
 	public void EndAnimMove()
@@ -131,6 +145,7 @@ public class PlayerScript : MonoBehaviour
 
 	public void MovePlayer(Vector3 pos)
 	{
+		forcedAction = null;
 		goToPos = new Vector3(pos.x, pos.y, transform.position.z);
 		if (!moving)
 		{
@@ -193,7 +208,10 @@ public class PlayerScript : MonoBehaviour
 
 	public void ActionAnimationDone()
 	{
-		InteractionManager.instance.EnableInteractions();
+		if (!GameManager.instance.IsGamePaused())
+		{
+			InteractionManager.instance.EnableInteractions();
+		}
 	}
 
 	public void DoAnimationAction()

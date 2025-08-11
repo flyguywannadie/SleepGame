@@ -3,9 +3,16 @@ using UnityEngine;
 
 public class InventoryScript : MonoBehaviour
 {
+	public static InventoryScript instance { get; private set; }
+
 	[SerializeField] private int itemCount = 0;
 	[SerializeField] private InventorySpot inventorySlots;
 	[SerializeField] private ItemDataSO test;
+
+	private void Awake()
+	{
+		instance = this;
+	}
 
 	public bool CanAddItem()
 	{
@@ -27,15 +34,15 @@ public class InventoryScript : MonoBehaviour
 		inventorySlots.Clear();
 	}
 
-	private void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.I))
-		{
-			AddItem(test);
-		}
-		if (Input.GetKeyDown(KeyCode.O))
-		{
-			RemoveItem();
-		}
-	}
+	//private void Update()
+	//{
+	//	if (Input.GetKeyDown(KeyCode.I))
+	//	{
+	//		AddItem(test);
+	//	}
+	//	if (Input.GetKeyDown(KeyCode.O))
+	//	{
+	//		RemoveItem();
+	//	}
+	//}
 }

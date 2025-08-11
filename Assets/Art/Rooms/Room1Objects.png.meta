@@ -256,6 +256,94 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: BigCrack
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 939
+        width: 208
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1e4936f1d18c5946bfb89461ecc9fd2
+      internalID: 1120113565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MidCrack
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 949
+        width: 133
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5661565d3813db043ad401cd0d07eb8f
+      internalID: -1692718059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallCrack
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 963
+        width: 80
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c0f1d462f782a245a3e6ef450b0ca92
+      internalID: -1062210586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room1Objects_5
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 804
+        width: 103
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e50bdc68e8ac42046bbfcced8ab26f42
+      internalID: -1113652178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -270,12 +358,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      BigCrack: 1120113565
       DoorSide: 1625516585
+      MidCrack: -1692718059
       Room1Objects_0: -8184026256146021399
       Room1Objects_1: 8452933935702710954
       Room1Objects_2: 4634184763525558230
       Room1Objects_3: 7492536608113302303
       Room1Objects_4: 2917674258422285107
+      Room1Objects_5: -1113652178
+      SmallCrack: -1062210586
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

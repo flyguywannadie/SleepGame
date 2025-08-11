@@ -7,7 +7,7 @@ public class InspectAction : ActionableItem
 	public override void DoTheAction()
 	{
 		//base.DoTheAction();
-		DialogueManager.instance.GenerateDialogue(dialogue);
+		DialogueManager.instance.GenerateDialogue(dialogue.ToUpper());
 	}
 
 	public override void Execute()

@@ -8,6 +8,8 @@ public class DialogueManager : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI dialogue;
 	[SerializeField] private Animator anims;
 
+	private UndoableAction dialogueAction;
+
 	private bool dialogueOpen = false;
 
 	private void Awake()
@@ -17,6 +19,14 @@ public class DialogueManager : MonoBehaviour
 
 	public void GenerateDialogue(string text)
 	{
+		dialogue.text = text;
+		InteractionManager.instance.DisableInteractions();
+		anims.SetBool("Open", true);
+	}
+
+	public void GenerateDialogueIntoAction(string text, UndoableAction action)
+	{
+		dialogueAction = action;
 		dialogue.text = text;
 		InteractionManager.instance.DisableInteractions();
 		anims.SetBool("Open", true);
@@ -43,6 +53,11 @@ public class DialogueManager : MonoBehaviour
 		InteractionManager.instance.EnableInteractions();
 		anims.SetBool("Open", false);
 		dialogueOpen = false;
+		if (dialogueAction != null)
+		{
+			GameManager.instance.AddActionToStack(dialogueAction);
+			dialogueAction = null;
+		}
 	}
 
 	public void CloseDialogueUndo()

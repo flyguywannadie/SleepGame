@@ -14,15 +14,29 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private PauseManager pauseManager;
 	[SerializeField] private CameraScript camManager;
 
+	[SerializeField] private bool tutorialDone = false;
+	[SerializeField] private GameObject undoTutorial;
+
+	[SerializeField] private int currentSound = 0;
+	[SerializeField] private List<AudioSource> soundPlayers;
+
+	[SerializeField] private AudioClip undoSound;
+
 	private void Awake()
 	{
 		instance = this;
+		undoTutorial.SetActive(false);
 	}
 
 	public void AddActionToStack(UndoableAction a)
 	{
 		actionStack.Add(a);
 		a.Execute();
+
+		if (!tutorialDone && actionStack.Count > 5)
+		{
+			undoTutorial.SetActive(true);
+		}
 	}
 
 	public void UndoAction()
@@ -33,9 +47,17 @@ public class GameManager : MonoBehaviour
 		{
 			return;
 		}
+		PlaySound(undoSound);
+
 		int index = actionStack.Count - 1;
 		actionStack[index].Undo();
 		actionStack.RemoveAt(index);
+
+		if (!tutorialDone)
+		{
+			undoTutorial.SetActive(false);
+			tutorialDone = true;
+		}
 	}
 
 	public void Update()
@@ -87,5 +109,20 @@ public class GameManager : MonoBehaviour
 	public void SetCameraTrack(CameraTrack track)
 	{
 		camManager.SetCameraTrack(track);
+	}
+
+	public void PlaySound(AudioClip audio)
+	{
+		currentSound++;
+		if (currentSound >= soundPlayers.Count)
+		{
+			currentSound = 0;
+		}
+		soundPlayers[currentSound].PlayOneShot(audio);
+	}
+
+	public bool IsGamePaused()
+	{
+		return pauseManager.IsGamePaused();
 	}
 }

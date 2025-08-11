@@ -8,7 +8,7 @@ public class FirstPuzzleButtonAction : ActionableItem
 	[SerializeField] private Sprite buttonPressed;
 	[SerializeField] private Sprite buttonUnpressed;
 	[SerializeField] private SpriteRenderer buttonImage;
-	[SerializeField] private bool pressed;
+	[SerializeField] private int pressed = 0;
 
 	public override void DoTheAction()
 	{
@@ -22,7 +22,7 @@ public class FirstPuzzleButtonAction : ActionableItem
 
 	public override bool AreActionsCorrect()
 	{
-		if (pressed)
+		if (pressed > 1)
 		{
 			return false;
 		}
@@ -31,17 +31,23 @@ public class FirstPuzzleButtonAction : ActionableItem
 
 	public override void Execute()
 	{
-		buttonImage.sprite = buttonPressed;
-		pressed = true;
+		pressed += 1;
+		if (pressed > 1)
+		{
+			buttonImage.sprite = buttonPressed;
+		}
 
-		mainPuzzle.Button(whichButton);
+		mainPuzzle.Button(whichButton, pressed);
 	}
 
 	public override void Undo()
 	{
-		buttonImage.sprite = buttonUnpressed;
-		pressed = false;
+		pressed -= 1;
+		if (pressed < 2)
+		{
+			buttonImage.sprite = buttonUnpressed;
+		}
 
-		mainPuzzle.ButtonUndo(whichButton);
+		mainPuzzle.ButtonUndo(whichButton, pressed);
 	}
 }

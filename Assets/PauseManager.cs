@@ -29,7 +29,6 @@ public class PauseManager : MonoBehaviour
 		if (animFinished)
 		{
 			pauseAnim.SetBool("Pause", false);
-			InteractionManager.instance.EnableInteractions();
 			PlayerScript.instance.PlayActionAnimation("OpenEye", null);
 			paused = false;
 			animFinished = false;
@@ -39,6 +38,11 @@ public class PauseManager : MonoBehaviour
 	public void FinishAnim()
 	{
 		animFinished = true;
+	}
+
+	public void UnpauseFinish()
+	{
+		InteractionManager.instance.EnableInteractions();
 	}
 
 	public void FinishBeginning()

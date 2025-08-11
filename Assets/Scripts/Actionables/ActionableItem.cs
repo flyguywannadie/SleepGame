@@ -7,13 +7,9 @@ public class ActionableItem : MonoBehaviour
 	[SerializeField] protected string actionName = "Base Action ";
 	[SerializeField] protected PlayerAction expectedAction;
 
-	public virtual void Execute()
-	{
-	}
+	public virtual void Execute() { }
 
-	public virtual void Undo()
-	{
-	}
+	public virtual void Undo() { }
 
 	public virtual bool AreActionsCorrect()
 	{
