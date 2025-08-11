@@ -28,6 +28,9 @@ public class GameManager : MonoBehaviour
 		if (!MainMenu)
 		{
 			undoTutorial.SetActive(false);
+		} else
+		{
+			Cursor.visible = true;
 		}
 	}
 

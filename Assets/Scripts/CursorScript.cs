@@ -13,7 +13,7 @@ public class CursorScript : MonoBehaviour
 		anims = GetComponent<Animator>();
 		visuals = GetComponent<Image>();
 
-		//Cursor.visible = false;
+		Cursor.visible = false;
 	}
 
 	private void Update()
