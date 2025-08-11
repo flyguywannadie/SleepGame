@@ -25,7 +25,10 @@ public class GameManager : MonoBehaviour
 	private void Awake()
 	{
 		instance = this;
-		undoTutorial.SetActive(false);
+		if (!MainMenu)
+		{
+			undoTutorial.SetActive(false);
+		}
 	}
 
 	public void AddActionToStack(UndoableAction a)
@@ -124,5 +127,11 @@ public class GameManager : MonoBehaviour
 	public bool IsGamePaused()
 	{
 		return pauseManager.IsGamePaused();
+	}
+
+	public void EndGame()
+	{
+		MainMenu = true;
+		pauseManager.GoToSleep();
 	}
 }

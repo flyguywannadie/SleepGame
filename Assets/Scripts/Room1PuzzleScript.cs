@@ -295,6 +295,24 @@ public class Room1PuzzleScript : MonoBehaviour
 		UpdateCrack();
 	}
 
+	public void HammerButton(int which)
+	{
+		switch (which)
+		{
+			case 0:
+				connectedDoor.SetUpBars();
+				break;
+			case 1:
+				connectedDoor.OpenDoor();
+				connectedDoor.SetUpBars();
+				break;
+			case 2:
+				connectedDoor.CloseDoor();
+				connectedDoor.RemoveBars();
+				break;
+		}
+	}
+
 	public void HammerButtonUndo(int which)
 	{
 		switch (which)

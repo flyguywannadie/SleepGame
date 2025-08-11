@@ -5,10 +5,14 @@ public class HummingGuyScript : ActionableItem
     [SerializeField] private string dialogue;
 	[SerializeField] private Transform animLineupLocation;
 	[SerializeField] private AudioSource humming;
+	[SerializeField] private Animator anims;
 
-	public override bool AreActionsCorrect()
+	[SerializeField] private GameObject PawnBedNoSleep;
+	[SerializeField] private GameObject PawnBedYesSleep;
+
+	private void Update()
 	{
-		return base.AreActionsCorrect();
+		humming.volume = Mathf.Clamp(0.15f * ((50.0f - Vector3.Distance(PlayerScript.instance.GetPlayerPos(), transform.position)) / 50), 0.05f, 0.15f);
 	}
 
 	public override void DoTheAction()
@@ -23,16 +27,29 @@ public class HummingGuyScript : ActionableItem
 
 	public override void Execute()
 	{
-		DialogueManager.instance.GenerateDialogueIntoAction(dialogue, new UndoableAction("Stop Humming", StopHumming, HummingUndo));
+		if (humming.isPlaying)
+		{
+			DialogueManager.instance.GenerateDialogueIntoAction(dialogue, new UndoableAction("Stop Humming", StopHumming, HummingUndo));
+			humming.Stop();
+		}
+		else
+		{
+			DialogueManager.instance.GenerateDialogueWithEndAction("You can go back to bed now.\nI'll be quiet.", StopHumming);
+		}
+		anims.SetBool("Talk", true);
 	}
 
 	public void StopHumming()
 	{
-		humming.Stop();
+		PawnBedNoSleep.SetActive(false);
+		PawnBedYesSleep.SetActive(true);
+		anims.SetBool("Talk", false);
 	}
 
 	public void HummingUndo()
 	{
+		PawnBedNoSleep.SetActive(true);
+		PawnBedYesSleep.SetActive(false);
 		humming.Play();
 	}
 }

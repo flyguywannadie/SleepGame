@@ -18,6 +18,7 @@ public class PauseManager : MonoBehaviour
 		{
 			pauseAnim.SetBool("Pause", true);
 			InteractionManager.instance.DisableInteractions();
+			Cursor.visible = true;
 			PlayerScript.instance.PlayActionAnimation("CloseEye", null);
 			paused = true;
 			animFinished = false;
@@ -43,6 +44,7 @@ public class PauseManager : MonoBehaviour
 	public void UnpauseFinish()
 	{
 		InteractionManager.instance.EnableInteractions();
+		Cursor.visible = false;
 	}
 
 	public void FinishBeginning()
@@ -59,5 +61,13 @@ public class PauseManager : MonoBehaviour
 	public void BeginningOpenEye()
 	{
 		PlayerScript.instance.PlayActionAnimation("OpenEye", null);
+	}
+
+	public void GoToSleep()
+	{
+		pauseAnim.Play("Sleep");
+		InteractionManager.instance.DisableInteractions();
+		Cursor.visible = true;
+		PlayerScript.instance.PlayActionAnimation("CloseEye", null);
 	}
 }

@@ -34,7 +34,7 @@ public class FirstPuzzleHammerButton : ActionableItem
 		undoButton = visuals.sprite;
 		visuals.sprite = brokeButton;
 		GameManager.instance.PlaySound(buttonBreak);
-		mainPuzzle.Button(whichButton,2);
+		mainPuzzle.HammerButton(whichButton);
 	}
 
 	public override void Undo()

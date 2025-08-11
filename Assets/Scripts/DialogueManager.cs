@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class DialogueManager : MonoBehaviour
 	[SerializeField] private Animator anims;
 
 	private UndoableAction dialogueAction;
+	private Action endAction;
 
 	private bool dialogueOpen = false;
 
@@ -20,6 +22,14 @@ public class DialogueManager : MonoBehaviour
 	public void GenerateDialogue(string text)
 	{
 		dialogue.text = text;
+		InteractionManager.instance.DisableInteractions();
+		anims.SetBool("Open", true);
+	}
+
+	public void GenerateDialogueWithEndAction(string text, Action end)
+	{
+		dialogue.text = text;
+		endAction = end;
 		InteractionManager.instance.DisableInteractions();
 		anims.SetBool("Open", true);
 	}
@@ -57,6 +67,11 @@ public class DialogueManager : MonoBehaviour
 		{
 			GameManager.instance.AddActionToStack(dialogueAction);
 			dialogueAction = null;
+		}
+		if (endAction != null)
+		{
+			endAction.Invoke();
+			endAction = null;
 		}
 	}
 

@@ -1114,8 +1114,15 @@ AnimationClip:
     floatParameter: 3.5
     intParameter: 0
     messageOptions: 0
-  - time: 0.53333336
+  - time: 0.51666665
     functionName: EndAnimMove
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.53333336
+    functionName: HopSound
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
