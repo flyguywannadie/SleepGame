@@ -59,6 +59,8 @@ public class GameManager : MonoBehaviour
 		actionStack[index].Undo();
 		actionStack.RemoveAt(index);
 
+		PlayerScript.instance.ForceIdleAnim();
+
 		if (!tutorialDone)
 		{
 			undoTutorial.SetActive(false);

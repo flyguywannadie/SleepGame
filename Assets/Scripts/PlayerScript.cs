@@ -181,6 +181,7 @@ public class PlayerScript : MonoBehaviour
 
 	public void UndoMove()
 	{
+		forcedAction = null;
 		if (undoLocations.Count <= 0)
 		{
 			return;
@@ -189,6 +190,13 @@ public class PlayerScript : MonoBehaviour
 		transform.position = undoLocations[index];
 		goToPos = transform.position;
 		undoLocations.RemoveAt(index);
+		anims.Play("Idle");
+	}
+
+	public void ForceIdleAnim()
+	{
+		animationAction = null;
+		forcedAction = null;
 		anims.Play("Idle");
 	}
 

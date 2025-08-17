@@ -35,11 +35,13 @@ public class FirstPuzzleHammerButton : ActionableItem
 		visuals.sprite = brokeButton;
 		GameManager.instance.PlaySound(buttonBreak);
 		mainPuzzle.HammerButton(whichButton);
+		buttonTrigger.enabled = false;
 	}
 
 	public override void Undo()
 	{
 		visuals.sprite = undoButton;
+		buttonTrigger.enabled = true;
 		mainPuzzle.HammerButtonUndo(whichButton);
 	}
 }
