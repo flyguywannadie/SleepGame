@@ -143,6 +143,11 @@ public class PlayerScript : MonoBehaviour
 		goToPos = pos;
 	}
 
+	/// <summary>
+	/// Sets the player to move to a given location
+	/// Adds a PLayer Movement action to the stack if the player was not already moving
+	/// </summary>
+	/// <param name="pos">Position to move towards</param>
 	public void MovePlayer(Vector3 pos)
 	{
 		forcedAction = null;
@@ -162,6 +167,7 @@ public class PlayerScript : MonoBehaviour
 
 	/// <summary>
 	/// Forces the Player to move then do an action after movement stops
+	/// Adds a Player Movement action to the stack
 	/// </summary>
 	/// <param name="pos">Position to move towards</param>
 	/// <param name="action">Action to be done after movement</param>

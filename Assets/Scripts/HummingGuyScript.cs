@@ -22,31 +22,31 @@ public class HummingGuyScript : ActionableItem
 			PlayerScript.instance.ForceMovementIntoAction(animLineupLocation.position, new UndoableAction(Execute, Undo));
 			return;
 		}
-		Execute();
+		base.DoTheAction();
 	}
 
 	public override void Execute()
 	{
 		if (humming.isPlaying)
 		{
-			DialogueManager.instance.GenerateDialogueIntoAction(dialogue, new UndoableAction("Stop Humming", StopHumming, HummingUndo));
+			DialogueManager.instance.GenerateDialogueWithEndAction(dialogue, StopTalking);
 			humming.Stop();
 		}
 		else
 		{
-			DialogueManager.instance.GenerateDialogueWithEndAction("You can go back to bed now.\nI'll be quiet.", StopHumming);
+			DialogueManager.instance.GenerateDialogueWithEndAction("You can go back to bed now.\nI'll be quiet.", StopTalking);
 		}
+		PawnBedNoSleep.SetActive(false);
+		PawnBedYesSleep.SetActive(true);
 		anims.SetBool("Talk", true);
 	}
 
-	public void StopHumming()
+	public void StopTalking()
 	{
-		PawnBedNoSleep.SetActive(false);
-		PawnBedYesSleep.SetActive(true);
 		anims.SetBool("Talk", false);
 	}
 
-	public void HummingUndo()
+	public override void Undo()
 	{
 		PawnBedNoSleep.SetActive(true);
 		PawnBedYesSleep.SetActive(false);

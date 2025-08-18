@@ -13,6 +13,6 @@ public class CameraScript : MonoBehaviour
 	private void Update()
 	{
 		float clampedx = currentTrack.ClampToValueTrack(follow.position.x);
-		transform.position = new Vector3(clampedx, transform.position.y, transform.position.z);
+		transform.position = new Vector3(clampedx, currentTrack.transform.position.y, transform.position.z);
 	}
 }

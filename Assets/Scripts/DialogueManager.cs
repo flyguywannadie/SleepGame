@@ -34,13 +34,13 @@ public class DialogueManager : MonoBehaviour
 		anims.SetBool("Open", true);
 	}
 
-	public void GenerateDialogueIntoAction(string text, UndoableAction action)
-	{
-		dialogueAction = action;
-		dialogue.text = text;
-		InteractionManager.instance.DisableInteractions();
-		anims.SetBool("Open", true);
-	}
+	//public void GenerateDialogueIntoAction(string text, UndoableAction action)
+	//{
+	//	dialogueAction = action;
+	//	dialogue.text = text;
+	//	InteractionManager.instance.DisableInteractions();
+	//	anims.SetBool("Open", true);
+	//}
 
 	public void AnimDialogueOpen()
 	{

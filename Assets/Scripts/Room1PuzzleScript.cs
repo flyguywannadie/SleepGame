@@ -295,22 +295,50 @@ public class Room1PuzzleScript : MonoBehaviour
 		UpdateCrack();
 	}
 
+	[SerializeField] private bool Hammer1bars = false;
+	[SerializeField] private bool Hammer2door = false;
+	[SerializeField] private bool Hammer2bars = false;
+	[SerializeField] private bool Hammer3door = false;
+	[SerializeField] private bool Hammer3bars = false;
+
 	public void HammerButton(int which)
 	{
 		switch (which)
 		{
 			case 0:
-				connectedDoor.SetUpBars();
+				if (!connectedDoor.barsDown)
+				{
+					connectedDoor.RemoveBars();
+					Hammer1bars = true;
+				}
 				break;
 			case 1:
-				connectedDoor.OpenDoor();
-				connectedDoor.SetUpBars();
+				if (connectedDoor.doorOpen)
+				{
+					connectedDoor.CloseDoor();
+					Hammer2door = true;
+				}
+				if (!connectedDoor.barsDown)
+				{
+					connectedDoor.RemoveBars();
+					Hammer2bars = true;
+				}
 				break;
 			case 2:
-				connectedDoor.CloseDoor();
-				connectedDoor.RemoveBars();
+				if (!connectedDoor.doorOpen)
+				{
+					connectedDoor.OpenDoor();
+					Hammer3door = true;
+				}
+				if (connectedDoor.barsDown)
+				{
+					connectedDoor.SetUpBars();
+					Hammer3bars = true;
+				}
 				break;
 		}
+
+		UpdateCrack();
 	}
 
 	public void HammerButtonUndo(int which)
@@ -318,15 +346,35 @@ public class Room1PuzzleScript : MonoBehaviour
 		switch (which)
 		{
 			case 0:
-				connectedDoor.RemoveBarsInstant();
+				if (Hammer1bars)
+				{
+					connectedDoor.SetUpBarsInstant();
+				}
+				Hammer1bars = false;
 				break;
 			case 1:
-				connectedDoor.CloseDoorInstant();
-				connectedDoor.RemoveBarsInstant();
+				if (Hammer2door)
+				{
+					connectedDoor.OpenDoorInstant();
+				}
+				if (Hammer2bars)
+				{
+					connectedDoor.SetUpBarsInstant();
+				}
+				Hammer2door = false;
+				Hammer2bars = false;
 				break;
 			case 2:
-				connectedDoor.OpenDoorInstant();
-				connectedDoor.SetUpBarsInstant();
+				if (Hammer3door)
+				{
+					connectedDoor.CloseDoorInstant();
+				}
+				if (Hammer3bars)
+				{
+					connectedDoor.RemoveBarsInstant();
+				}
+				Hammer3door = false;
+				Hammer3bars = false;
 				break;
 		}
 

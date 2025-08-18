@@ -7,19 +7,19 @@ public class UndoableAction
 {
     [SerializeField] protected string name = "Action";
     [SerializeField] private Action executeActions;
-    [SerializeField] private Action undoActions;
+    [SerializeField] private List<Action> undoActions;
 
 	public UndoableAction() { }
 	public UndoableAction(Action execute, Action undo)
 	{
 		executeActions = execute;
-		undoActions = undo;
+		undoActions = new List<Action>(){ undo };
 	}
 	public UndoableAction(string name, Action execute, Action undo)
 	{
 		this.name = name;
 		executeActions = execute;
-		undoActions = undo;
+		undoActions = new List<Action>() { undo };
 	}
 
 	public virtual void Execute()
@@ -30,7 +30,15 @@ public class UndoableAction
 
     public virtual void Undo() {
 		Debug.Log(name + " was Undone");
-		undoActions.Invoke();
+		foreach (Action undo in undoActions)
+		{
+			undo.Invoke();
+		}
+	}
+
+	public virtual void AddUndo(Action undo)
+	{
+		undoActions.Add(undo);
 	}
 
 	public string GetName()
