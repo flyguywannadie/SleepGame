@@ -5,4 +5,5 @@ public class ItemDataSO : ScriptableObject
 {
     public PlayerAction itemAction;
     public Sprite itemImage;
+    public Sprite itemPressed;
 }

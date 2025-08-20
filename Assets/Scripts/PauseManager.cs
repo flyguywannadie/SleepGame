@@ -67,7 +67,6 @@ public class PauseManager : MonoBehaviour
 	{
 		pauseAnim.Play("Sleep");
 		InteractionManager.instance.DisableInteractions();
-		Cursor.visible = true;
 		PlayerScript.instance.PlayActionAnimation("CloseEye", null);
 	}
 }

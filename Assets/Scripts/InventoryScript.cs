@@ -7,7 +7,7 @@ public class InventoryScript : MonoBehaviour
 
 	[SerializeField] private int itemCount = 0;
 	[SerializeField] private InventorySpot inventorySlots;
-	[SerializeField] private ItemDataSO test;
+	//[SerializeField] private ItemDataSO test;
 
 	private void Awake()
 	{

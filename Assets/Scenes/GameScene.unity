@@ -531,6 +531,8 @@ GameObject:
   m_Component:
   - component: {fileID: 122653459}
   - component: {fileID: 122653460}
+  - component: {fileID: 122653461}
+  - component: {fileID: 122653462}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -576,6 +578,34 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &122653461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122653458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e72fdf2eedc154aa7c314fea264614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: e6881dd1aa09b1d42b1675a02be8c7c1, type: 3}
+--- !u!114 &122653462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122653458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 678410ff8efccd64eb674c48ce43b3f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorAnims: {fileID: 122653460}
+  open: 0
+  jams: 0
 --- !u!1 &166350754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,6 +1548,7 @@ GameObject:
   - component: {fileID: 451341864}
   - component: {fileID: 451341863}
   - component: {fileID: 451341862}
+  - component: {fileID: 451341865}
   m_Layer: 5
   m_Name: Look
   m_TagString: Untagged
@@ -1563,7 +1594,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1588,9 +1619,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1318739552}
-        m_TargetAssemblyTypeName: InteractionManager, Assembly-CSharp
-        m_MethodName: ChangeActionLook
+      - m_Target: {fileID: 451341865}
+        m_TargetAssemblyTypeName: ActionButton, Assembly-CSharp
+        m_MethodName: Press
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1638,6 +1669,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451341860}
   m_CullTransparentMesh: 1
+--- !u!114 &451341865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451341860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c400b04b504d36f44b326a7c2e210ef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visuals: {fileID: 451341863}
+  action: 0
+  UnPressed: {fileID: 21300000, guid: 72922628e665fe94fad0dd10df06f72c, type: 3}
+  Pressed: {fileID: 21300000, guid: d5f742f8bfb3b58468447e7d10a8f00a, type: 3}
 --- !u!1 &492959856
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,6 +1696,7 @@ GameObject:
   - component: {fileID: 492959857}
   - component: {fileID: 492959860}
   - component: {fileID: 492959859}
+  - component: {fileID: 492959861}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -1713,6 +1761,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492959856}
   m_CullTransparentMesh: 1
+--- !u!114 &492959861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492959856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 492959859}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 733771124}
+        m_TargetAssemblyTypeName: InventorySpot, Assembly-CSharp
+        m_MethodName: Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2226,6 +2330,7 @@ GameObject:
   - component: {fileID: 618548451}
   - component: {fileID: 618548450}
   - component: {fileID: 618548449}
+  - component: {fileID: 618548452}
   m_Layer: 5
   m_Name: Move
   m_TagString: Untagged
@@ -2271,7 +2376,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2296,9 +2401,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1318739552}
-        m_TargetAssemblyTypeName: InteractionManager, Assembly-CSharp
-        m_MethodName: ChangeActionMove
+      - m_Target: {fileID: 618548452}
+        m_TargetAssemblyTypeName: ActionButton, Assembly-CSharp
+        m_MethodName: Press
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2346,6 +2451,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618548447}
   m_CullTransparentMesh: 1
+--- !u!114 &618548452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618548447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c400b04b504d36f44b326a7c2e210ef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visuals: {fileID: 618548450}
+  action: 2
+  UnPressed: {fileID: 21300000, guid: 3495b5df3d744d44e968443eb1d75a71, type: 3}
+  Pressed: {fileID: 21300000, guid: d96b5dee90c925743bcead64f39f59f4, type: 3}
 --- !u!1 &667043546
 GameObject:
   m_ObjectHideFlags: 0
@@ -2551,9 +2672,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84348b567cefac54f9137af907ee922e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 1669240370}
+  visuals: {fileID: 1669240370}
+  action: 0
+  UnPressed: {fileID: 0}
+  Pressed: {fileID: 0}
   myitem: {fileID: 0}
-  previousHoverAction: 0
 --- !u!114 &668872276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2968,9 +3091,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84348b567cefac54f9137af907ee922e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 492959859}
+  visuals: {fileID: 492959859}
+  action: 0
+  UnPressed: {fileID: 0}
+  Pressed: {fileID: 0}
   myitem: {fileID: 0}
-  previousHoverAction: 0
 --- !u!1 &741222979
 GameObject:
   m_ObjectHideFlags: 0
@@ -3024,7 +3149,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemCount: 0
   inventorySlots: {fileID: 733771124}
-  test: {fileID: 11400000, guid: d9eef12702658674fbd32a9687b07e7d, type: 2}
 --- !u!1001 &769758765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3245,9 +3369,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84348b567cefac54f9137af907ee922e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 1960253213}
+  visuals: {fileID: 1960253213}
+  action: 0
+  UnPressed: {fileID: 0}
+  Pressed: {fileID: 0}
   myitem: {fileID: 0}
-  previousHoverAction: 0
 --- !u!114 &798736767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3960,9 +4086,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorAnims: {fileID: 0}
-  barsAnims: {fileID: 0}
-  doorOpen: 0
-  barsDown: 0
+  open: 0
+  jams: 0
 --- !u!1 &1054705313
 GameObject:
   m_ObjectHideFlags: 0
@@ -4715,19 +4840,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentAction: 0
-  prevAction: 0
   cursor: {fileID: 2027602814}
   hoverCount: 0
   interactionEnabled: 0
-  lookButton: {fileID: 451341863}
-  touchButton: {fileID: 1617914855}
-  MoveButton: {fileID: 618548450}
-  lookUnPressed: {fileID: 21300000, guid: 72922628e665fe94fad0dd10df06f72c, type: 3}
-  lookPressed: {fileID: 21300000, guid: d5f742f8bfb3b58468447e7d10a8f00a, type: 3}
-  touchUnPressed: {fileID: 21300000, guid: b3293f233db510f4f9d54059bcc1351d, type: 3}
-  touchPressed: {fileID: 21300000, guid: 2e09a95e975898b498c2b80afa8bfaf5, type: 3}
-  moveUnPressed: {fileID: 21300000, guid: 3495b5df3d744d44e968443eb1d75a71, type: 3}
-  movePressed: {fileID: 21300000, guid: d96b5dee90c925743bcead64f39f59f4, type: 3}
+  prevAction: {fileID: 451341865}
 --- !u!4 &1318739553
 Transform:
   m_ObjectHideFlags: 0
@@ -5888,6 +6004,7 @@ GameObject:
   - component: {fileID: 1617914856}
   - component: {fileID: 1617914855}
   - component: {fileID: 1617914854}
+  - component: {fileID: 1617914857}
   m_Layer: 5
   m_Name: Touch
   m_TagString: Untagged
@@ -5933,7 +6050,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -5958,9 +6075,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1318739552}
-        m_TargetAssemblyTypeName: InteractionManager, Assembly-CSharp
-        m_MethodName: ChangeActionTouch
+      - m_Target: {fileID: 1617914857}
+        m_TargetAssemblyTypeName: ActionButton, Assembly-CSharp
+        m_MethodName: Press
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6008,6 +6125,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617914852}
   m_CullTransparentMesh: 1
+--- !u!114 &1617914857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617914852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c400b04b504d36f44b326a7c2e210ef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visuals: {fileID: 1617914855}
+  action: 1
+  UnPressed: {fileID: 21300000, guid: b3293f233db510f4f9d54059bcc1351d, type: 3}
+  Pressed: {fileID: 21300000, guid: 2e09a95e975898b498c2b80afa8bfaf5, type: 3}
 --- !u!1 &1669240368
 GameObject:
   m_ObjectHideFlags: 0
@@ -6019,6 +6152,7 @@ GameObject:
   - component: {fileID: 1669240369}
   - component: {fileID: 1669240371}
   - component: {fileID: 1669240370}
+  - component: {fileID: 1669240372}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -6083,6 +6217,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669240368}
   m_CullTransparentMesh: 1
+--- !u!114 &1669240372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669240368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1669240370}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 668872275}
+        m_TargetAssemblyTypeName: InventorySpot, Assembly-CSharp
+        m_MethodName: Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1677220439
 GameObject:
   m_ObjectHideFlags: 0
@@ -6823,6 +7013,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1878215309}
   - component: {fileID: 1878215310}
+  - component: {fileID: 1878215311}
+  - component: {fileID: 1878215312}
   m_Layer: 0
   m_Name: Bars
   m_TagString: Untagged
@@ -6868,6 +7060,34 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1878215311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878215308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e72fdf2eedc154aa7c314fea264614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: e6881dd1aa09b1d42b1675a02be8c7c1, type: 3}
+--- !u!114 &1878215312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878215308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 678410ff8efccd64eb674c48ce43b3f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorAnims: {fileID: 1878215310}
+  open: 0
+  jams: 0
 --- !u!1 &1902397382
 GameObject:
   m_ObjectHideFlags: 0
@@ -7033,7 +7253,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1931493352}
-  - component: {fileID: 1931493353}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -7059,22 +7278,6 @@ Transform:
   - {fileID: 122653459}
   m_Father: {fileID: 1295981775}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1931493353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1931493351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 678410ff8efccd64eb674c48ce43b3f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorAnims: {fileID: 122653460}
-  barsAnims: {fileID: 1878215310}
-  doorOpen: 0
-  barsDown: 0
 --- !u!1 &1936355247
 GameObject:
   m_ObjectHideFlags: 0
@@ -7216,6 +7419,7 @@ GameObject:
   - component: {fileID: 1960253212}
   - component: {fileID: 1960253214}
   - component: {fileID: 1960253213}
+  - component: {fileID: 1960253215}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -7280,6 +7484,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1960253211}
   m_CullTransparentMesh: 1
+--- !u!114 &1960253215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960253211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1960253213}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 798736766}
+        m_TargetAssemblyTypeName: InventorySpot, Assembly-CSharp
+        m_MethodName: Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2024277896
 GameObject:
   m_ObjectHideFlags: 0
@@ -7514,14 +7774,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8cd7240f31a1149b28677b35470422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedDoor: {fileID: 1931493353}
+  theDoor: {fileID: 122653462}
+  doorBars: {fileID: 1878215312}
   doorTravelTrigger: {fileID: 198816576}
-  jams: 0
   buttonClick: {fileID: 8300000, guid: 9f6cc6183908c7f42b5e0e33e78d7b93, type: 3}
-  jamSound: {fileID: 8300000, guid: e6881dd1aa09b1d42b1675a02be8c7c1, type: 3}
   smallCrack: {fileID: 1525785185}
   midCrack: {fileID: 676017995}
   hammerCrack: {fileID: 2146341248}
+  jams: 0
   Button1bars: 0
   Button1bars2: 0
   Button2door: 0

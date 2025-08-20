@@ -3,60 +3,50 @@ using UnityEngine;
 public class DoorScript : MonoBehaviour
 {
 	[SerializeField] private Animator doorAnims;
-	[SerializeField] private Animator barsAnims;
 
-	public bool doorOpen = false;
-	public bool barsDown = false;
+	public bool open = false;
 
-	public void OpenDoor()
+	[SerializeField] private int jams = 0;
+
+	public void Open()
 	{
 		doorAnims.SetBool("Open", true);
-		doorOpen = true;
+		open = true;
 	}
 
-	public void CloseDoor()
+	public void Close()
 	{
 		doorAnims.SetBool("Open", false);
-		doorOpen = false;
+		open = false;
 	}
 
-	public void OpenDoorInstant()
+	public void OpenInstant()
 	{
 		doorAnims.SetBool("Open", true);
 		doorAnims.Play("Opened");
-		doorOpen = true;
+		open = true;
 	}
 
-	public void CloseDoorInstant()
+	public void CloseInstant()
 	{
 		doorAnims.SetBool("Open", false);
 		doorAnims.Play("Closed");
-		doorOpen = false;
+		open = false;
 	}
 
-	public void RemoveBars()
+	public void Jam()
 	{
-		barsAnims.SetBool("Open", true);
-		barsDown = true;
+		doorAnims.SetTrigger("Jam");
+		jams++;
 	}
 
-	public void SetUpBars()
+	public void UnJam()
 	{
-		barsAnims.SetBool("Open", false);
-		barsDown = false;
+		doorAnims.ResetTrigger("Jam");
 	}
 
-	public void RemoveBarsInstant()
+	public void RemoveJam()
 	{
-		barsAnims.SetBool("Open", true);
-		barsAnims.Play("Opened");
-		barsDown = true;
-	}
-
-	public void SetUpBarsInstant()
-	{
-		barsAnims.SetBool("Open", false);
-		barsAnims.Play("Closed");
-		barsDown = false;
+		jams--;
 	}
 }

@@ -15,26 +15,13 @@ public class InteractionManager : MonoBehaviour
 
 	[SerializeField] private PlayerAction currentAction;
 
-	[SerializeField] private PlayerAction prevAction;
-
 	[SerializeField] private CursorScript cursor;
 
 	[SerializeField] private int hoverCount = 0;
 
 	[SerializeField] private bool interactionEnabled;
 
-	[SerializeField] private Image lookButton;
-	[SerializeField] private Image touchButton;
-	[SerializeField] private Image MoveButton;
-
-	[SerializeField] private Sprite lookUnPressed;
-	[SerializeField] private Sprite lookPressed;
-
-	[SerializeField] private Sprite touchUnPressed;
-	[SerializeField] private Sprite touchPressed;
-
-	[SerializeField] private Sprite moveUnPressed;
-	[SerializeField] private Sprite movePressed;
+	[SerializeField] private ActionButton prevAction;
 
 	private void Awake()
 	{
@@ -43,8 +30,7 @@ public class InteractionManager : MonoBehaviour
 
 	private void Start()
 	{
-		ChangeActionLook();
-		//Invoke("EnableInteractions", 2.0f);
+		ChangeAction(prevAction);
 	}
 
 	public PlayerAction GetCurrentAction()
@@ -89,52 +75,14 @@ public class InteractionManager : MonoBehaviour
 		cursor.HideCursor();
 	}
 
-	//public void UsePlayerAction()
-	//{
-	//	switch (currentAction)
-	//	{
-	//		case PlayerAction.LOOK:
-	//			break;
-	//		case PlayerAction.TOUCH:
-	//			break;
-	//		case PlayerAction.MOVE:
-	//			GameManager.instance.ForcePlayerMovement(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-	//			break;
-	//	}
-	//}
-
-	public void ChangeActionLook()
+	public void ChangeAction(ActionButton ab)
 	{
-		ChangeAction(PlayerAction.LOOK);
-		lookButton.sprite = lookPressed;
-		touchButton.sprite = touchUnPressed;
-		MoveButton.sprite = moveUnPressed;
-	}
-	public void ChangeActionTouch()
-	{
-		ChangeAction(PlayerAction.TOUCH);
-		lookButton.sprite = lookUnPressed;
-		touchButton.sprite = touchPressed;
-		MoveButton.sprite = moveUnPressed;
-	}
-	public void ChangeActionMove()
-	{
-		ChangeAction(PlayerAction.MOVE);
-		lookButton.sprite = lookUnPressed;
-		touchButton.sprite = touchUnPressed;
-		MoveButton.sprite = movePressed;
-	}
-
-	public void ChangeAction(PlayerAction s)
-	{
-		prevAction = currentAction;
-		currentAction = s;
-		cursor.SetCursor(s);
-	}
-
-	public void ChangeActionPrev()
-	{
-		currentAction = prevAction;
-		cursor.SetCursor(prevAction);
+		if (ab != prevAction)
+		{
+			prevAction.UnPress();
+		}
+		currentAction = ab.GetAction();
+		cursor.SetCursor(currentAction);
+		prevAction = ab;
 	}
 }

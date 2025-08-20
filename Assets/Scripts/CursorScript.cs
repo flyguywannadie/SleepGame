@@ -59,10 +59,12 @@ public class CursorScript : MonoBehaviour
 	public void HideCursor()
 	{
 		visuals.enabled = false;
+		Cursor.visible = true;
 	}
 
 	public void ShowCursor()
 	{
 		visuals.enabled = true;
+		Cursor.visible = false;
 	}
 }

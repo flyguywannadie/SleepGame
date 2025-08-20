@@ -1,19 +1,11 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
-public class InventorySpot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
+public class InventorySpot : ActionButton
 {
-	[SerializeField] private Image itemImage;
 	[SerializeField] private ItemDataSO myitem;
-
-	//[SerializeField] private Vector3 itemStartPos;
-	[SerializeField] private PlayerAction previousHoverAction;
-
-	private void Start()
-	{
-		//itemStartPos = itemImage.transform.position;
-	}
 
 	public bool hasItem()
 	{
@@ -23,70 +15,36 @@ public class InventorySpot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
 	public void Populate(ItemDataSO item)
 	{
 		myitem = item;
-		itemImage.gameObject.SetActive(true);
-		itemImage.sprite = myitem.itemImage;
+		visuals.gameObject.SetActive(true);
+		action = item.itemAction;
+		UnPressed = item.itemImage;
+		Pressed = item.itemPressed;
+		UnPress();
+	}
+
+	public override void Press()
+	{
+		if (myitem == null)
+		{
+			return;
+		}
+		base.Press();
+	}
+
+	public override void UnPress()
+	{
+		if (myitem == null)
+		{
+			return;
+		}
+		base.UnPress();
 	}
 
 	public void Clear()
 	{
 		myitem = null;
-		itemImage.gameObject.SetActive(false);
-	}
-
-	//public void StartDrag()
-	//{
-	//	if (!InteractionManager.instance.AreActionsEnabled())
-	//	{
-	//		return;
-	//	}
-	//	Debug.Log("start Drag");
-	//	itemImage.transform.position = itemStartPos;
-	//	itemImage.enabled = false;
-	//	InteractionManager.instance.ChangeAction(myitem.itemAction);
-	//}
-
-	//public void Drag()
-	//{
-	//	if (!InteractionManager.instance.AreActionsEnabled())
-	//	{
-	//		return;
-	//	}
-	//	Debug.Log("Drag");
-	//	itemImage.transform.position = Input.mousePosition;
-	//}
-
-	//public void EndDrag()
-	//{
-	//	if (!InteractionManager.instance.AreActionsEnabled())
-	//	{
-	//		return;
-	//	}
-	//	StopDragging();
-	//}
-
-	public void OnBeginDrag(PointerEventData eventData)
-	{
-		if (!InteractionManager.instance.AreActionsEnabled() || !(eventData.button == PointerEventData.InputButton.Left) || myitem == null)
-		{
-			return;
-		}
-		Debug.Log("start Drag");
-		itemImage.enabled = false;
-		InteractionManager.instance.ChangeAction(myitem.itemAction);
-	}
-
-	public void OnDrag(PointerEventData eventData)
-	{
-	}
-	
-	public void OnEndDrag(PointerEventData eventData)
-	{
-		if (!InteractionManager.instance.AreActionsEnabled() || !(eventData.button == PointerEventData.InputButton.Left) || myitem == null)
-		{
-			return;
-		}
-		Debug.Log("end Drag");
-		itemImage.enabled = true;
-		InteractionManager.instance.ChangeActionPrev();
+		UnPressed = null;
+		Pressed = null;
+		visuals.gameObject.SetActive(false);
 	}
 }
