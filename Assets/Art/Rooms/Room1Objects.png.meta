@@ -257,11 +257,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BigCrack
+      name: CrackFinal
       rect:
         serializedVersion: 2
         x: 385
-        y: 939
+        y: 941
         width: 208
         height: 54
       alignment: 0
@@ -279,11 +279,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MidCrack
+      name: Crack4
       rect:
         serializedVersion: 2
-        x: 617
-        y: 949
+        x: 425
+        y: 839
         width: 133
         height: 40
       alignment: 0
@@ -301,11 +301,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SmallCrack
+      name: Crack2
       rect:
         serializedVersion: 2
-        x: 776
-        y: 963
+        x: 452
+        y: 763
         width: 80
         height: 28
       alignment: 0
@@ -331,7 +331,7 @@ TextureImporter:
         width: 103
         height: 99
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -340,6 +340,72 @@ TextureImporter:
       bones: []
       spriteID: e50bdc68e8ac42046bbfcced8ab26f42
       internalID: -1113652178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crack3
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 797
+        width: 110
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8588dc38d05055543910f52df98cbc39
+      internalID: -381021723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crack5
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 903
+        width: 165
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6cfd0fd6dd81bc489e89f6ac3c16bb1
+      internalID: 714610096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crack1
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 726
+        width: 53
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e18744a617aa4640bbaee4654eaf4f0
+      internalID: 2130140128
       vertices: []
       indices: 
       edges: []
@@ -358,16 +424,19 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BigCrack: 1120113565
+      Crack1: 2130140128
+      Crack2: -1062210586
+      Crack3: -381021723
+      Crack4: -1692718059
+      Crack5: 714610096
+      CrackFinal: 1120113565
       DoorSide: 1625516585
-      MidCrack: -1692718059
       Room1Objects_0: -8184026256146021399
       Room1Objects_1: 8452933935702710954
       Room1Objects_2: 4634184763525558230
       Room1Objects_3: 7492536608113302303
       Room1Objects_4: 2917674258422285107
       Room1Objects_5: -1113652178
-      SmallCrack: -1062210586
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

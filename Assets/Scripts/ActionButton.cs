@@ -8,9 +8,17 @@ public class ActionButton : MonoBehaviour
 	[SerializeField] protected Sprite UnPressed;
 	[SerializeField] protected Sprite Pressed;
 
-	private void Awake()
+	[SerializeField] private bool startPressed = false;
+
+	private void Start()
 	{
-		UnPress();
+		if (startPressed)
+		{
+			Press();
+		} else
+		{
+			UnPress();
+		}
 	}
 
 	public virtual void Press()

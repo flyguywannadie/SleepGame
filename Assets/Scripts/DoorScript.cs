@@ -6,7 +6,7 @@ public class DoorScript : MonoBehaviour
 
 	public bool open = false;
 
-	[SerializeField] private int jams = 0;
+	public bool updateCrack = false;
 
 	public void Open()
 	{
@@ -37,16 +37,15 @@ public class DoorScript : MonoBehaviour
 	public void Jam()
 	{
 		doorAnims.SetTrigger("Jam");
-		jams++;
+	}
+
+	public void JamAnim()
+	{
+		updateCrack = true;
 	}
 
 	public void UnJam()
 	{
 		doorAnims.ResetTrigger("Jam");
-	}
-
-	public void RemoveJam()
-	{
-		jams--;
 	}
 }

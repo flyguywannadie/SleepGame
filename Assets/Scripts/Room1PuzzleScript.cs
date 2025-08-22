@@ -8,11 +8,8 @@ public class Room1PuzzleScript : MonoBehaviour
 
 	[SerializeField] private AudioClip buttonClick;
 
-	[SerializeField] private GameObject smallCrack;
-	[SerializeField] private GameObject midCrack;
-	[SerializeField] private GameObject hammerCrack;
-
-	[SerializeField] private int jams = 0;
+	[SerializeField] private ProgressiveUnlock crack;
+	[SerializeField] private GameObject crackInspect;
 
 	private void Start()
 	{
@@ -20,14 +17,23 @@ public class Room1PuzzleScript : MonoBehaviour
 		doorBars.OpenInstant();
 		doorTravelTrigger.enabled = false;
 
-		smallCrack.SetActive(false);
-		midCrack.SetActive(false);
-		hammerCrack.SetActive(false);
+		crackInspect.SetActive(false);
 	}
 
 	private void Update()
 	{
 		doorTravelTrigger.enabled = (theDoor.open && doorBars.open);
+
+		if (doorBars.updateCrack)
+		{
+			doorBars.updateCrack = false;
+			Crack();
+		}
+		if (theDoor.updateCrack)
+		{
+			theDoor.updateCrack = false;
+			Crack();
+		}
 	}
 
 	// booleans for if the buttons functioned properly. so that they won't undo wrong
@@ -155,7 +161,7 @@ public class Room1PuzzleScript : MonoBehaviour
 					}
 					else
 					{
-						doorBars.RemoveJam();
+						UnCrack();
 					}
 					Button1bars2 = false;
 					break;
@@ -166,7 +172,7 @@ public class Room1PuzzleScript : MonoBehaviour
 					}
 					else
 					{
-						theDoor.RemoveJam();
+						UnCrack();
 					}
 					if (Button2bars2)
 					{
@@ -174,7 +180,7 @@ public class Room1PuzzleScript : MonoBehaviour
 					}
 					else
 					{
-						doorBars.RemoveJam();
+						UnCrack();
 					}
 					Button2door2 = false;
 					Button2bars2 = false;
@@ -186,7 +192,7 @@ public class Room1PuzzleScript : MonoBehaviour
 					}
 					else
 					{
-						theDoor.RemoveJam();
+						UnCrack();
 					}
 					if (Button3bars2)
 					{
@@ -194,7 +200,7 @@ public class Room1PuzzleScript : MonoBehaviour
 					}
 					else
 					{
-						doorBars.RemoveJam();
+						UnCrack();
 					}
 					Button3door2 = false;
 					Button3bars2 = false;
@@ -212,7 +218,7 @@ public class Room1PuzzleScript : MonoBehaviour
 					}
 					else
 					{
-						doorBars.RemoveJam();
+						UnCrack();
 					}
 					Button1bars = false;
 					break;
@@ -223,7 +229,7 @@ public class Room1PuzzleScript : MonoBehaviour
 					}
 					else
 					{
-						theDoor.RemoveJam();
+						UnCrack();
 					}
 					if (Button2bars)
 					{
@@ -231,7 +237,7 @@ public class Room1PuzzleScript : MonoBehaviour
 					}
 					else
 					{
-						doorBars.RemoveJam();
+						UnCrack();
 					}
 					Button2door = false;
 					Button2bars = false;
@@ -243,7 +249,7 @@ public class Room1PuzzleScript : MonoBehaviour
 					}
 					else
 					{
-						theDoor.RemoveJam();
+						UnCrack();
 					}
 					if (Button3bars)
 					{
@@ -251,7 +257,7 @@ public class Room1PuzzleScript : MonoBehaviour
 					}
 					else
 					{
-						doorBars.RemoveJam();
+						UnCrack();
 					}
 					Button3door = false;
 					Button3bars = false;
@@ -342,31 +348,21 @@ public class Room1PuzzleScript : MonoBehaviour
 		}
 	}
 
-	public void UpdateCrack()
+	public void Crack()
 	{
-		if (jams >= 2 && jams < 4)
+		if (crack.GetProgress() > 0)
 		{
-			smallCrack.SetActive(true);
-			midCrack.SetActive(false);
-			hammerCrack.SetActive(false);
+			crackInspect.SetActive(true);
 		}
-		else if (jams >= 4 && jams < 6)
+		crack.Progress();
+	}
+
+	public void UnCrack()
+	{
+		if (crack.GetProgress() <= 0)
 		{
-			smallCrack.SetActive(false);
-			midCrack.SetActive(true);
-			hammerCrack.SetActive(false);
+			crackInspect.SetActive(false);
 		}
-		else if (jams >= 6)
-		{
-			smallCrack.SetActive(false);
-			midCrack.SetActive(false);
-			hammerCrack.SetActive(true);
-		}
-		else
-		{
-			smallCrack.SetActive(false);
-			midCrack.SetActive(false);
-			hammerCrack.SetActive(false);
-		}
+		crack.Regress();
 	}
 }

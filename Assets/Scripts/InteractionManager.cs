@@ -30,7 +30,7 @@ public class InteractionManager : MonoBehaviour
 
 	private void Start()
 	{
-		ChangeAction(prevAction);
+		//ChangeAction(prevAction);
 	}
 
 	public PlayerAction GetCurrentAction()
