@@ -350,19 +350,19 @@ public class Room1PuzzleScript : MonoBehaviour
 
 	public void Crack()
 	{
-		if (crack.GetProgress() > 0)
+		crack.Progress();
+		if (crack.GetProgress() > 1)
 		{
 			crackInspect.SetActive(true);
 		}
-		crack.Progress();
 	}
 
 	public void UnCrack()
 	{
-		if (crack.GetProgress() <= 0)
+		crack.Regress();
+		if (crack.GetProgress() <= 1)
 		{
 			crackInspect.SetActive(false);
 		}
-		crack.Regress();
 	}
 }
