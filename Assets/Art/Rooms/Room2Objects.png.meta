@@ -231,6 +231,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: DownDoor
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 180
+        width: 330
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72ba22796638c6e44a35d06d791233c4
+      internalID: 1772989102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownDoorOpen
+      rect:
+        serializedVersion: 2
+        x: 1378
+        y: 436
+        width: 335
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 130186e0bacd0c5458dbe37af4ade537
+      internalID: 1316886224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -246,6 +290,8 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Chair: -841419098541503855
+      DownDoor: 1772989102
+      DownDoorOpen: 1316886224
       Fireplace: 7217096591688275805
       RockingChair: -454444221646815821
       UpDoor: 3561772731989719253

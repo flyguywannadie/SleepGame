@@ -45,6 +45,19 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// This is to add bonus Undos to actions that may be have different outcomes based on the state of other things<br/>
+	/// <br/>
+	/// example: <br/>
+	///		When pressing a button change X -> Y<br/>
+	///		If the button is pressed on X, you want it to undo back into X<br/>
+	///		If the button is pressed on Y, you don't want it to undo back to X because then the Undo isn't proper<br/>
+	/// </summary>
+	public void AddConditionalUndo(Action a)
+	{
+		actionStack[actionStack.Count - 1].AddUndo(a);
+	}
+
 	public void UndoAction()
 	{
 		DialogueManager.instance.CloseDialogueUndo();
