@@ -152,11 +152,7 @@ public class PlayerScript : MonoBehaviour
 	{
 		forcedAction = null;
 		goToPos = new Vector3(pos.x, pos.y, transform.position.z);
-		if (!moving)
-		{
-			undoLocations.Add(transform.position);
-			GameManager.instance.AddActionToStack(new UndoableAction("Player Movement",StartMove, UndoMove));
-		}
+		TryAddMovementUndo();
 	}
 
 	public void MovePlayerNoUndo(Vector3 pos)
@@ -175,8 +171,16 @@ public class PlayerScript : MonoBehaviour
 	{
 		forcedAction = action;
 		goToPos = new Vector3(pos.x, pos.y, transform.position.z);
-		undoLocations.Add(transform.position);
-		GameManager.instance.AddActionToStack(new UndoableAction("Player Movement",StartMove, UndoMove));
+		TryAddMovementUndo();
+	}
+
+	private void TryAddMovementUndo()
+	{
+		if (!moving)
+		{
+			undoLocations.Add(transform.position);
+			GameManager.instance.AddActionToStack(new UndoableAction("Player Movement", StartMove, UndoMove));
+		}
 	}
 
 	public void StartMove()

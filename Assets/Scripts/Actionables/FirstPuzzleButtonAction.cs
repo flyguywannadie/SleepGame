@@ -37,7 +37,7 @@ public class FirstPuzzleButtonAction : ActionableItem
 			buttonImage.sprite = buttonPressed;
 		}
 
-		mainPuzzle.Button(whichButton, pressed);
+		mainPuzzle.Button(whichButton);
 	}
 
 	public override void Undo()
@@ -47,7 +47,5 @@ public class FirstPuzzleButtonAction : ActionableItem
 		{
 			buttonImage.sprite = buttonUnpressed;
 		}
-
-		mainPuzzle.ButtonUndo(whichButton, pressed);
 	}
 }

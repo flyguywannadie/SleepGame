@@ -6,6 +6,7 @@ public class TravelAction : ActionableItem
 	[SerializeField] private Transform travelLocation;
 	[SerializeField] private Transform travelEndLocation;
 	[SerializeField] private CameraTrack travelTrack;
+	[SerializeField] private CameraTrack undoTrack;
 
 	public override void DoTheAction()
 	{
@@ -19,13 +20,14 @@ public class TravelAction : ActionableItem
 
 	public override void Execute()
 	{
+		GameManager.instance.SetCameraTrack(travelTrack);
 		PlayerScript.instance.ForcePosition(travelLocation.position);
 		PlayerScript.instance.MovePlayerNoUndo(travelEndLocation.position);
-		GameManager.instance.SetCameraTrack(travelTrack);
 	}
 
 	public override void Undo()
 	{
+		GameManager.instance.SetCameraTrack(undoTrack);
 		PlayerScript.instance.ForcePosition(animLineupLocation.position);
 	}
 }

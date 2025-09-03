@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour
 	///		When pressing a button change X -> Y<br/>
 	///		If the button is pressed on X, you want it to undo back into X<br/>
 	///		If the button is pressed on Y, you don't want it to undo back to X because then the Undo isn't proper<br/>
+	///	<br/>
+	/// Can also be used for 
 	/// </summary>
 	public void AddConditionalUndo(Action a)
 	{

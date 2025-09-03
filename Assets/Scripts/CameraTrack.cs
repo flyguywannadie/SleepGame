@@ -15,5 +15,8 @@ public class CameraTrack : MonoBehaviour
 	{
 		Gizmos.color = Color.yellow;
 		Gizmos.DrawCube(transform.position + new Vector3((min + max) / 2, 0.0f, 0.0f), new Vector3(max - min, 0.2f, 0.0f));
+
+		Gizmos.color = Color.green;
+		Gizmos.DrawWireCube(transform.position + new Vector3((min + max) / 2, 1.0f, 0.0f), new Vector3((max - min) + 19.2f, 8.8f, 0.0f));
 	}
 }

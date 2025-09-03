@@ -42,6 +42,5 @@ public class FirstPuzzleHammerButton : ActionableItem
 	{
 		visuals.sprite = undoButton;
 		buttonTrigger.enabled = true;
-		mainPuzzle.HammerButtonUndo(whichButton);
 	}
 }
