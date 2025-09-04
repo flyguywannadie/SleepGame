@@ -1,22 +1,19 @@
 fileFormatVersion: 2
-guid: daaa05b5cc0e202479d787e659f35a7c
+guid: 92e54cc7c6037cf409aa46d2d837e05c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2367702065335954684
-    second: BackyardObjects_0
+      213: 7519753400087680208
+    second: Queen_0
   - first:
-      213: -6445909498019594417
-    second: BackyardObjects_1
+      213: -4328662396056435738
+    second: Queen_1
   - first:
-      213: -3107635704089069414
-    second: BackyardObjects_2
+      213: -8479850652928027842
+    second: Queen_2
   - first:
-      213: -4097172924312221249
-    second: BackyardObjects_3
-  - first:
-      213: -5858722730492059018
-    second: BackyardObjects_4
+      213: 6030540156099359548
+    second: Queen_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -125,78 +122,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Shed
+      name: QueenHead1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 263
-        width: 781
-        height: 817
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cfcee4adb74cbd020800000000000000
-      internalID: 2367702065335954684
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mountain1
-      rect:
-        serializedVersion: 2
-        x: 922
-        y: 736
-        width: 692
-        height: 330
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f4fb934a6778b86a0800000000000000
-      internalID: -6445909498019594417
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: house
-      rect:
-        serializedVersion: 2
-        x: 1633
-        y: 0
-        width: 287
-        height: 1080
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a983376cac57fd4d0800000000000000
-      internalID: -3107635704089069414
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mountain2
-      rect:
-        serializedVersion: 2
-        x: 1112
-        y: 472
-        width: 406
+        x: 8
+        y: 261
+        width: 223
         height: 232
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -206,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fb9850fdeeae327c0800000000000000
-      internalID: -4097172924312221249
+      spriteID: 0d413c240e78b5860800000000000000
+      internalID: 7519753400087680208
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: horizon
+      name: QueenHead2
       rect:
         serializedVersion: 2
-        x: 78
-        y: 0
-        width: 1412
-        height: 62
+        x: 255
+        y: 261
+        width: 223
+        height: 232
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,52 +159,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 672a38ba7b2a1bea0800000000000000
-      internalID: -5858722730492059018
+      spriteID: 6e3077a2c708de3c0800000000000000
+      internalID: -4328662396056435738
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShedDoor
+      name: QueenBody
       rect:
         serializedVersion: 2
-        x: 849
-        y: 81
-        width: 327
-        height: 368
+        x: 37
+        y: 80
+        width: 174
+        height: 114
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7bd112ff81adcdf428845d41d9430540
-      internalID: -1792852692
+      spriteID: e335cd362c4815a80800000000000000
+      internalID: -8479850652928027842
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShedDoorLock
+      name: QueenHead3
       rect:
         serializedVersion: 2
-        x: 1313
-        y: 188
-        width: 81
-        height: 87
+        x: 242
+        y: 4
+        width: 223
+        height: 232
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2783dd1b96b754b4090056c0d7a00868
-      internalID: -928335978
+      spriteID: c33f7002258c0b350800000000000000
+      internalID: 6030540156099359548
       vertices: []
       indices: 
       edges: []
@@ -282,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c2a6a46455882024889a08e82f4ec6b1
+    spriteID: c644a9667e7c1bd4887ff130c4a59edf
     internalID: 0
     vertices: []
     indices: 
@@ -292,13 +223,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mountain1: -6445909498019594417
-      Shed: 2367702065335954684
-      ShedDoor: -1792852692
-      ShedDoorLock: -928335978
-      horizon: -5858722730492059018
-      house: -3107635704089069414
-      mountain2: -4097172924312221249
+      1: 7519753400087680208
+      QueenBody: -8479850652928027842
+      QueenHead1: 7519753400087680208
+      QueenHead2: -4328662396056435738
+      QueenHead3: 6030540156099359548
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

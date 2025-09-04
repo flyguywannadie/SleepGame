@@ -1,18 +1,16 @@
 using UnityEngine;
 
-public class PickupItemAction : ActionableItem
+public class PickupItemAction : BaseWalkupAction
 {
 	[SerializeField] private ItemDataSO pickup;
-	[SerializeField] private Transform animLineupLocation;
 
-	public override void DoTheAction()
+	public override bool AreActionsCorrect()
 	{
-		if (Vector2.Distance(PlayerScript.instance.GetPlayerPos(), animLineupLocation.position) > 0.01f)
+		if (!InventoryScript.instance.CanAddItem())
 		{
-			PlayerScript.instance.ForceMovementIntoAction(animLineupLocation.position, new UndoableAction("PickupItem", Execute, Undo));
-			return;
+			return false;
 		}
-		PlayerScript.instance.PlayActionAnimation("PickupItem", new UndoableAction(actionName, Execute, Undo));
+		return base.AreActionsCorrect();
 	}
 
 	public override void Execute()
@@ -23,7 +21,7 @@ public class PickupItemAction : ActionableItem
 
 	public override void Undo()
 	{
-		InventoryScript.instance.RemoveItem();
+		InventoryScript.instance.Undo();
 		gameObject.SetActive(true);
 	}
 }

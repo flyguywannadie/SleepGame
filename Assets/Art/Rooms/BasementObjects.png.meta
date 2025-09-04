@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 14fb1c8263f168d4d906011bb44c766d
+guid: 10c3701d937b432428c23ff7e5cc23e7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5843738022056429502
-    second: HammerActionPressed_0
+      213: -4589879941338932379
+    second: BasementObjects_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HammerActionPressed_0
+      name: StairStep
       rect:
         serializedVersion: 2
-        x: 3
-        y: 5
-        width: 92
-        height: 92
+        x: 225
+        y: 800
+        width: 309
+        height: 102
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eb70e1505c0291150800000000000000
-      internalID: 5843738022056429502
+      spriteID: 56b5dc6f2887d40c0800000000000000
+      internalID: -4589879941338932379
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 87f3702c65a66e948900c5159e38df58
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      HammerActionPressed_0: 5843738022056429502
+      StairStep: -4589879941338932379
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

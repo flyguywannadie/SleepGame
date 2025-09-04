@@ -7,6 +7,7 @@ public enum PlayerAction
 	TOUCH = 1,
 	MOVE = 2,
 	HAMMER = 3,
+	KEY = 4,
 }
 
 public class InteractionManager : MonoBehaviour

@@ -60,7 +60,7 @@ public class PlayerScript : MonoBehaviour
 			transform.position = goToPos;
 			if (forcedAction != null)
 			{
-				if (forcedAction.GetName() == "Action")
+				if (forcedAction.GetName() == "Action" || forcedAction.GetName() == "")
 				{
 					GameManager.instance.AddActionToStack(forcedAction);
 				}

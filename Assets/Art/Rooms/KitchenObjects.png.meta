@@ -1,22 +1,25 @@
 fileFormatVersion: 2
-guid: daaa05b5cc0e202479d787e659f35a7c
+guid: 86d455baea4fc024b8fda5c950d0d9f4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2367702065335954684
-    second: BackyardObjects_0
+      213: -5101044095855023339
+    second: KitchenObjects_0
   - first:
-      213: -6445909498019594417
-    second: BackyardObjects_1
+      213: 7446948421324203592
+    second: KitchenObjects_1
   - first:
-      213: -3107635704089069414
-    second: BackyardObjects_2
+      213: 3649381194598418908
+    second: KitchenObjects_2
   - first:
-      213: -4097172924312221249
-    second: BackyardObjects_3
+      213: 2817438328692125638
+    second: KitchenObjects_3
   - first:
-      213: -5858722730492059018
-    second: BackyardObjects_4
+      213: 8602246113557294286
+    second: KitchenObjects_4
+  - first:
+      213: -4381119026746297073
+    second: KitchenObjects_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -125,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Shed
+      name: Food2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 263
-        width: 781
-        height: 817
+        x: 49
+        y: 550
+        width: 116
+        height: 89
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cfcee4adb74cbd020800000000000000
-      internalID: 2367702065335954684
+      spriteID: 51b25fadb637539b0800000000000000
+      internalID: -5101044095855023339
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mountain1
+      name: Food
       rect:
         serializedVersion: 2
-        x: 922
-        y: 736
-        width: 692
-        height: 330
+        x: 80
+        y: 408
+        width: 95
+        height: 92
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f4fb934a6778b86a0800000000000000
-      internalID: -6445909498019594417
+      spriteID: 8466fa13220e85760800000000000000
+      internalID: 7446948421324203592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: house
+      name: Key
       rect:
         serializedVersion: 2
-        x: 1633
-        y: 0
-        width: 287
-        height: 1080
+        x: 261
+        y: 446
+        width: 166
+        height: 82
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a983376cac57fd4d0800000000000000
-      internalID: -3107635704089069414
+      spriteID: cd9870a7cd435a230800000000000000
+      internalID: 3649381194598418908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mountain2
+      name: CabinetDoor
       rect:
         serializedVersion: 2
-        x: 1112
-        y: 472
-        width: 406
-        height: 232
+        x: 103
+        y: 234
+        width: 223
+        height: 97
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +209,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fb9850fdeeae327c0800000000000000
-      internalID: -4097172924312221249
+      spriteID: 6cfa3468b3d891720800000000000000
+      internalID: 2817438328692125638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: horizon
+      name: Counter
       rect:
         serializedVersion: 2
-        x: 78
-        y: 0
-        width: 1412
-        height: 62
+        x: 13
+        y: 21
+        width: 540
+        height: 163
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,20 +231,42 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 672a38ba7b2a1bea0800000000000000
-      internalID: -5858722730492059018
+      spriteID: ecc211d7341516770800000000000000
+      internalID: 8602246113557294286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShedDoor
+      name: Table
       rect:
         serializedVersion: 2
-        x: 849
-        y: 81
-        width: 327
-        height: 368
+        x: 1271
+        y: 18
+        width: 623
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f05f41415732333c0800000000000000
+      internalID: -4381119026746297073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CabinetBack
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 34
+        width: 465
+        height: 134
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,30 +275,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bd112ff81adcdf428845d41d9430540
-      internalID: -1792852692
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ShedDoorLock
-      rect:
-        serializedVersion: 2
-        x: 1313
-        y: 188
-        width: 81
-        height: 87
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2783dd1b96b754b4090056c0d7a00868
-      internalID: -928335978
+      spriteID: 2a8042980f6713b4fbd27bb61f38a10c
+      internalID: -391167832
       vertices: []
       indices: 
       edges: []
@@ -282,7 +285,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c2a6a46455882024889a08e82f4ec6b1
+    spriteID: 014940874c409464e8be73c987d8827c
     internalID: 0
     vertices: []
     indices: 
@@ -292,13 +295,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mountain1: -6445909498019594417
-      Shed: 2367702065335954684
-      ShedDoor: -1792852692
-      ShedDoorLock: -928335978
-      horizon: -5858722730492059018
-      house: -3107635704089069414
-      mountain2: -4097172924312221249
+      CabinetBack: -391167832
+      CabinetDoor: 2817438328692125638
+      Counter: 8602246113557294286
+      Food: 7446948421324203592
+      Food2: -5101044095855023339
+      Key: 3649381194598418908
+      Table: -4381119026746297073
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

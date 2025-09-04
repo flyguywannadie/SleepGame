@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 14fb1c8263f168d4d906011bb44c766d
+guid: ffb628858460c444bae8a852ae374c62
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5843738022056429502
-    second: HammerActionPressed_0
+      213: -2830096982661892302
+    second: KeyInter2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HammerActionPressed_0
+      name: KeyInter2_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 5
-        width: 92
-        height: 92
+        x: 7
+        y: 30
+        width: 89
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eb70e1505c0291150800000000000000
-      internalID: 5843738022056429502
+      spriteID: 237788ce9c979b8d0800000000000000
+      internalID: -2830096982661892302
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      HammerActionPressed_0: 5843738022056429502
+      KeyInter2_0: -2830096982661892302
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

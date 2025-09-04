@@ -28,6 +28,7 @@ public class InventorySpot : ActionButton
 		{
 			return;
 		}
+		InventoryScript.instance.SetActiveInventorySpot(this);
 		base.Press();
 	}
 
@@ -46,5 +47,10 @@ public class InventorySpot : ActionButton
 		UnPressed = null;
 		Pressed = null;
 		visuals.gameObject.SetActive(false);
+	}
+
+	public ItemDataSO GetItem()
+	{
+		return myitem;
 	}
 }
