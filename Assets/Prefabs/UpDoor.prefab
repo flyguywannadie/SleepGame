@@ -433,6 +433,7 @@ MonoBehaviour:
   travelLocation: {fileID: 0}
   travelEndLocation: {fileID: 0}
   travelTrack: {fileID: 0}
+  undoTrack: {fileID: 0}
 --- !u!114 &5263652532737250545
 MonoBehaviour:
   m_ObjectHideFlags: 0

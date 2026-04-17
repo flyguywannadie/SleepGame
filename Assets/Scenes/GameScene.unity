@@ -4542,7 +4542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   follow: {fileID: 706487842}
-  currentTrack: {fileID: 329710937}
+  currentTrack: {fileID: 1603055236}
 --- !u!1 &522867407
 GameObject:
   m_ObjectHideFlags: 0
@@ -5927,7 +5927,7 @@ Transform:
   m_GameObject: {fileID: 706487841}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.0000000037252903, w: 1}
-  m_LocalPosition: {x: 76.7, y: -33.9, z: -1}
+  m_LocalPosition: {x: -5, y: -37.5, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6417,7 +6417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &788633495
 Transform:
   m_ObjectHideFlags: 0
@@ -7381,6 +7381,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2532527903960363681, guid: 5f0d896eed3f342468716a02e835d29f, type: 3}
+      propertyPath: whereIGo
+      value: 
+      objectReference: {fileID: 2693661942280411962}
+    - target: {fileID: 2532527903960363681, guid: 5f0d896eed3f342468716a02e835d29f, type: 3}
       propertyPath: undoTrack
       value: 
       objectReference: {fileID: 693743753}
@@ -7388,6 +7392,10 @@ PrefabInstance:
       propertyPath: travelTrack
       value: 
       objectReference: {fileID: 1603055236}
+    - target: {fileID: 2532527903960363681, guid: 5f0d896eed3f342468716a02e835d29f, type: 3}
+      propertyPath: myCameraTrack
+      value: 
+      objectReference: {fileID: 693743753}
     - target: {fileID: 2532527903960363681, guid: 5f0d896eed3f342468716a02e835d29f, type: 3}
       propertyPath: travelLocation
       value: 
@@ -8629,10 +8637,10 @@ MonoBehaviour:
   actionName: Backyard Travel
   expectedAction: 2
   animLineupLocation: {fileID: 1560237360}
-  travelLocation: {fileID: 37213821}
-  travelEndLocation: {fileID: 931538022}
-  travelTrack: {fileID: 3186751809387058178}
-  undoTrack: {fileID: 454488168}
+  whereIGo: {fileID: 0}
+  myTravelLocation: {fileID: 0}
+  myTravelEndLocation: {fileID: 0}
+  myCameraTrack: {fileID: 0}
 --- !u!61 &1171503116
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11785,10 +11793,10 @@ MonoBehaviour:
   actionName: Backyard Travel
   expectedAction: 2
   animLineupLocation: {fileID: 1717849817}
-  travelLocation: {fileID: 1581691819}
-  travelEndLocation: {fileID: 25504997}
-  travelTrack: {fileID: 454488168}
-  undoTrack: {fileID: 3186751809387058178}
+  whereIGo: {fileID: 0}
+  myTravelLocation: {fileID: 0}
+  myTravelEndLocation: {fileID: 0}
+  myCameraTrack: {fileID: 0}
 --- !u!61 &1623714689
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12684,7 +12692,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1727641865
 Transform:
   m_ObjectHideFlags: 0
@@ -15425,6 +15433,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1957988476968341951, guid: b19f746224bae7f43a62f48ba9f5da38, type: 3}
   m_PrefabInstance: {fileID: 221258566}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2107417396 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2532527903960363681, guid: 5f0d896eed3f342468716a02e835d29f, type: 3}
+  m_PrefabInstance: {fileID: 871404062}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05316f908a4090b40a8e1773bc5c4a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2110211616
 GameObject:
   m_ObjectHideFlags: 0
@@ -15823,7 +15842,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2146094019
 Transform:
   m_ObjectHideFlags: 0
@@ -16040,6 +16059,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2532527903960363681, guid: 5f0d896eed3f342468716a02e835d29f, type: 3}
+      propertyPath: whereIGo
+      value: 
+      objectReference: {fileID: 2107417396}
+    - target: {fileID: 2532527903960363681, guid: 5f0d896eed3f342468716a02e835d29f, type: 3}
       propertyPath: undoTrack
       value: 
       objectReference: {fileID: 1603055236}
@@ -16047,6 +16070,10 @@ PrefabInstance:
       propertyPath: travelTrack
       value: 
       objectReference: {fileID: 693743753}
+    - target: {fileID: 2532527903960363681, guid: 5f0d896eed3f342468716a02e835d29f, type: 3}
+      propertyPath: myCameraTrack
+      value: 
+      objectReference: {fileID: 1603055236}
     - target: {fileID: 2532527903960363681, guid: 5f0d896eed3f342468716a02e835d29f, type: 3}
       propertyPath: travelLocation
       value: 
@@ -16068,6 +16095,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f0d896eed3f342468716a02e835d29f, type: 3}
+--- !u!114 &2693661942280411962 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2532527903960363681, guid: 5f0d896eed3f342468716a02e835d29f, type: 3}
+  m_PrefabInstance: {fileID: 2693661942280411961}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05316f908a4090b40a8e1773bc5c4a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2790270804472461610 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1632170255486608920, guid: 41da9284338c26e499ebfabe46db10f9, type: 3}
@@ -16402,7 +16440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!60 &4351557310457529737
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -16559,7 +16597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6093541334825495039
 Transform:
   m_ObjectHideFlags: 0
@@ -16756,7 +16794,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &8731830881656494510
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -304,8 +304,9 @@ MonoBehaviour:
   actionName: Travel Rooms
   expectedAction: 2
   animLineupLocation: {fileID: 7475643236469577466}
-  travelLocation: {fileID: 0}
-  travelEndLocation: {fileID: 0}
+  whereIGo: {fileID: 0}
+  myTravelLocation: {fileID: 3834707531829853108}
+  myTravelEndLocation: {fileID: 970201883670029688}
   travelTrack: {fileID: 0}
   undoTrack: {fileID: 0}
 --- !u!114 &2755662035193223502
