@@ -1,9 +1,9 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ItemData", menuName = "Scriptable Objects/ItemData")]
+[CreateAssetMenu(fileName = "ItemData", menuName = "Scriptable Objects/Item Data")]
 public class ItemDataSO : ScriptableObject
 {
-    public PlayerAction itemAction;
     public Sprite itemImage;
     public Sprite itemPressed;
+    public ActionCursorSO actionCursor;
 }

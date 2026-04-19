@@ -4,9 +4,11 @@ using UnityEngine.UI;
 public class ActionButton : MonoBehaviour
 {
 	[SerializeField] protected Image visuals;
-	[SerializeField] protected PlayerAction action;
+	//[SerializeField] protected PlayerAction action;
 	[SerializeField] protected Sprite UnPressed;
 	[SerializeField] protected Sprite Pressed;
+
+	[SerializeField] protected ActionCursorSO actionCursor;
 
 	[SerializeField] private bool startPressed = false;
 
@@ -34,6 +36,11 @@ public class ActionButton : MonoBehaviour
 
 	public PlayerAction GetAction()
 	{
-		return action;
+		return actionCursor.itemAction;
+	}
+
+	public ActionCursorSO GetActionCursor()
+	{
+		return actionCursor;
 	}
 }

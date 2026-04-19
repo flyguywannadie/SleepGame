@@ -5,8 +5,9 @@ using UnityEngine.UI;
 public class CursorScript : MonoBehaviour
 {
 	[SerializeField] private Animator anims;
-	[SerializeField] private RuntimeAnimatorController[] cursorAnimations;
-	[SerializeField] private Image visuals;
+	//[SerializeField] private RuntimeAnimatorController[] cursorAnimations;
+	[SerializeField] private ActionCursorSO currentCursor;
+    [SerializeField] private Image visuals;
 
 	private void Awake()
 	{
@@ -51,9 +52,9 @@ public class CursorScript : MonoBehaviour
 		anims.SetBool("Interact", works);
 	}
 
-	public void SetCursor(PlayerAction cursor)
+	public void SetCursor(ActionCursorSO cursor)
 	{
-		anims.runtimeAnimatorController = cursorAnimations[(int)cursor];
+		anims.runtimeAnimatorController = cursor.interactAnim;
 	}
 
 	public void HideCursor()

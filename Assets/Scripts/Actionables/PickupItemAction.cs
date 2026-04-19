@@ -22,7 +22,7 @@ public class PickupItemAction : BaseWalkupAction
 	public override void Undo()
 	{
 		InventoryScript.instance.Undo();
-		InteractionManager.instance.UnselectAction(pickup.itemAction);
+		InteractionManager.instance.UnselectAction(pickup.actionCursor.itemAction);
 		gameObject.SetActive(true);
 	}
 }

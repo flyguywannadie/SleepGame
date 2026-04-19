@@ -16,9 +16,10 @@ public class InventorySpot : ActionButton
 	{
 		myitem = item;
 		visuals.gameObject.SetActive(true);
-		action = item.itemAction;
+		//action = item.itemAction;
 		UnPressed = item.itemImage;
 		Pressed = item.itemPressed;
+		actionCursor = item.actionCursor;
 		UnPress();
 	}
 
@@ -46,6 +47,7 @@ public class InventorySpot : ActionButton
 		myitem = null;
 		UnPressed = null;
 		Pressed = null;
+		actionCursor = null;
 		visuals.gameObject.SetActive(false);
 	}
 

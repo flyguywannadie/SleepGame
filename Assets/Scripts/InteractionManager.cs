@@ -88,7 +88,7 @@ public class InteractionManager : MonoBehaviour
             prevNonItemAction = ab;
         }
 		currentAction = ab.GetAction();
-		cursor.SetCursor(currentAction);
+		cursor.SetCursor(ab.GetActionCursor());
 		prevAction = ab;
 	}
 
@@ -96,7 +96,7 @@ public class InteractionManager : MonoBehaviour
 	{
 		if (a == currentAction)
 		{
-			Debug.Log("testing");
+			Debug.Log("Deselecting - " + a.ToString());
 			ChangeAction(prevNonItemAction);
 		}
 	}

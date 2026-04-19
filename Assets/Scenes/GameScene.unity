@@ -3799,9 +3799,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visuals: {fileID: 451341863}
-  action: 0
   UnPressed: {fileID: 21300000, guid: 72922628e665fe94fad0dd10df06f72c, type: 3}
   Pressed: {fileID: 21300000, guid: d5f742f8bfb3b58468447e7d10a8f00a, type: 3}
+  actionCursor: {fileID: 11400000, guid: af9a272a76474a54b902a216cd7ee21b, type: 2}
   startPressed: 1
 --- !u!1 &454488166
 GameObject:
@@ -5131,9 +5131,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visuals: {fileID: 618548450}
-  action: 2
   UnPressed: {fileID: 21300000, guid: 3495b5df3d744d44e968443eb1d75a71, type: 3}
   Pressed: {fileID: 21300000, guid: d96b5dee90c925743bcead64f39f59f4, type: 3}
+  actionCursor: {fileID: 11400000, guid: d3e5ef1a9535b7a488235c0a9e4d2e0f, type: 2}
   startPressed: 0
 --- !u!4 &629954275 stripped
 Transform:
@@ -5438,9 +5438,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visuals: {fileID: 1669240370}
-  action: 0
   UnPressed: {fileID: 0}
   Pressed: {fileID: 0}
+  actionCursor: {fileID: 0}
   startPressed: 0
   myitem: {fileID: 0}
 --- !u!114 &668872276
@@ -6081,9 +6081,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visuals: {fileID: 492959859}
-  action: 0
   UnPressed: {fileID: 0}
   Pressed: {fileID: 0}
+  actionCursor: {fileID: 0}
   startPressed: 0
   myitem: {fileID: 0}
 --- !u!4 &740834074 stripped
@@ -6502,9 +6502,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visuals: {fileID: 1960253213}
-  action: 0
   UnPressed: {fileID: 0}
   Pressed: {fileID: 0}
+  actionCursor: {fileID: 0}
   startPressed: 0
   myitem: {fileID: 0}
 --- !u!114 &798736767
@@ -9223,7 +9223,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -11969,9 +11969,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visuals: {fileID: 1617914855}
-  action: 1
   UnPressed: {fileID: 21300000, guid: b3293f233db510f4f9d54059bcc1351d, type: 3}
   Pressed: {fileID: 21300000, guid: 2e09a95e975898b498c2b80afa8bfaf5, type: 3}
+  actionCursor: {fileID: 11400000, guid: a8ba2ce234772b14393b8f70a951a711, type: 2}
   startPressed: 0
 --- !u!1 &1623714685
 GameObject:
@@ -15713,7 +15713,7 @@ Animator:
   m_GameObject: {fileID: 2027602809}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c67d8086915779846aed3a2631eabff1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 043b6c9fac4f98347ae57308cdd53505, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -15738,12 +15738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anims: {fileID: 2027602813}
-  cursorAnimations:
-  - {fileID: 9100000, guid: 043b6c9fac4f98347ae57308cdd53505, type: 2}
-  - {fileID: 9100000, guid: 1cbc529df49aa044baec50cbf123d3f5, type: 2}
-  - {fileID: 9100000, guid: 8a219512dfce46740be990c91cdfe73e, type: 2}
-  - {fileID: 9100000, guid: 9a2acb35fcc37ce459abb721d64dc86f, type: 2}
-  - {fileID: 9100000, guid: c67d8086915779846aed3a2631eabff1, type: 2}
+  currentCursor: {fileID: 0}
   visuals: {fileID: 2027602811}
 --- !u!1 &2032816615
 GameObject:

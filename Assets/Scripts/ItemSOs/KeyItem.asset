@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf10e89b610383498df62a212f4a6d1, type: 3}
   m_Name: KeyItem
   m_EditorClassIdentifier: 
-  itemAction: 4
   itemImage: {fileID: 21300000, guid: 88d0d7403e7932b44b9c80232fa96d1f, type: 3}
   itemPressed: {fileID: 21300000, guid: 0e74f569308fc6346875305b9da25515, type: 3}
+  actionCursor: {fileID: 11400000, guid: a89c6e3124cb1f147b7ed7d4d1f1a904, type: 2}

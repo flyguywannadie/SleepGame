@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf10e89b610383498df62a212f4a6d1, type: 3}
   m_Name: HammerItem
   m_EditorClassIdentifier: 
-  itemAction: 3
   itemImage: {fileID: 21300000, guid: 0bde9d2feaba8d54aa97b9e477fcefa0, type: 3}
   itemPressed: {fileID: 21300000, guid: 14fb1c8263f168d4d906011bb44c766d, type: 3}
+  actionCursor: {fileID: 11400000, guid: 84bc78d6e10c3b843b87609ff0985d05, type: 2}
