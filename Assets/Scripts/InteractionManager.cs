@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public enum PlayerAction
 {
@@ -23,6 +22,8 @@ public class InteractionManager : MonoBehaviour
 	[SerializeField] private bool interactionEnabled;
 
 	[SerializeField] private ActionButton prevAction;
+
+	[SerializeField] private ActionButton prevNonItemAction;
 
 	private void Awake()
 	{
@@ -82,8 +83,21 @@ public class InteractionManager : MonoBehaviour
 		{
 			prevAction.UnPress();
 		}
+		if (ab.GetAction() <= PlayerAction.MOVE)
+		{
+            prevNonItemAction = ab;
+        }
 		currentAction = ab.GetAction();
 		cursor.SetCursor(currentAction);
 		prevAction = ab;
+	}
+
+	public void UnselectAction(PlayerAction a)
+	{
+		if (a == currentAction)
+		{
+			Debug.Log("testing");
+			ChangeAction(prevNonItemAction);
+		}
 	}
 }
