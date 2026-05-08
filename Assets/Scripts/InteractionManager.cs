@@ -96,7 +96,7 @@ public class InteractionManager : MonoBehaviour
 	{
 		if (a == currentAction)
 		{
-			Debug.Log("Deselecting - " + a.ToString());
+			Debug.Log("Deselecting - " + a.ToString() + " and selecting " + prevNonItemAction.GetAction().ToString());
 			ChangeAction(prevNonItemAction);
 		}
 	}

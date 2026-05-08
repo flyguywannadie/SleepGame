@@ -54,7 +54,8 @@ public class CursorScript : MonoBehaviour
 
 	public void SetCursor(ActionCursorSO cursor)
 	{
-		anims.runtimeAnimatorController = cursor.interactAnim;
+		currentCursor = cursor;
+		anims.runtimeAnimatorController = currentCursor.interactAnim;
 	}
 
 	public void HideCursor()

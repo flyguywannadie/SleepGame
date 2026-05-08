@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: HammerCursor
   m_EditorClassIdentifier: 
   itemAction: 3
+  actionIdle: {fileID: 21300000, guid: 0bde9d2feaba8d54aa97b9e477fcefa0, type: 3}
   interactAnim: {fileID: 9100000, guid: 9a2acb35fcc37ce459abb721d64dc86f, type: 2}

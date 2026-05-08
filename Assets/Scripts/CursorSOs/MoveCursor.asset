@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: MoveCursor
   m_EditorClassIdentifier: 
   itemAction: 2
+  actionIdle: {fileID: 21300000, guid: 3d537baa8029b0d40b264fffc1a6330f, type: 3}
   interactAnim: {fileID: 9100000, guid: 8a219512dfce46740be990c91cdfe73e, type: 2}

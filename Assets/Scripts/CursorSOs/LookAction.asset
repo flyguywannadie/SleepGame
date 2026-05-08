@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: LookAction
   m_EditorClassIdentifier: 
   itemAction: 0
+  actionIdle: {fileID: 21300000, guid: 0b9a891f7d41d894b801e849a2af10ce, type: 3}
   interactAnim: {fileID: 9100000, guid: 043b6c9fac4f98347ae57308cdd53505, type: 2}
