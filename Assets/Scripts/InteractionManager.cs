@@ -25,7 +25,9 @@ public class InteractionManager : MonoBehaviour
 
 	[SerializeField] private ActionButton prevNonItemAction;
 
-	private void Awake()
+    [SerializeField] private Animator removeItemButton;
+
+    private void Awake()
 	{
 		instance = this;
 	}
@@ -83,9 +85,14 @@ public class InteractionManager : MonoBehaviour
 		{
 			prevAction.UnPress();
 		}
-		if (ab.GetAction() <= PlayerAction.MOVE)
+		if (ab.GetAction() <= PlayerAction.MOVE && (ab as InventorySpot == null))
 		{
             prevNonItemAction = ab;
+            removeItemButton.gameObject.SetActive(false);
+        }
+        else
+		{
+			removeItemButton.gameObject.SetActive(true);
         }
 		currentAction = ab.GetAction();
 		cursor.SetCursor(ab.GetActionCursor());
@@ -97,7 +104,7 @@ public class InteractionManager : MonoBehaviour
 		if (a == currentAction)
 		{
 			Debug.Log("Deselecting - " + a.ToString() + " and selecting " + prevNonItemAction.GetAction().ToString());
-			ChangeAction(prevNonItemAction);
+			prevNonItemAction.Press();
 		}
 	}
 }

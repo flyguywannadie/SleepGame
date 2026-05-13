@@ -1,6 +1,6 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class InventoryScript : MonoBehaviour
 {
@@ -10,7 +10,10 @@ public class InventoryScript : MonoBehaviour
 	[SerializeField] private List<InventorySpot> inventorySlots;
 	//[SerializeField] private ItemDataSO test;
 	[SerializeField] private List<InventoryUndo> undos = new List<InventoryUndo>();
+	[SerializeField] private Animator removeItemButton;
+	[SerializeField] private RemoveItemOption removeItemOption; 
 
+	[Serializable]
 	private class InventoryUndo
 	{
 		public int spot;
@@ -65,9 +68,25 @@ public class InventoryScript : MonoBehaviour
 		activeSpot.Clear();
 	}
 
-	public void SetActiveInventorySpot(InventorySpot i)
+	public void SetActiveInventorySpot(InventorySpot i, RemoveItemOption option)
 	{
 		activeSpot = i;
+		removeItemOption = option;
+        removeItemButton.SetInteger("RemoveOption", (int)removeItemOption);
+		removeItemButton.SetTrigger("Reset");
+	}
+
+	public void RemoveItem()
+	{
+		switch(removeItemOption)
+		{
+			case RemoveItemOption.Trash:
+				
+				break;
+			case RemoveItemOption.Drop:
+				
+				break;
+		}
 	}
 
 	public void Undo()

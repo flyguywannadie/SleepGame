@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a7d74d32c4ba28c4d9ee01bb23071902
+guid: c8c25c19029514f49b8315d58d13a6c3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 194267116164964566
-    second: 008_0
+      213: 9089961127893128997
+    second: TrashIdle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 008_0
+      name: TrashIdle_0
       rect:
         serializedVersion: 2
-        x: 29
-        y: 6
-        width: 62
-        height: 76
+        x: 9
+        y: 16
+        width: 79
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6d06d82b9ec22b200800000000000000
-      internalID: 194267116164964566
+      spriteID: 527dd223c77062e70800000000000000
+      internalID: 9089961127893128997
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      008_0: 194267116164964566
+      TrashIdle_0: 9089961127893128997
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

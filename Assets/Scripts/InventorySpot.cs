@@ -29,7 +29,7 @@ public class InventorySpot : ActionButton
 		{
 			return;
 		}
-		InventoryScript.instance.SetActiveInventorySpot(this);
+		InventoryScript.instance.SetActiveInventorySpot(this, myitem.removeOption);
 		base.Press();
 	}
 
