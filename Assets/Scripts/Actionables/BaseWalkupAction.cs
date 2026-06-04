@@ -9,9 +9,9 @@ public class BaseWalkupAction : ActionableItem
 	{
 		if (Vector2.Distance(PlayerScript.instance.GetPlayerPos(), animLineupLocation.position) > 0.01f)
 		{
-			PlayerScript.instance.ForceMovementIntoAction(animLineupLocation.position, new UndoableAction(actionAnimName, Execute, Undo));
+			PlayerScript.instance.ForceMovementIntoAction(animLineupLocation.position, new PlayerAction(actionAnimName, Execute));
 			return;
 		}
-		PlayerScript.instance.PlayActionAnimation(actionAnimName, new UndoableAction(actionName, Execute, Undo));
+		PlayerScript.instance.PlayActionAnimation(actionAnimName, new PlayerAction(actionName, Execute));
 	}
 }

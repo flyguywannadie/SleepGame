@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum PlayerAction
+public enum CursorAction
 {
 	LOOK = 0,
 	TOUCH = 1,
@@ -13,7 +13,7 @@ public class InteractionManager : MonoBehaviour
 {
 	public static InteractionManager instance { get; private set; }
 
-	[SerializeField] private PlayerAction currentAction;
+	[SerializeField] private CursorAction currentAction;
 
 	[SerializeField] private CursorScript cursor;
 
@@ -37,14 +37,14 @@ public class InteractionManager : MonoBehaviour
 		//ChangeAction(prevAction);
 	}
 
-	public PlayerAction GetCurrentAction()
+	public CursorAction GetCurrentAction()
 	{
 		return currentAction;
 	}
 
 	public bool IsUsingItem()
 	{
-		return (int)currentAction > (int)PlayerAction.MOVE;
+		return (int)currentAction > (int)CursorAction.MOVE;
 	}
 
 	public void IsPossibleToInteract()
@@ -85,7 +85,7 @@ public class InteractionManager : MonoBehaviour
 		{
 			prevAction.UnPress();
 		}
-		if (ab.GetAction() <= PlayerAction.MOVE && (ab as InventorySpot == null))
+		if (ab.GetAction() <= CursorAction.MOVE && (ab as InventorySpot == null))
 		{
             prevNonItemAction = ab;
             removeItemButton.gameObject.SetActive(false);
@@ -99,7 +99,7 @@ public class InteractionManager : MonoBehaviour
 		prevAction = ab;
 	}
 
-	public void UnselectAction(PlayerAction a)
+	public void UnselectAction(CursorAction a)
 	{
 		if (a == currentAction)
 		{

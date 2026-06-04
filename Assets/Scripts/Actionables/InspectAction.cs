@@ -10,13 +10,13 @@ public class InspectAction : ActionableItem
 		DialogueManager.instance.GenerateDialogue(dialogue.ToUpper());
 	}
 
-	public override void Execute()
-	{
-		//base.Execute();
-	}
+	//public override void Execute()
+	//{
+	//	//base.Execute();
+	//}
 
-	public override void Undo()
-	{
-		//base.Undo();
-	}
+	//public override void Undo()
+	//{
+	//	//base.Undo();
+	//}
 }

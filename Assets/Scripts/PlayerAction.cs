@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class UndoableAction
+public class PlayerAction
 {
     [SerializeField] protected string name = "Action";
     [SerializeField] private Action executeActions;
-    [SerializeField] private List<Action> undoActions;
+    //[SerializeField] private List<Action> undoActions;
 
-	public UndoableAction() { }
-	public UndoableAction(Action execute, Action undo)
+	public PlayerAction() { }
+	public PlayerAction(Action execute)
 	{
 		executeActions = execute;
-		undoActions = new List<Action>(){ undo };
+		//undoActions = new List<Action>(){ undo };
 	}
-	public UndoableAction(string name, Action execute, Action undo)
+	public PlayerAction(string name, Action execute)
 	{
 		this.name = name;
 		executeActions = execute;
-		undoActions = new List<Action>() { undo };
+		//undoActions = new List<Action>() { undo };
 	}
 
 	public virtual void Execute()
@@ -29,16 +29,16 @@ public class UndoableAction
 	}
 
     public virtual void Undo() {
-		Debug.Log(name + " was Undone");
-		foreach (Action undo in undoActions)
-		{
-			undo.Invoke();
-		}
+		//Debug.Log(name + " was Undone");
+		//foreach (Action undo in undoActions)
+		//{
+		//	undo.Invoke();
+		//}
 	}
 
 	public virtual void AddUndo(Action undo)
 	{
-		undoActions.Add(undo);
+		//undoActions.Add(undo);
 	}
 
 	public string GetName()

@@ -11,29 +11,30 @@ public class ShedDoorAction : ActionableItem
 
 	public override void DoTheAction()
 	{
-		base.DoTheAction();
-	}
+		//base.DoTheAction();
+        if (shedDoor.open)
+        {
+            shedDoor.Close();
+        }
+        else
+        {
+            shedDoor.Open();
+        }
+    }
 
-	public override void Execute()
-	{
-		if (shedDoor.open)
-		{
-			shedDoor.Close();
-		}
-		else
-		{
-			shedDoor.Open();
-		}
-	}
+	//public override void Execute()
+	//{
 
-	public override void Undo()
-	{
-		if (shedDoor.open)
-		{
-			shedDoor.CloseInstant();
-		} else
-		{
-			shedDoor.OpenInstant();
-		}
-	}
+	//}
+
+	//public override void Undo()
+	//{
+	//	if (shedDoor.open)
+	//	{
+	//		shedDoor.CloseInstant();
+	//	} else
+	//	{
+	//		shedDoor.OpenInstant();
+	//	}
+	//}
 }

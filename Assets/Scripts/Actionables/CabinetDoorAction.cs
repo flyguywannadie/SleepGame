@@ -7,30 +7,30 @@ public class CabinetDoorAction : ActionableItem
 
 	public override void DoTheAction()
 	{
-		base.DoTheAction();
-	}
+        if (leftDoor)
+        {
+            cabinet.LeftDoor();
+        }
+        else
+        {
+            cabinet.RightDoor();
+        }
+    }
 
-	public override void Execute()
-	{
-		if (leftDoor)
-		{
-			cabinet.LeftDoor();
-		} 
-		else
-		{
-			cabinet.RightDoor();
-		}
-	}
+	//public override void Execute()
+	//{
 
-	public override void Undo()
-	{
-		if (leftDoor)
-		{
-			cabinet.LeftUndo();
-		}
-		else
-		{
-			cabinet.RightUndo();
-		}
-	}
+	//}
+
+	//public override void Undo()
+	//{
+	//	if (leftDoor)
+	//	{
+	//		cabinet.LeftUndo();
+	//	}
+	//	else
+	//	{
+	//		cabinet.RightUndo();
+	//	}
+	//}
 }

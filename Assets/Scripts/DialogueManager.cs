@@ -9,7 +9,7 @@ public class DialogueManager : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI dialogue;
 	[SerializeField] private Animator anims;
 
-	private UndoableAction dialogueAction;
+	//private UndoableAction dialogueAction;
 	private Action endAction;
 
 	private bool dialogueOpen = false;
@@ -63,11 +63,11 @@ public class DialogueManager : MonoBehaviour
 		InteractionManager.instance.EnableInteractions();
 		anims.SetBool("Open", false);
 		dialogueOpen = false;
-		if (dialogueAction != null)
-		{
-			GameManager.instance.AddActionToStack(dialogueAction);
-			dialogueAction = null;
-		}
+		//if (dialogueAction != null)
+		//{
+		//	GameManager.instance.AddActionToStack(dialogueAction);
+		//	dialogueAction = null;
+		//}
 		if (endAction != null)
 		{
 			endAction.Invoke();

@@ -21,26 +21,27 @@ public class FirstPuzzleHammerButton : ActionableItem
 
 	public override void DoTheAction()
 	{
-		if (Vector2.Distance(PlayerScript.instance.GetPlayerPos(), animLineupLocation.position) > 0.01f)
-		{
-			PlayerScript.instance.ForceMovementIntoAction(animLineupLocation.position, new UndoableAction("HammerButton", Execute, Undo));
-			return;
-		}
-		PlayerScript.instance.PlayActionAnimation("HammerButton", new UndoableAction(actionName, Execute, Undo));
-	}
+        //if (Vector2.Distance(PlayerScript.instance.GetPlayerPos(), animLineupLocation.position) > 0.01f)
+        //{
+        //	PlayerScript.instance.ForceMovementIntoAction(animLineupLocation.position, new UndoableAction("HammerButton", Execute, Undo));
+        //	return;
+        //}
+        //PlayerScript.instance.PlayActionAnimation("HammerButton", new UndoableAction(actionName, Execute, Undo));
+        undoButton = visuals.sprite;
+        visuals.sprite = brokeButton;
+        GameManager.instance.PlaySound(buttonBreak);
+        mainPuzzle.HammerButton(whichButton);
+        buttonTrigger.enabled = false;
+    }
 
-	public override void Execute()
-	{
-		undoButton = visuals.sprite;
-		visuals.sprite = brokeButton;
-		GameManager.instance.PlaySound(buttonBreak);
-		mainPuzzle.HammerButton(whichButton);
-		buttonTrigger.enabled = false;
-	}
+	//public override void Execute()
+	//{
 
-	public override void Undo()
-	{
-		visuals.sprite = undoButton;
-		buttonTrigger.enabled = true;
-	}
+	//}
+
+	//public override void Undo()
+	//{
+	//	visuals.sprite = undoButton;
+	//	buttonTrigger.enabled = true;
+	//}
 }

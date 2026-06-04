@@ -10,13 +10,13 @@ public class PlayerScript : MonoBehaviour
 	[SerializeField] private Animator anims;
 
 	[SerializeField] private Vector3 goToPos;
-	[SerializeField] private List<Vector3> undoLocations;
+	//[SerializeField] private List<Vector3> undoLocations;
 
 	[SerializeField] private AudioClip moveSound;
 	[SerializeField] private AudioClip slideSound;
 
-	private UndoableAction animationAction;
-	private UndoableAction forcedAction;
+	//private UndoableAction animationAction;
+	private PlayerAction forcedAction;
 
 	private float moveSpeed = 1;
 
@@ -62,7 +62,8 @@ public class PlayerScript : MonoBehaviour
 			{
 				if (forcedAction.GetName() == "Action" || forcedAction.GetName() == "")
 				{
-					GameManager.instance.AddActionToStack(forcedAction);
+					//GameManager.instance.AddActionToStack(forcedAction);
+					forcedAction.Execute();
 				}
 				else
 				{
@@ -152,14 +153,15 @@ public class PlayerScript : MonoBehaviour
 	{
 		forcedAction = null;
 		goToPos = new Vector3(pos.x, pos.y, transform.position.z);
-		TryAddMovementUndo();
-	}
+        //TryAddMovementUndo();
+        StartMove();
+    }
 
-	public void MovePlayerNoUndo(Vector3 pos)
-	{
-		goToPos = new Vector3(pos.x, pos.y, transform.position.z);
-		StartMove();
-	}
+	//public void MovePlayerNoUndo(Vector3 pos)
+	//{
+	//	goToPos = new Vector3(pos.x, pos.y, transform.position.z);
+	//	StartMove();
+	//}
 
 	/// <summary>
 	/// Forces the Player to move then do an action after movement stops
@@ -167,19 +169,20 @@ public class PlayerScript : MonoBehaviour
 	/// </summary>
 	/// <param name="pos">Position to move towards</param>
 	/// <param name="action">Action to be done after movement</param>
-	public void ForceMovementIntoAction(Vector3 pos, UndoableAction action)
+	public void ForceMovementIntoAction(Vector3 pos, PlayerAction action)
 	{
 		forcedAction = action;
 		goToPos = new Vector3(pos.x, pos.y, transform.position.z);
-		TryAddMovementUndo();
+		//TryAddMovementUndo();
+		StartMove();
 	}
 
 	private void TryAddMovementUndo()
 	{
 		if (!moving)
 		{
-			undoLocations.Add(transform.position);
-			GameManager.instance.AddActionToStack(new UndoableAction("Player Movement", StartMove, UndoMove));
+			//undoLocations.Add(transform.position);
+			//GameManager.instance.AddActionToStack(new UndoableAction("Player Movement", StartMove, UndoMove));
 		}
 	}
 
@@ -191,35 +194,35 @@ public class PlayerScript : MonoBehaviour
 
 	public void UndoMove()
 	{
-		forcedAction = null;
-		if (undoLocations.Count <= 0)
-		{
-			return;
-		}
-		int index = undoLocations.Count - 1;
-		transform.position = undoLocations[index];
-		goToPos = transform.position;
-		undoLocations.RemoveAt(index);
-		anims.Play("Idle");
+		//forcedAction = null;
+		//if (undoLocations.Count <= 0)
+		//{
+		//	return;
+		//}
+		//int index = undoLocations.Count - 1;
+		//transform.position = undoLocations[index];
+		//goToPos = transform.position;
+		//undoLocations.RemoveAt(index);
+		//anims.Play("Idle");
 	}
 
 	public void ForceIdleAnim()
 	{
-		animationAction = null;
+		//animationAction = null;
 		forcedAction = null;
 		anims.Play("Idle");
 	}
 
-	public void PlayActionAnimation(string anim, UndoableAction action)
+	public void PlayActionAnimation(string anim, PlayerAction action)
 	{
-		animationAction = action;
+		//animationAction = action;
 		anims.Play(anim);
 		InteractionManager.instance.DisableInteractions();
 	}
 
-	public void PlayActionAnimation(UndoableAction action)
+	public void PlayActionAnimation(PlayerAction action)
 	{
-		animationAction = action;
+		//animationAction = action;
 		anims.Play(action.GetName());
 		InteractionManager.instance.DisableInteractions();
 	}
@@ -234,7 +237,7 @@ public class PlayerScript : MonoBehaviour
 
 	public void DoAnimationAction()
 	{
-		GameManager.instance.AddActionToStack(animationAction);
+		//GameManager.instance.AddActionToStack(animationAction);
 	}
 
 	public Vector3 GetPlayerPos()

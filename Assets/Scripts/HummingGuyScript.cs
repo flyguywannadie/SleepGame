@@ -17,39 +17,41 @@ public class HummingGuyScript : ActionableItem
 
 	public override void DoTheAction()
 	{
-		if (Vector2.Distance(PlayerScript.instance.GetPlayerPos(), animLineupLocation.position) > 0.01f)
-		{
-			PlayerScript.instance.ForceMovementIntoAction(animLineupLocation.position, new UndoableAction(Execute, Undo));
-			return;
-		}
-		base.DoTheAction();
-	}
+		//if (Vector2.Distance(PlayerScript.instance.GetPlayerPos(), animLineupLocation.position) > 0.01f)
+		//{
+		//	PlayerScript.instance.ForceMovementIntoAction(animLineupLocation.position, new UndoableAction(Execute, Undo));
+		//	return;
+		//}
+		//base.DoTheAction();
 
-	public override void Execute()
-	{
-		if (humming.isPlaying)
-		{
-			DialogueManager.instance.GenerateDialogueWithEndAction(dialogue, StopTalking);
-			humming.Stop();
-		}
-		else
-		{
-			DialogueManager.instance.GenerateDialogueWithEndAction("You can go back to bed now.\nI'll be quiet.", StopTalking);
-		}
-		PawnBedNoSleep.SetActive(false);
-		PawnBedYesSleep.SetActive(true);
-		anims.SetBool("Talk", true);
-	}
+        if (humming.isPlaying)
+        {
+            DialogueManager.instance.GenerateDialogueWithEndAction(dialogue, StopTalking);
+            humming.Stop();
+        }
+        else
+        {
+            DialogueManager.instance.GenerateDialogueWithEndAction("You can go back to bed now.\nI'll be quiet.", StopTalking);
+        }
+        PawnBedNoSleep.SetActive(false);
+        PawnBedYesSleep.SetActive(true);
+        anims.SetBool("Talk", true);
+    }
+
+	//public override void Execute()
+	//{
+
+	//}
 
 	public void StopTalking()
 	{
 		anims.SetBool("Talk", false);
 	}
 
-	public override void Undo()
-	{
-		PawnBedNoSleep.SetActive(true);
-		PawnBedYesSleep.SetActive(false);
-		humming.Play();
-	}
+	//public override void Undo()
+	//{
+	//	PawnBedNoSleep.SetActive(true);
+	//	PawnBedYesSleep.SetActive(false);
+	//	humming.Play();
+	//}
 }

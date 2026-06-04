@@ -5,22 +5,23 @@ using UnityEngine.EventSystems;
 public class ActionableItem : MonoBehaviour
 {
 	[SerializeField] protected string actionName = "Base Action ";
-	[SerializeField] protected PlayerAction expectedAction;
+	[SerializeField] protected CursorAction expectedAction;
 
-	public virtual void Execute() { }
+	protected virtual void Execute() { }
 
-	public virtual void Undo() { }
+	protected virtual void Undo(bool removing) { }
 
 	public virtual bool AreActionsCorrect()
 	{
-		PlayerAction current = InteractionManager.instance.GetCurrentAction();
+		CursorAction current = InteractionManager.instance.GetCurrentAction();
 
 		return expectedAction == current;
 	}
 
 	public virtual void DoTheAction()
 	{
-		GameManager.instance.AddActionToStack(new UndoableAction(actionName, Execute, Undo));
+		//GameManager.instance.AddActionToStack(new UndoableAction(actionName, Execute, Undo));
+		Execute();
 	}
 
 	private void OnMouseOver()

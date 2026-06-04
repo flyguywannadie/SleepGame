@@ -34,7 +34,7 @@ public class ActionButton : MonoBehaviour
 		visuals.sprite = UnPressed;
 	}
 
-	public PlayerAction GetAction()
+	public CursorAction GetAction()
 	{
 		return actionCursor.itemAction;
 	}

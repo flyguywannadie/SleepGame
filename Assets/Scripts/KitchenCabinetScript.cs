@@ -16,7 +16,7 @@ public class KitchenCabinetScript : MonoBehaviour
 			if (leftdoor.open)
 			{
 				leftdoor.Close();
-				GameManager.instance.AddConditionalUndo(leftdoor.OpenInstant);
+				//GameManager.instance.AddConditionalUndo(leftdoor.OpenInstant);
 			}
 		}
 	}
@@ -33,7 +33,7 @@ public class KitchenCabinetScript : MonoBehaviour
 			if (rightdoor.open)
 			{
 				rightdoor.Close();
-				GameManager.instance.AddConditionalUndo(rightdoor.OpenInstant);
+				//GameManager.instance.AddConditionalUndo(rightdoor.OpenInstant);
 			}
 		}
 	}

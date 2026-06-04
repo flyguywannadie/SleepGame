@@ -13,24 +13,24 @@ public class DoorwayAction : ActionableItem
 	{
 		if (Vector2.Distance(PlayerScript.instance.GetPlayerPos(), animLineupLocation.position) > 0.01f)
 		{
-			PlayerScript.instance.ForceMovementIntoAction(animLineupLocation.position, new UndoableAction(Execute, Undo));
+			PlayerScript.instance.ForceMovementIntoAction(animLineupLocation.position, new PlayerAction(Execute));
 			return;
 		}
 		base.DoTheAction();
 	}
 
-	public override void Execute()
+	protected override void Execute()
 	{
 		GameManager.instance.SetCameraTrack(whereIGo.GetCameraTrack());
 		PlayerScript.instance.ForcePosition(whereIGo.GetTravelToLocation().position);
-		PlayerScript.instance.MovePlayerNoUndo(whereIGo.GetTravelWalkLocation().position);
+		PlayerScript.instance.MovePlayer(whereIGo.GetTravelWalkLocation().position);
 	}
 
-	public override void Undo()
-	{
-		GameManager.instance.SetCameraTrack(myCameraTrack);
-		PlayerScript.instance.ForcePosition(animLineupLocation.position);
-	}
+	//public override void Undo()
+	//{
+	//	GameManager.instance.SetCameraTrack(myCameraTrack);
+	//	PlayerScript.instance.ForcePosition(animLineupLocation.position);
+	//}
 
 	public Transform GetTravelToLocation()
 	{

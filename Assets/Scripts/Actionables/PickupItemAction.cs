@@ -13,16 +13,21 @@ public class PickupItemAction : BaseWalkupAction
 		return base.AreActionsCorrect();
 	}
 
-	public override void Execute()
-	{
-		InventoryScript.instance.AddItem(pickup);
-		gameObject.SetActive(false);
-	}
+    public override void DoTheAction()
+    {
+        InventoryScript.instance.AddItem(pickup);
+        gameObject.SetActive(false);
+    }
 
-	public override void Undo()
-	{
-		InventoryScript.instance.Undo();
-		InteractionManager.instance.UnselectAction(pickup.actionCursor.itemAction);
-		gameObject.SetActive(true);
-	}
+ //   public override void Execute()
+	//{
+
+	//}
+
+	//public override void Undo()
+	//{
+	//	InventoryScript.instance.Undo();
+	//	InteractionManager.instance.UnselectAction(pickup.actionCursor.itemAction);
+	//	gameObject.SetActive(true);
+	//}
 }

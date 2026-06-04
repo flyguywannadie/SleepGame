@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
 	[SerializeField] private bool MainMenu;
 
-    [SerializeField] private List<UndoableAction> actionStack;
+    [SerializeField] private List<PlayerAction> actionStack;
 	[SerializeField] private PlayerScript player;
 	[SerializeField] private PauseManager pauseManager;
 	[SerializeField] private CameraScript camManager;
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	public void AddActionToStack(UndoableAction a)
+	private void AddActionToStack(PlayerAction a)
 	{
 		actionStack.Add(a);
 		a.Execute();
@@ -55,12 +55,12 @@ public class GameManager : MonoBehaviour
 	///	<br/>
 	/// Can also be used for 
 	/// </summary>
-	public void AddConditionalUndo(Action a)
+	private void AddConditionalUndo(Action a)
 	{
 		actionStack[actionStack.Count - 1].AddUndo(a);
 	}
 
-	public void UndoAction()
+	private void UndoAction()
 	{
 		DialogueManager.instance.CloseDialogueUndo();
 
@@ -92,10 +92,10 @@ public class GameManager : MonoBehaviour
 
 		if (!pauseManager.IsGamePaused())
 		{
-			if (Input.GetKeyDown(KeyCode.Z))
-			{
-				UndoAction();
-			}
+			//if (Input.GetKeyDown(KeyCode.Z))
+			//{
+			//	UndoAction();
+			//}
 			if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Tab))
 			{
 				PauseGame();
