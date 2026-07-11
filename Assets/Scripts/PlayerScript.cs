@@ -15,7 +15,7 @@ public class PlayerScript : MonoBehaviour
 	[SerializeField] private AudioClip moveSound;
 	[SerializeField] private AudioClip slideSound;
 
-	//private UndoableAction animationAction;
+	private PlayerAction animationAction;
 	private PlayerAction forcedAction;
 
 	private float moveSpeed = 1;
@@ -215,14 +215,14 @@ public class PlayerScript : MonoBehaviour
 
 	public void PlayActionAnimation(string anim, PlayerAction action)
 	{
-		//animationAction = action;
+		animationAction = action;
 		anims.Play(anim);
 		InteractionManager.instance.DisableInteractions();
 	}
 
 	public void PlayActionAnimation(PlayerAction action)
 	{
-		//animationAction = action;
+		animationAction = action;
 		anims.Play(action.GetName());
 		InteractionManager.instance.DisableInteractions();
 	}
@@ -237,7 +237,7 @@ public class PlayerScript : MonoBehaviour
 
 	public void DoAnimationAction()
 	{
-		//GameManager.instance.AddActionToStack(animationAction);
+		animationAction.Execute();
 	}
 
 	public Vector3 GetPlayerPos()

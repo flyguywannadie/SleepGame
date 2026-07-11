@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class UseItemAction : BaseWalkupAction
 {
-	public override void DoTheAction()
-	{
-        InventoryScript.instance.UseItem();
-        gameObject.SetActive(false);
-	}
-
-	//public override void Execute()
+	//public override void DoTheAction()
 	//{
 
 	//}
+
+	protected override void Execute()
+	{
+        InventoryScript.instance.UseItem();
+        gameObject.SetActive(false);
+    }
 
 	//public override void Undo()
 	//{

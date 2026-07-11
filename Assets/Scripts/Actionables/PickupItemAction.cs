@@ -13,7 +13,7 @@ public class PickupItemAction : BaseWalkupAction
 		return base.AreActionsCorrect();
 	}
 
-    public override void DoTheAction()
+    protected override void Execute()
     {
         InventoryScript.instance.AddItem(pickup);
         gameObject.SetActive(false);

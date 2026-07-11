@@ -17,13 +17,16 @@ public class HummingGuyScript : ActionableItem
 
 	public override void DoTheAction()
 	{
-		//if (Vector2.Distance(PlayerScript.instance.GetPlayerPos(), animLineupLocation.position) > 0.01f)
-		//{
-		//	PlayerScript.instance.ForceMovementIntoAction(animLineupLocation.position, new UndoableAction(Execute, Undo));
-		//	return;
-		//}
-		//base.DoTheAction();
+		if (Vector2.Distance(PlayerScript.instance.GetPlayerPos(), animLineupLocation.position) > 0.01f)
+		{
+			PlayerScript.instance.ForceMovementIntoAction(animLineupLocation.position, new PlayerAction(Execute));
+			return;
+		}
+		base.DoTheAction();
+    }
 
+	protected override void Execute()
+	{
         if (humming.isPlaying)
         {
             DialogueManager.instance.GenerateDialogueWithEndAction(dialogue, StopTalking);
@@ -37,11 +40,6 @@ public class HummingGuyScript : ActionableItem
         PawnBedYesSleep.SetActive(true);
         anims.SetBool("Talk", true);
     }
-
-	//public override void Execute()
-	//{
-
-	//}
 
 	public void StopTalking()
 	{

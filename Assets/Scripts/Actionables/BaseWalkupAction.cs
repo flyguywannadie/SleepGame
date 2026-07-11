@@ -12,6 +12,6 @@ public class BaseWalkupAction : ActionableItem
 			PlayerScript.instance.ForceMovementIntoAction(animLineupLocation.position, new PlayerAction(actionAnimName, Execute));
 			return;
 		}
-		PlayerScript.instance.PlayActionAnimation(actionAnimName, new PlayerAction(actionName, Execute));
+		PlayerScript.instance.PlayActionAnimation(actionAnimName, new PlayerAction(Execute));
 	}
 }

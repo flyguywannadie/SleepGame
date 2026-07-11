@@ -1163,6 +1163,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 954458274750027946, guid: b19f746224bae7f43a62f48ba9f5da38, type: 3}
+      propertyPath: whereIGo
+      value: 
+      objectReference: {fileID: 388824165}
+    - target: {fileID: 954458274750027946, guid: b19f746224bae7f43a62f48ba9f5da38, type: 3}
       propertyPath: undoTrack
       value: 
       objectReference: {fileID: 329710937}
@@ -1170,6 +1174,10 @@ PrefabInstance:
       propertyPath: travelTrack
       value: 
       objectReference: {fileID: 693743753}
+    - target: {fileID: 954458274750027946, guid: b19f746224bae7f43a62f48ba9f5da38, type: 3}
+      propertyPath: myCameraTrack
+      value: 
+      objectReference: {fileID: 329710937}
     - target: {fileID: 954458274750027946, guid: b19f746224bae7f43a62f48ba9f5da38, type: 3}
       propertyPath: travelLocation
       value: 
@@ -3359,6 +3367,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.28, y: 3.63}
   m_EdgeRadius: 0
+--- !u!114 &388824165 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 954458274750027946, guid: b19f746224bae7f43a62f48ba9f5da38, type: 3}
+  m_PrefabInstance: {fileID: 1084539700}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05316f908a4090b40a8e1773bc5c4a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &392530778
 GameObject:
   m_ObjectHideFlags: 0
@@ -4842,7 +4861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70acf31d53ef7dc46baf12347dd67138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionName: Pickup item
+  actionName: Pickup   item
   expectedAction: 1
   actionAnimName: PickupItem
   animLineupLocation: {fileID: 696669282}
@@ -6173,7 +6192,6 @@ MonoBehaviour:
   head: {fileID: 970124754}
   anims: {fileID: 706487844}
   goToPos: {x: 0, y: 0, z: 0}
-  undoLocations: []
   moveSound: {fileID: 8300000, guid: 21b370e0f5a07374da85af1b9407391a, type: 3}
   slideSound: {fileID: 8300000, guid: 5f231c08eb7c47e489904e7525a350fb, type: 3}
 --- !u!95 &706487844
@@ -6637,7 +6655,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &788633495
 Transform:
   m_ObjectHideFlags: 0
@@ -6851,6 +6869,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &819897196 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 954458274750027946, guid: b19f746224bae7f43a62f48ba9f5da38, type: 3}
+  m_PrefabInstance: {fileID: 843728255}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05316f908a4090b40a8e1773bc5c4a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &827515609
 GameObject:
   m_ObjectHideFlags: 0
@@ -7086,6 +7115,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 954458274750027946, guid: b19f746224bae7f43a62f48ba9f5da38, type: 3}
+      propertyPath: whereIGo
+      value: 
+      objectReference: {fileID: 1994058251}
+    - target: {fileID: 954458274750027946, guid: b19f746224bae7f43a62f48ba9f5da38, type: 3}
       propertyPath: undoTrack
       value: 
       objectReference: {fileID: 454488168}
@@ -7093,6 +7126,10 @@ PrefabInstance:
       propertyPath: travelTrack
       value: 
       objectReference: {fileID: 916687097}
+    - target: {fileID: 954458274750027946, guid: b19f746224bae7f43a62f48ba9f5da38, type: 3}
+      propertyPath: myCameraTrack
+      value: 
+      objectReference: {fileID: 454488168}
     - target: {fileID: 954458274750027946, guid: b19f746224bae7f43a62f48ba9f5da38, type: 3}
       propertyPath: travelLocation
       value: 
@@ -8078,6 +8115,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1623714686}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &962802099 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5293217007686449820, guid: 99268f986fc75ab48a82d8589d114922, type: 3}
+  m_PrefabInstance: {fileID: 1006875472946170158}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05316f908a4090b40a8e1773bc5c4a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &970124753
 GameObject:
   m_ObjectHideFlags: 0
@@ -8583,6 +8631,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 954458274750027946, guid: b19f746224bae7f43a62f48ba9f5da38, type: 3}
+      propertyPath: whereIGo
+      value: 
+      objectReference: {fileID: 1193225642}
+    - target: {fileID: 954458274750027946, guid: b19f746224bae7f43a62f48ba9f5da38, type: 3}
       propertyPath: undoTrack
       value: 
       objectReference: {fileID: 693743753}
@@ -8590,6 +8642,10 @@ PrefabInstance:
       propertyPath: travelTrack
       value: 
       objectReference: {fileID: 329710937}
+    - target: {fileID: 954458274750027946, guid: b19f746224bae7f43a62f48ba9f5da38, type: 3}
+      propertyPath: myCameraTrack
+      value: 
+      objectReference: {fileID: 693743753}
     - target: {fileID: 954458274750027946, guid: b19f746224bae7f43a62f48ba9f5da38, type: 3}
       propertyPath: travelLocation
       value: 
@@ -8912,6 +8968,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1957988476968341951, guid: b19f746224bae7f43a62f48ba9f5da38, type: 3}
   m_PrefabInstance: {fileID: 843728255}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1193225642 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 954458274750027946, guid: b19f746224bae7f43a62f48ba9f5da38, type: 3}
+  m_PrefabInstance: {fileID: 81357370}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05316f908a4090b40a8e1773bc5c4a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1228894012
 GameObject:
   m_ObjectHideFlags: 0
@@ -13730,7 +13797,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1727641865
 Transform:
   m_ObjectHideFlags: 0
@@ -13907,6 +13974,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1735968962 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1615417208113232312, guid: 41da9284338c26e499ebfabe46db10f9, type: 3}
+  m_PrefabInstance: {fileID: 4639056275242327967}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05316f908a4090b40a8e1773bc5c4a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1738975560
 GameObject:
   m_ObjectHideFlags: 0
@@ -16106,6 +16184,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1994058251 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 954458274750027946, guid: b19f746224bae7f43a62f48ba9f5da38, type: 3}
+  m_PrefabInstance: {fileID: 3963321186009708056}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05316f908a4090b40a8e1773bc5c4a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2012204458
 GameObject:
   m_ObjectHideFlags: 0
@@ -17079,7 +17168,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2146094019
 Transform:
   m_ObjectHideFlags: 0
@@ -17125,6 +17214,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5293217007686449820, guid: 99268f986fc75ab48a82d8589d114922, type: 3}
+      propertyPath: whereIGo
+      value: 
+      objectReference: {fileID: 1735968962}
+    - target: {fileID: 5293217007686449820, guid: 99268f986fc75ab48a82d8589d114922, type: 3}
       propertyPath: undoTrack
       value: 
       objectReference: {fileID: 916687097}
@@ -17133,13 +17226,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 693743753}
     - target: {fileID: 5293217007686449820, guid: 99268f986fc75ab48a82d8589d114922, type: 3}
+      propertyPath: myCameraTrack
+      value: 
+      objectReference: {fileID: 916687097}
+    - target: {fileID: 5293217007686449820, guid: 99268f986fc75ab48a82d8589d114922, type: 3}
       propertyPath: travelLocation
       value: 
       objectReference: {fileID: 2790270804472461610}
     - target: {fileID: 5293217007686449820, guid: 99268f986fc75ab48a82d8589d114922, type: 3}
+      propertyPath: myTravelLocation
+      value: 
+      objectReference: {fileID: 922729462}
+    - target: {fileID: 5293217007686449820, guid: 99268f986fc75ab48a82d8589d114922, type: 3}
       propertyPath: travelEndLocation
       value: 
       objectReference: {fileID: 2231621389714188262}
+    - target: {fileID: 5293217007686449820, guid: 99268f986fc75ab48a82d8589d114922, type: 3}
+      propertyPath: myTravelEndLocation
+      value: 
+      objectReference: {fileID: 1363637185}
     - target: {fileID: 7755564324713334263, guid: 99268f986fc75ab48a82d8589d114922, type: 3}
       propertyPath: dialogue
       value: living room
@@ -17561,6 +17666,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 954458274750027946, guid: b19f746224bae7f43a62f48ba9f5da38, type: 3}
+      propertyPath: whereIGo
+      value: 
+      objectReference: {fileID: 819897196}
+    - target: {fileID: 954458274750027946, guid: b19f746224bae7f43a62f48ba9f5da38, type: 3}
       propertyPath: undoTrack
       value: 
       objectReference: {fileID: 916687097}
@@ -17568,6 +17677,10 @@ PrefabInstance:
       propertyPath: travelTrack
       value: 
       objectReference: {fileID: 454488168}
+    - target: {fileID: 954458274750027946, guid: b19f746224bae7f43a62f48ba9f5da38, type: 3}
+      propertyPath: myCameraTrack
+      value: 
+      objectReference: {fileID: 916687097}
     - target: {fileID: 954458274750027946, guid: b19f746224bae7f43a62f48ba9f5da38, type: 3}
       propertyPath: travelLocation
       value: 
@@ -17677,7 +17790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!60 &4351557310457529737
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -17738,17 +17851,33 @@ PrefabInstance:
     m_TransformParent: {fileID: 1281545954}
     m_Modifications:
     - target: {fileID: 1615417208113232312, guid: 41da9284338c26e499ebfabe46db10f9, type: 3}
+      propertyPath: whereIGo
+      value: 
+      objectReference: {fileID: 962802099}
+    - target: {fileID: 1615417208113232312, guid: 41da9284338c26e499ebfabe46db10f9, type: 3}
       propertyPath: travelTrack
       value: 
       objectReference: {fileID: 916687097}
+    - target: {fileID: 1615417208113232312, guid: 41da9284338c26e499ebfabe46db10f9, type: 3}
+      propertyPath: myCameraTrack
+      value: 
+      objectReference: {fileID: 693743753}
     - target: {fileID: 1615417208113232312, guid: 41da9284338c26e499ebfabe46db10f9, type: 3}
       propertyPath: travelLocation
       value: 
       objectReference: {fileID: 922729462}
     - target: {fileID: 1615417208113232312, guid: 41da9284338c26e499ebfabe46db10f9, type: 3}
+      propertyPath: myTravelLocation
+      value: 
+      objectReference: {fileID: 2790270804472461610}
+    - target: {fileID: 1615417208113232312, guid: 41da9284338c26e499ebfabe46db10f9, type: 3}
       propertyPath: travelEndLocation
       value: 
       objectReference: {fileID: 1363637185}
+    - target: {fileID: 1615417208113232312, guid: 41da9284338c26e499ebfabe46db10f9, type: 3}
+      propertyPath: myTravelEndLocation
+      value: 
+      objectReference: {fileID: 2231621389714188262}
     - target: {fileID: 4441341764983161217, guid: 41da9284338c26e499ebfabe46db10f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -17797,6 +17926,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 8104001232217112973, guid: 41da9284338c26e499ebfabe46db10f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17834,7 +17967,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6093541334825495039
 Transform:
   m_ObjectHideFlags: 0
@@ -18031,7 +18164,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &8731830881656494510
 SpriteRenderer:
   m_ObjectHideFlags: 0
