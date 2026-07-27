@@ -26,7 +26,7 @@ public class FirstPuzzleHammerButton : ActionableItem
 			PlayerScript.instance.ForceMovementIntoAction(animLineupLocation.position, new PlayerAction("HammerButton", Execute));
 			return;
 		}
-		PlayerScript.instance.PlayActionAnimation("HammerButton", new PlayerAction(actionName, Execute));
+		PlayerScript.instance.PlayAnimationWithAction(new PlayerAction("HammerButton", Execute));
 	}
 
 	protected override void Execute()

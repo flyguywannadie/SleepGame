@@ -2,8 +2,15 @@ using UnityEngine;
 
 public class FloorAction : ActionableItem
 {
-	public override void DoTheAction()
+	protected override void Execute()
 	{
-		PlayerScript.instance.MovePlayer(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+		if (!PlayerScript.instance.GetStairMovement())
+		{
+			PlayerScript.instance.MovePlayer(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+		}
+		else
+		{
+			PlayerScript.instance.TryExit(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+		}
 	}
 }

@@ -17,7 +17,7 @@ public class FirstPuzzleButtonAction : ActionableItem
 			PlayerScript.instance.ForceMovementIntoAction(animLineupLocation.position, new PlayerAction("ButtonPress", Execute));
 			return;
 		}
-		PlayerScript.instance.PlayActionAnimation("ButtonPress", new PlayerAction(actionName, Execute));
+		PlayerScript.instance.PlayAnimationWithAction(new PlayerAction("ButtonPress", Execute));
 	}
 
 	public override bool AreActionsCorrect()

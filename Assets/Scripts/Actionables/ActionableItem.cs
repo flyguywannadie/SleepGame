@@ -9,7 +9,7 @@ public class ActionableItem : MonoBehaviour
 
 	protected virtual void Execute() { }
 
-	protected virtual void Undo(bool removing) { }
+	//protected virtual void Undo(bool removing) { }
 
 	public virtual bool AreActionsCorrect()
 	{

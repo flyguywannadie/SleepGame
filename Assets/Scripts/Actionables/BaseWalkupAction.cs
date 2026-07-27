@@ -3,7 +3,7 @@ using UnityEngine;
 public class BaseWalkupAction : ActionableItem
 {
 	[SerializeField] private string actionAnimName = "Base Walkup";
-	[SerializeField] private Transform animLineupLocation;
+	[SerializeField] protected Transform animLineupLocation;
 
 	public override void DoTheAction()
 	{
@@ -12,6 +12,6 @@ public class BaseWalkupAction : ActionableItem
 			PlayerScript.instance.ForceMovementIntoAction(animLineupLocation.position, new PlayerAction(actionAnimName, Execute));
 			return;
 		}
-		PlayerScript.instance.PlayActionAnimation(actionAnimName, new PlayerAction(Execute));
+		PlayerScript.instance.PlayAnimationWithAction(new PlayerAction(actionAnimName, Execute));
 	}
 }

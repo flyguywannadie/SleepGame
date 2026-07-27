@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -16,17 +17,26 @@ public class PlayerScript : MonoBehaviour
 	[SerializeField] private AudioClip slideSound;
 
 	private PlayerAction animationAction;
-	private PlayerAction forcedAction;
+	private PlayerAction movementForcedAction;
+	private PlayerAction queuedForcedAction;
 
 	private float moveSpeed = 1;
+	private float lookatDelay = 0;
 
-	private bool moving = false;
-	private bool animMove = true;
+	[SerializeField] private bool moving = false;
+	[SerializeField] private bool animMove = true;
+	[SerializeField] private bool stairMovement;
 
-	private void Awake()
+    [SerializeField] private float stairMovementDistance;
+    [SerializeField] private Vector3 stairMovementStart;
+	[SerializeField] private StairsScript currentActionMover;
+    //[SerializeField] private Transform stairMovementFollow;
+
+    private void Awake()
 	{
 		instance = this;
-	}
+		SetStairMovement(false, null);
+    }
 
 	private void Start()
 	{
@@ -35,17 +45,18 @@ public class PlayerScript : MonoBehaviour
 
 	private void Update()
 	{
-		if (!InteractionManager.instance.AreActionsEnabled())
+		if (GameManager.instance.IsGamePaused())
 		{
 			if (moving)
 			{
 				animMove = false;
 				moving = false;
+
+				EyeLookAt(goToPos - transform.position);
+				
 				goToPos = transform.position;
 
 				anims.SetBool("Move", moving);
-
-				EyeLookAt(Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position);
 			}
 			return;
 		}
@@ -53,43 +64,81 @@ public class PlayerScript : MonoBehaviour
 		Vector3 look = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
 		float distance = Vector3.Distance(transform.position, goToPos);
-		if (moving && distance <= 0.01f)
+
+        if (!stairMovement)
 		{
-			animMove = false;
-			moving = false;
-			transform.position = goToPos;
-			if (forcedAction != null)
+            if (moving && distance <= 0.01f)
+            {
+                animMove = false;
+				EndMovement();
+            }
+            else if (moving)
+            {
+                look = goToPos - transform.position;
+            }
+
+            anims.SetBool("Move", moving);
+            anims.SetFloat("Distance", distance);
+            anims.SetFloat("Side", Mathf.Clamp((transform.position.x - goToPos.x) / 3.0f, -1.0f, 1.0f));
+
+            if (animMove)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, goToPos, moveSpeed * Time.deltaTime);
+                look = goToPos - transform.position;
+            }
+        }
+		else
+		{
+            // Might need to attatch the player to different objects for certain action movements
+            //if (stairMovementFollow)
+            //{
+            //	transform.position = stairMovementFollow.transform.position;
+            //}
+
+            //         if (moving && distance <= 0.01f)
+            //         {
+            //             //animMove = false;
+            //             //moving = false;
+            //             transform.position = goToPos;
+            //	if (forcedAction != null)
+            //	{
+            //		if (forcedAction.GetName() == "Action" || forcedAction.GetName() == "")
+            //		{
+            //			//GameManager.instance.AddActionToStack(forcedAction);
+            //			forcedAction.Execute();
+            //		}
+            //		else
+            //		{
+            //			PlayAnimationWithAction(forcedAction);
+            //		}
+            //		forcedAction = null;
+            //	}
+            //}
+            //         else 
+			if (moving)
 			{
-				if (forcedAction.GetName() == "Action" || forcedAction.GetName() == "")
-				{
-					//GameManager.instance.AddActionToStack(forcedAction);
-					forcedAction.Execute();
-				}
-				else
-				{
-					PlayActionAnimation(forcedAction);
-				}
-				forcedAction = null;
+				look = goToPos - stairMovementStart;
 			}
-		} else if (moving)
-		{
-			look = goToPos - transform.position;
-		}
 
-		anims.SetBool("Move", moving);
-		anims.SetFloat("Distance", distance);
-		anims.SetFloat("Side", Mathf.Clamp((transform.position.x - goToPos.x)/3.0f,-1.0f,1.0f));
+			anims.SetBool("Move", moving);
 
-		if (animMove)
-		{
-			transform.position = Vector3.MoveTowards(transform.position, goToPos, moveSpeed * Time.deltaTime);
-		}
+			if (animMove)
+			{
+				stairMovementDistance += Time.deltaTime;
+				transform.position = Vector3.Lerp(stairMovementStart, goToPos, (stairMovementDistance / moveSpeed));
+			}
+        }
 
 		EyeLookAt(look);
 	}
 
 	public void EyeLookAt(Vector3 look)
 	{
+		if (lookatDelay > 0.0f)
+		{
+			lookatDelay -= Time.deltaTime;
+			return;
+		}
 		int lookangle = (int)(Mathf.Atan2(look.y, look.x) * Mathf.Rad2Deg) + 180;
 		int index = 4;
 		if (lookangle > 35 && lookangle <= 125)
@@ -115,6 +164,27 @@ public class PlayerScript : MonoBehaviour
 		//Debug.Log(lookangle + " - " + index);
 		head.sprite = headSprites[index];
 	}
+
+	private void EndMovement()
+	{
+		lookatDelay = 0.1f;
+        moving = false;
+        transform.position = goToPos;
+        if (movementForcedAction != null)
+        {
+            if (movementForcedAction.GetName() == "Action" || movementForcedAction.GetName() == "")
+            {
+                //GameManager.instance.AddActionToStack(forcedAction);
+                movementForcedAction.Execute();
+            }
+            else
+            {
+                PlayAnimationWithAction(movementForcedAction);
+            }
+            movementForcedAction = queuedForcedAction;
+			queuedForcedAction = null;
+        }
+    }
 
 	public void StartAnimMove(float speed)
 	{
@@ -151,9 +221,9 @@ public class PlayerScript : MonoBehaviour
 	/// <param name="pos">Position to move towards</param>
 	public void MovePlayer(Vector3 pos)
 	{
-		forcedAction = null;
+		movementForcedAction = null;
 		goToPos = new Vector3(pos.x, pos.y, transform.position.z);
-        //TryAddMovementUndo();
+		//TryAddMovementUndo();
         StartMove();
     }
 
@@ -171,10 +241,17 @@ public class PlayerScript : MonoBehaviour
 	/// <param name="action">Action to be done after movement</param>
 	public void ForceMovementIntoAction(Vector3 pos, PlayerAction action)
 	{
-		forcedAction = action;
+		if (movementForcedAction == null)
+		{
+			movementForcedAction = action;
+		}
+		else
+		{
+			queuedForcedAction = action;
+		}
 		goToPos = new Vector3(pos.x, pos.y, transform.position.z);
-		//TryAddMovementUndo();
-		StartMove();
+        //TryAddMovementUndo();
+        StartMove();
 	}
 
 	private void TryAddMovementUndo()
@@ -189,8 +266,14 @@ public class PlayerScript : MonoBehaviour
 	public void StartMove()
 	{
 		moving = true;
-//		transform.position = new Vector3(goToPos.x, goToPos.y, 0);
-	}
+		if (stairMovement)
+		{
+			stairMovementDistance = 0;
+			stairMovementStart = transform.position;
+		}
+        lookatDelay = 0.0f;
+        //		transform.position = new Vector3(goToPos.x, goToPos.y, 0);
+    }
 
 	public void UndoMove()
 	{
@@ -209,18 +292,20 @@ public class PlayerScript : MonoBehaviour
 	public void ForceIdleAnim()
 	{
 		//animationAction = null;
-		forcedAction = null;
+		movementForcedAction = null;
 		anims.Play("Idle");
 	}
 
-	public void PlayActionAnimation(string anim, PlayerAction action)
-	{
-		animationAction = action;
+	public void PlayAnimation(string anim, bool disableActions = true)
+    {
 		anims.Play(anim);
-		InteractionManager.instance.DisableInteractions();
+        if (disableActions)
+        {
+			InteractionManager.instance.DisableInteractions();
+        }
 	}
 
-	public void PlayActionAnimation(PlayerAction action)
+	public void PlayAnimationWithAction(PlayerAction action)
 	{
 		animationAction = action;
 		anims.Play(action.GetName());
@@ -232,6 +317,10 @@ public class PlayerScript : MonoBehaviour
 		if (!GameManager.instance.IsGamePaused())
 		{
 			InteractionManager.instance.EnableInteractions();
+			if (stairMovement)
+			{
+				EndMovement();
+            }
 		}
 	}
 
@@ -243,5 +332,21 @@ public class PlayerScript : MonoBehaviour
 	public Vector3 GetPlayerPos()
 	{
 		return transform.position;
+	}
+
+	public bool GetStairMovement()
+	{
+		return stairMovement;
+	}
+
+	public void SetStairMovement(bool sm, StairsScript stairs)
+	{
+		stairMovement = sm;
+		currentActionMover = stairs;
+    }
+
+	public void TryExit(Vector3 exitpos)
+	{
+		currentActionMover.TryExit(exitpos);
 	}
 }
