@@ -6,6 +6,7 @@ public class ActionableItem : MonoBehaviour
 {
 	[SerializeField] protected string actionName = "Base Action ";
 	[SerializeField] protected CursorAction expectedAction;
+	[SerializeField] protected ActionCursorSO useCursor;
 
 	protected virtual void Execute() { }
 
@@ -16,6 +17,11 @@ public class ActionableItem : MonoBehaviour
 		CursorAction current = InteractionManager.instance.GetCurrentAction();
 
 		return expectedAction == current;
+	}
+
+	public ActionCursorSO getCursor()
+	{
+		return useCursor;
 	}
 
 	public virtual void DoTheAction()

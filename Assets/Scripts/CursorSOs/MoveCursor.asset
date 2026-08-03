@@ -12,6 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46808e787c0faed419fcc31f317df079, type: 3}
   m_Name: MoveCursor
   m_EditorClassIdentifier: 
-  itemAction: 2
-  actionIdle: {fileID: 21300000, guid: 3d537baa8029b0d40b264fffc1a6330f, type: 3}
+  cursorUnselect: {fileID: 21300000, guid: 3d537baa8029b0d40b264fffc1a6330f, type: 3}
+  frames:
+  - frame: {fileID: 21300000, guid: 3d537baa8029b0d40b264fffc1a6330f, type: 3}
+    frameLength: 0.1666667
+  - frame: {fileID: 21300000, guid: a7d74d32c4ba28c4d9ee01bb23071902, type: 3}
+    frameLength: 0.1666667
+  - frame: {fileID: 21300000, guid: 3d537baa8029b0d40b264fffc1a6330f, type: 3}
+    frameLength: 0.1666667
+  - frame: {fileID: 21300000, guid: 4e4ddce4c23d4e04487e9b5524dd14a1, type: 3}
+    frameLength: 0.1666667
   interactAnim: {fileID: 9100000, guid: 8a219512dfce46740be990c91cdfe73e, type: 2}

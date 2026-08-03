@@ -49,7 +49,7 @@ public class InteractionManager : MonoBehaviour
 
 	public void IsPossibleToInteract()
 	{
-		cursor.SetInteractAnim(true);
+		cursor.PlayInterAnim();
 		hoverCount++;
 	}
 
@@ -58,7 +58,7 @@ public class InteractionManager : MonoBehaviour
 		hoverCount = Mathf.Max(0, hoverCount - 1);
 		if (hoverCount <= 0)
 		{
-			cursor.SetInteractAnim(false);
+			cursor.PlayInterAnim();
 		}
 	}
 

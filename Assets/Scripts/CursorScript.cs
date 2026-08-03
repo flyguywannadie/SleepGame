@@ -1,20 +1,28 @@
 using System.Buffers;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.GraphView.GraphView;
+using static UnityEditor.Progress;
 
 public class CursorScript : MonoBehaviour
 {
 	[SerializeField] private Animator anims;
 	//[SerializeField] private RuntimeAnimatorController[] cursorAnimations;
 	[SerializeField] private ActionCursorSO currentCursor;
+	//[SerializeField] private ActionCursorSO tempCursor;
+	[SerializeField] private ActionableItem whatIAmSelecting;
     [SerializeField] private Image visuals;
+
+    [SerializeField] private float frameTime;
+    [SerializeField] private int currentCursorFrame;
 
 	private void Awake()
 	{
-		anims = GetComponent<Animator>();
+		//anims = GetComponent<Animator>();
 		visuals = GetComponent<Image>();
 
 		Cursor.visible = false;
+		//anims.StopPlayback();
 	}
 
 	private void Update()
@@ -29,34 +37,132 @@ public class CursorScript : MonoBehaviour
 		//{
 		//	anims.SetBool("Interact", false);
 		//}
-		bool works = false;
+//		bool works = false;
 
-		Collider2D hit = Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-		if (hit != null)
+        Collider2D hit = Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+		
+		if (whatIAmSelecting == null)
 		{
-			ActionableItem[] actionItem = hit.gameObject.GetComponents<ActionableItem>();
-			foreach (ActionableItem item in actionItem)
+            if (hit != null)
+            {
+                ActionableItem[] actionItem = hit.gameObject.GetComponents<ActionableItem>();
+                foreach (ActionableItem item in actionItem)
+                {
+                    if (item.AreActionsCorrect())
+                    {
+                        //SetTempCursor(item.getCursor());
+						SetWhatIAmOverlapping(item);
+                        //works = true;
+                    }
+                }
+            }
+            //else if (tempCursor != null)
+            //{
+            //    //SetTempCursor(null);
+            //}
+        }
+		else if (whatIAmSelecting != null)
+		{
+			if (hit == null)
 			{
-				if (item.AreActionsCorrect())
+				SetWhatIAmOverlapping(null);
+			}
+			else if (hit.gameObject != whatIAmSelecting.gameObject)
+			{
+                SetWhatIAmOverlapping(null);
+                //Debug.Log(hit.gameObject.name);
+                ActionableItem[] actionItem = hit.gameObject.GetComponents<ActionableItem>();
+				foreach (ActionableItem item in actionItem)
 				{
-					works = true;
+					if (item.AreActionsCorrect())
+					{
+						//SetTempCursor(item.getCursor());
+						SetWhatIAmOverlapping(item);
+						//works = true;
+					}
 				}
 			}
-		} 
+		}
 
-		SetInteractAnim(works);
+		PlayInterAnim();
 	}
 
-	public void SetInteractAnim(bool works)
+	public void SetWhatIAmOverlapping(ActionableItem overlap)
 	{
-		anims.SetBool("Interact", works);
+		whatIAmSelecting = overlap;
+		if (overlap)
+		{
+	        Debug.Log(overlap.gameObject.name);
+            frameTime = 0;
+            currentCursorFrame = 0;
+
+			if (whatIAmSelecting.getCursor())
+			{
+				visuals.sprite = whatIAmSelecting.getCursor().frames[currentCursorFrame].frame;
+			}
+			else
+			{
+				visuals.sprite = currentCursor.frames[currentCursorFrame].frame;
+			}
+		} else
+		{
+			Debug.Log("Null");
+			frameTime = 0;
+			currentCursorFrame = 0;
+            visuals.sprite = currentCursor.cursorUnselect;
+        }
+    }
+
+	public void PlayInterAnim()
+	{
+		if (whatIAmSelecting == null)
+		{
+			return;
+		}
+
+		ActionCursorSO usedCursor = currentCursor;
+		if (whatIAmSelecting.getCursor())
+		{
+			usedCursor = whatIAmSelecting.getCursor();
+		}
+
+		//anims.SetBool("Interact", works);
+		//if (usedCursor.cursorUnselect == null || usedCursor.frames.Length == 0)
+		//{
+		//	return;
+		//}
+
+		if (whatIAmSelecting.AreActionsCorrect())
+		{
+			frameTime += Time.deltaTime;
+			if (frameTime >= usedCursor.frames[currentCursorFrame].frameLength)
+			{
+				frameTime = 0;
+				currentCursorFrame += 1;
+				if (currentCursorFrame >= usedCursor.frames.Length)
+				{
+					currentCursorFrame = 0;
+				}
+				visuals.sprite = usedCursor.frames[currentCursorFrame].frame;
+			}
+		}
 	}
 
 	public void SetCursor(ActionCursorSO cursor)
 	{
+		if (cursor == null)
+		{
+			return;
+		}
 		currentCursor = cursor;
-		anims.runtimeAnimatorController = currentCursor.interactAnim;
-	}
+		SetWhatIAmOverlapping(null);
+        //anims.runtimeAnimatorController = currentCursor.interactAnim;
+    }
+	
+	public void SetTempCursor(ActionCursorSO cursor)
+	{
+        //tempCursor = cursor;
+    }
 
 	public void HideCursor()
 	{

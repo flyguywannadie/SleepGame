@@ -402,6 +402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Shed Door Inspect
   expectedAction: 0
+  useCursor: {fileID: 0}
   dialogue: The Door
 --- !u!1 &57843289
 GameObject:
@@ -1501,6 +1502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Fireplace Inspect
   expectedAction: 0
+  useCursor: {fileID: 0}
   dialogue: All Burned Up
 --- !u!1 &122653458
 GameObject:
@@ -1834,6 +1836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Step
   expectedAction: 2
+  useCursor: {fileID: 0}
   stepLocation: {fileID: 145220720}
   stepNum: 0
 --- !u!212 &159573308
@@ -1974,6 +1977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Stop Humming
   expectedAction: 1
+  useCursor: {fileID: 0}
   dialogue: Hey. Am I keeping you up? Sorry... I'll keep quiet
   animLineupLocation: {fileID: 70397357}
   humming: {fileID: 1738975561}
@@ -1994,6 +1998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Kill Him
   expectedAction: 3
+  useCursor: {fileID: 0}
   dialogue: No
 --- !u!61 &166350758
 BoxCollider2D:
@@ -2055,6 +2060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Inspect Humming Guy
   expectedAction: 0
+  useCursor: {fileID: 0}
   dialogue: Him
 --- !u!95 &166350760
 Animator:
@@ -2229,6 +2235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Inspect
   expectedAction: 0
+  useCursor: {fileID: 11400000, guid: af9a272a76474a54b902a216cd7ee21b, type: 2}
   dialogue: This is where I sleep
 --- !u!114 &173245922
 MonoBehaviour:
@@ -2244,6 +2251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Move Over Bed
   expectedAction: 2
+  useCursor: {fileID: 11400000, guid: 84bc78d6e10c3b843b87609ff0985d05, type: 2}
 --- !u!114 &173245923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2258,6 +2266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: 'Try Bed '
   expectedAction: 1
+  useCursor: {fileID: 0}
   dialogue: Can't go back to bed with that humming
 --- !u!1 &192360561
 GameObject:
@@ -2523,6 +2532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Crack Inspect
   expectedAction: 0
+  useCursor: {fileID: 0}
   dialogue: The Door caused this
 --- !u!61 &246970261
 BoxCollider2D:
@@ -2978,6 +2988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Open Shed Door
   expectedAction: 1
+  useCursor: {fileID: 0}
   shedDoor: {fileID: 456903242}
 --- !u!61 &322942457
 BoxCollider2D:
@@ -3189,6 +3200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Floor Move
   expectedAction: 2
+  useCursor: {fileID: 0}
 --- !u!60 &339002257
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3565,6 +3577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Chair Inspect
   expectedAction: 0
+  useCursor: {fileID: 0}
   dialogue: her chair
 --- !u!61 &382675248
 BoxCollider2D:
@@ -4065,7 +4078,8 @@ MonoBehaviour:
   visuals: {fileID: 451341863}
   UnPressed: {fileID: 21300000, guid: 0b9a891f7d41d894b801e849a2af10ce, type: 3}
   Pressed: {fileID: 21300000, guid: d5f742f8bfb3b58468447e7d10a8f00a, type: 3}
-  actionCursor: {fileID: 11400000, guid: af9a272a76474a54b902a216cd7ee21b, type: 2}
+  defaultCursor: {fileID: 0}
+  itemAction: 0
   startPressed: 1
 --- !u!1 &454488166
 GameObject:
@@ -4858,6 +4872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Sleep
   expectedAction: 1
+  useCursor: {fileID: 0}
   animLineupLocation: {fileID: 522867408}
 --- !u!114 &522867410
 MonoBehaviour:
@@ -4873,6 +4888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Move Over Bed
   expectedAction: 2
+  useCursor: {fileID: 0}
 --- !u!114 &522867411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4887,6 +4903,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Inspect
   expectedAction: 0
+  useCursor: {fileID: 0}
   dialogue: Time to go to bed
 --- !u!61 &522867412
 BoxCollider2D:
@@ -5093,6 +5110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: 'Base Action '
   expectedAction: 0
+  useCursor: {fileID: 0}
   dialogue: That Hammer Looks Useful
 --- !u!114 &550524278
 MonoBehaviour:
@@ -5108,6 +5126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Pickup   item
   expectedAction: 1
+  useCursor: {fileID: 0}
   actionAnimName: PickupItem
   animLineupLocation: {fileID: 696669282}
   pickup: {fileID: 11400000, guid: d9eef12702658674fbd32a9687b07e7d, type: 2}
@@ -5428,7 +5447,8 @@ MonoBehaviour:
   visuals: {fileID: 618548450}
   UnPressed: {fileID: 21300000, guid: a7d74d32c4ba28c4d9ee01bb23071902, type: 3}
   Pressed: {fileID: 21300000, guid: d96b5dee90c925743bcead64f39f59f4, type: 3}
-  actionCursor: {fileID: 11400000, guid: d3e5ef1a9535b7a488235c0a9e4d2e0f, type: 2}
+  defaultCursor: {fileID: 11400000, guid: d3e5ef1a9535b7a488235c0a9e4d2e0f, type: 2}
+  itemAction: 2
   startPressed: 0
 --- !u!4 &629954275 stripped
 Transform:
@@ -5896,6 +5916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Floor Move
   expectedAction: 2
+  useCursor: {fileID: 0}
 --- !u!1 &667075211
 GameObject:
   m_ObjectHideFlags: 0
@@ -5981,7 +6002,8 @@ MonoBehaviour:
   visuals: {fileID: 1669240370}
   UnPressed: {fileID: 0}
   Pressed: {fileID: 0}
-  actionCursor: {fileID: 0}
+  defaultCursor: {fileID: 0}
+  itemAction: 0
   startPressed: 0
   myitem: {fileID: 0}
 --- !u!114 &668872276
@@ -6127,6 +6149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: TestKey
   expectedAction: 0
+  useCursor: {fileID: 0}
   dialogue: Needs key
 --- !u!114 &677307289
 MonoBehaviour:
@@ -6142,6 +6165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: UnlockDoor
   expectedAction: 4
+  useCursor: {fileID: 0}
   actionAnimName: KeyOpenShed
   animLineupLocation: {fileID: 392530779}
 --- !u!61 &677307290
@@ -6506,6 +6530,7 @@ MonoBehaviour:
   stairMovement: 0
   stairMovementDistance: 0
   stairMovementStart: {x: 0, y: 0, z: 0}
+  currentActionMover: {fileID: 0}
 --- !u!95 &706487844
 Animator:
   serializedVersion: 7
@@ -6628,7 +6653,8 @@ MonoBehaviour:
   visuals: {fileID: 492959859}
   UnPressed: {fileID: 0}
   Pressed: {fileID: 0}
-  actionCursor: {fileID: 0}
+  defaultCursor: {fileID: 0}
+  itemAction: 0
   startPressed: 0
   myitem: {fileID: 0}
 --- !u!4 &740834074 stripped
@@ -7053,7 +7079,8 @@ MonoBehaviour:
   visuals: {fileID: 1960253213}
   UnPressed: {fileID: 0}
   Pressed: {fileID: 0}
-  actionCursor: {fileID: 0}
+  defaultCursor: {fileID: 0}
+  itemAction: 0
   startPressed: 0
   myitem: {fileID: 0}
 --- !u!114 &798736767
@@ -7372,6 +7399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Right Cabinet Kitchen
   expectedAction: 1
+  useCursor: {fileID: 0}
   cabinet: {fileID: 979303983}
   leftDoor: 0
 --- !u!1001 &843728255
@@ -7519,6 +7547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: 'Base Action '
   expectedAction: 0
+  useCursor: {fileID: 0}
   actionAnimName: Base Walkup
   animLineupLocation: {fileID: 879423625}
   mySteps:
@@ -7532,6 +7561,8 @@ MonoBehaviour:
   - {fileID: 888712358}
   desiredStep: 0
   currentStep: 0
+  exitWalkPosition: {x: 0, y: 0, z: 0}
+  goingtoExit: 0
 --- !u!1 &850215204
 GameObject:
   m_ObjectHideFlags: 0
@@ -7878,6 +7909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Floor Move
   expectedAction: 2
+  useCursor: {fileID: 0}
 --- !u!60 &862431962
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8313,6 +8345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Step2
   expectedAction: 2
+  useCursor: {fileID: 0}
   stepLocation: {fileID: 2065333069}
   stepNum: 0
 --- !u!212 &888712359
@@ -8418,6 +8451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Floor Move
   expectedAction: 2
+  useCursor: {fileID: 0}
 --- !u!60 &916490431
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9008,6 +9042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Left Cabinet Kitchen
   expectedAction: 1
+  useCursor: {fileID: 0}
   cabinet: {fileID: 979303983}
   leftDoor: 1
 --- !u!4 &1004642307 stripped
@@ -9064,6 +9099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Step
   expectedAction: 2
+  useCursor: {fileID: 0}
   stepLocation: {fileID: 32905649}
   stepNum: 0
 --- !u!212 &1021975238
@@ -9643,6 +9679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: 'Base Action '
   expectedAction: 0
+  useCursor: {fileID: 0}
   dialogue: frontyard
 --- !u!114 &1171503115
 MonoBehaviour:
@@ -9658,6 +9695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Backyard Travel
   expectedAction: 2
+  useCursor: {fileID: 0}
   animLineupLocation: {fileID: 1560237360}
   whereIGo: {fileID: 0}
   myTravelLocation: {fileID: 0}
@@ -9774,6 +9812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: 'Base Action '
   expectedAction: 0
+  useCursor: {fileID: 0}
   dialogue: That Hammer Looks Useful
 --- !u!114 &1228894015
 MonoBehaviour:
@@ -9789,6 +9828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Pickup item
   expectedAction: 1
+  useCursor: {fileID: 0}
   actionAnimName: PickupItem
   animLineupLocation: {fileID: 696669282}
   pickup: {fileID: 11400000, guid: 60102c1afaec6d1478c44ec1aba39985, type: 2}
@@ -10544,6 +10584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Bars On Door
   expectedAction: 0
+  useCursor: {fileID: 0}
   dialogue: The door is locked now. Should probably undo...
 --- !u!61 &1317852902
 BoxCollider2D:
@@ -11035,6 +11076,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Step3
   expectedAction: 2
+  useCursor: {fileID: 0}
   stepLocation: {fileID: 560607072}
   stepNum: 0
 --- !u!212 &1350963817
@@ -11525,7 +11567,8 @@ MonoBehaviour:
   visuals: {fileID: 1376658305}
   UnPressed: {fileID: 21300000, guid: 3495b5df3d744d44e968443eb1d75a71, type: 3}
   Pressed: {fileID: 21300000, guid: d96b5dee90c925743bcead64f39f59f4, type: 3}
-  actionCursor: {fileID: 11400000, guid: d3e5ef1a9535b7a488235c0a9e4d2e0f, type: 2}
+  defaultCursor: {fileID: 0}
+  itemAction: 0
   startPressed: 0
 --- !u!114 &1376658304
 MonoBehaviour:
@@ -12310,6 +12353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Step2
   expectedAction: 2
+  useCursor: {fileID: 0}
   stepLocation: {fileID: 850215205}
   stepNum: 0
 --- !u!212 &1510058208
@@ -13516,6 +13560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Door Door Inspect
   expectedAction: 0
+  useCursor: {fileID: 0}
   dialogue: I can't sleep with this noise, I need to open the door
 --- !u!61 &1617221020
 BoxCollider2D:
@@ -13711,7 +13756,8 @@ MonoBehaviour:
   visuals: {fileID: 1617914855}
   UnPressed: {fileID: 21300000, guid: ad7f58a97e2625446956bee2f0be8872, type: 3}
   Pressed: {fileID: 21300000, guid: 2e09a95e975898b498c2b80afa8bfaf5, type: 3}
-  actionCursor: {fileID: 11400000, guid: a8ba2ce234772b14393b8f70a951a711, type: 2}
+  defaultCursor: {fileID: 11400000, guid: a8ba2ce234772b14393b8f70a951a711, type: 2}
+  itemAction: 1
   startPressed: 0
 --- !u!1 &1623714685
 GameObject:
@@ -13765,6 +13811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: 'Base Action '
   expectedAction: 0
+  useCursor: {fileID: 0}
   dialogue: backyard
 --- !u!114 &1623714688
 MonoBehaviour:
@@ -13780,6 +13827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Backyard Travel
   expectedAction: 2
+  useCursor: {fileID: 0}
   animLineupLocation: {fileID: 1717849817}
   whereIGo: {fileID: 0}
   myTravelLocation: {fileID: 0}
@@ -13967,6 +14015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: 'Base Action '
   expectedAction: 0
+  useCursor: {fileID: 0}
   dialogue: That Hammer Looks Useful
 --- !u!114 &1645933807
 MonoBehaviour:
@@ -13982,6 +14031,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Pickup item
   expectedAction: 1
+  useCursor: {fileID: 0}
   actionAnimName: PickupItem
   animLineupLocation: {fileID: 696669282}
   pickup: {fileID: 11400000, guid: d9eef12702658674fbd32a9687b07e7d, type: 2}
@@ -14919,6 +14969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Floor Move
   expectedAction: 2
+  useCursor: {fileID: 0}
 --- !u!60 &1727953438
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -15245,6 +15296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: 'Base Action '
   expectedAction: 0
+  useCursor: {fileID: 0}
   dialogue: That Hammer Looks Useful
 --- !u!114 &1753344153
 MonoBehaviour:
@@ -15260,6 +15312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Pickup item
   expectedAction: 1
+  useCursor: {fileID: 0}
   actionAnimName: PickupItem
   animLineupLocation: {fileID: 696669282}
   pickup: {fileID: 11400000, guid: f4d1ada1f7a719d42bb027708b9a3a50, type: 2}
@@ -15459,6 +15512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Step
   expectedAction: 2
+  useCursor: {fileID: 0}
   stepLocation: {fileID: 165694166}
   stepNum: 0
 --- !u!212 &1763013818
@@ -15634,6 +15688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: 'Base Action '
   expectedAction: 0
+  useCursor: {fileID: 0}
   dialogue: Shed needs a key
 --- !u!1 &1768884251
 GameObject:
@@ -16374,6 +16429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Testing
   expectedAction: 1
+  useCursor: {fileID: 0}
   actionAnimName: KeyPickup
   animLineupLocation: {fileID: 1616258062}
   pickup: {fileID: 11400000, guid: f4d1ada1f7a719d42bb027708b9a3a50, type: 2}
@@ -16708,6 +16764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Rocking Chair Inspect
   expectedAction: 0
+  useCursor: {fileID: 0}
   dialogue: his chair
 --- !u!61 &1902397386
 BoxCollider2D:
@@ -17093,6 +17150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Floor Move
   expectedAction: 2
+  useCursor: {fileID: 0}
 --- !u!60 &1949440792
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -17426,6 +17484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Step3
   expectedAction: 2
+  useCursor: {fileID: 0}
   stepLocation: {fileID: 667075212}
   stepNum: 0
 --- !u!212 &1965791021
@@ -17767,7 +17826,6 @@ GameObject:
   - component: {fileID: 2027602812}
   - component: {fileID: 2027602811}
   - component: {fileID: 2027602814}
-  - component: {fileID: 2027602813}
   m_Layer: 2
   m_Name: Cursor
   m_TagString: Untagged
@@ -17832,28 +17890,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027602809}
   m_CullTransparentMesh: 1
---- !u!95 &2027602813
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2027602809}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 043b6c9fac4f98347ae57308cdd53505, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &2027602814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17866,9 +17902,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef3efb5d969d284caa5b55549242c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anims: {fileID: 2027602813}
-  currentCursor: {fileID: 0}
+  anims: {fileID: 0}
+  currentCursor: {fileID: 11400000, guid: af9a272a76474a54b902a216cd7ee21b, type: 2}
+  tempCursor: {fileID: 0}
   visuals: {fileID: 2027602811}
+  frameTime: 0
+  currentCursorFrame: 0
 --- !u!1 &2030076541
 GameObject:
   m_ObjectHideFlags: 0
@@ -17964,6 +18003,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Step2
   expectedAction: 2
+  useCursor: {fileID: 0}
   stepLocation: {fileID: 1731530887}
   stepNum: 0
 --- !u!212 &2030076545
@@ -18442,6 +18482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Floor Move
   expectedAction: 2
+  useCursor: {fileID: 0}
 --- !u!60 &2110211620
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -18921,6 +18962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Floor Move
   expectedAction: 2
+  useCursor: {fileID: 0}
 --- !u!1001 &2693661942280411961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19336,6 +19378,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8065116954549015166, guid: 540c4bd41b38e2543ae5507d9fb6638f, type: 3}
+      propertyPath: useCursor
+      value: 
+      objectReference: {fileID: 11400000, guid: a89c6e3124cb1f147b7ed7d4d1f1a904, type: 2}
+    - target: {fileID: 8065116954549015166, guid: 540c4bd41b38e2543ae5507d9fb6638f, type: 3}
       propertyPath: mainPuzzle
       value: 
       objectReference: {fileID: 2078309438}
@@ -19667,6 +19713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Floor Move
   expectedAction: 2
+  useCursor: {fileID: 0}
 --- !u!60 &8108624927642919987
 PolygonCollider2D:
   m_ObjectHideFlags: 0

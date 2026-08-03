@@ -8,9 +8,10 @@ public class ActionButton : MonoBehaviour
 	[SerializeField] protected Sprite UnPressed;
 	[SerializeField] protected Sprite Pressed;
 
-	[SerializeField] protected ActionCursorSO actionCursor;
+	[SerializeField] protected ActionCursorSO defaultCursor;
+	[SerializeField] protected CursorAction itemAction;
 
-	[SerializeField] private bool startPressed = false;
+    [SerializeField] private bool startPressed = false;
 
 	private void Start()
 	{
@@ -36,11 +37,11 @@ public class ActionButton : MonoBehaviour
 
 	public CursorAction GetAction()
 	{
-		return actionCursor.itemAction;
+		return itemAction;
 	}
 
 	public ActionCursorSO GetActionCursor()
 	{
-		return actionCursor;
+		return defaultCursor;
 	}
 }
