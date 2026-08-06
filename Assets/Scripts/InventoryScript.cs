@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InventoryScript : MonoBehaviour
@@ -9,9 +10,10 @@ public class InventoryScript : MonoBehaviour
 	[SerializeField] private InventorySpot activeSpot;
 	[SerializeField] private List<InventorySpot> inventorySlots;
 	//[SerializeField] private ItemDataSO test;
-	[SerializeField] private List<InventoryUndo> undos = new List<InventoryUndo>();
+	//[SerializeField] private List<InventoryUndo> undos = new List<InventoryUndo>();
 	[SerializeField] private Animator removeItemButton;
-	[SerializeField] private RemoveItemOption removeItemOption; 
+	[SerializeField] private RemoveItemOption removeItemOption;
+	[SerializeField] private DroppedItemScript droppedItemPrefab;
 
 	[Serializable]
 	private class InventoryUndo
@@ -56,61 +58,119 @@ public class InventoryScript : MonoBehaviour
 			if (!inventorySlots[i].hasItem())
 			{
 				inventorySlots[i].Populate(item);
-				undos.Add(new InventoryUndo(i, true, item));
+				//undos.Add(new InventoryUndo(i, true, item));
 				return;
 			}
 		}
 	}
 
-	public void UseItem()
-	{
-		undos.Add(new InventoryUndo(inventorySlots.IndexOf(activeSpot), false, activeSpot.GetItem()));
-		activeSpot.Clear();
-	}
+	//public void UseItem()
+	//{
+	//	//undos.Add(new InventoryUndo(inventorySlots.IndexOf(activeSpot), false, activeSpot.GetItem()));
+	//	activeSpot.Clear();
+	//}
 
 	public void SetActiveInventorySpot(InventorySpot i, RemoveItemOption option)
 	{
 		activeSpot = i;
 		removeItemOption = option;
-        removeItemButton.SetInteger("RemoveOption", (int)removeItemOption);
+		removeItemButton.ResetTrigger("Reset");
+        removeItemButton.SetInteger("RemoveOption", (int)option);
 		removeItemButton.SetTrigger("Reset");
+		//Debug.Log("Test " + i.name + " - " + option);
 	}
+
+	public int GetCurrentSlotIndex()
+	{
+		if (activeSpot == null)
+		{
+			return -1;
+		}
+		if (!inventorySlots.Contains(activeSpot))	
+		{
+			return -1;
+		}
+		return inventorySlots.IndexOf(activeSpot);
+	}
+
+	private void RemoveItemCleanup(InventorySpot spot)
+	{
+        spot.Clear();
+        if (spot == activeSpot)
+        {
+            InteractionManager.instance.UnselectItem();
+            activeSpot = null;
+        }
+		PlayerScript.instance.StopMoving();
+    }
 
 	public void RemoveItem()
 	{
 		switch(removeItemOption)
 		{
 			case RemoveItemOption.Trash:
-				
-				break;
+				RemoveItemCleanup(activeSpot);
+                break;
 			case RemoveItemOption.Drop:
-				
-				break;
+                DroppedItemScript newdrop = Instantiate(droppedItemPrefab.gameObject, PlayerScript.instance.transform.position, Quaternion.identity).GetComponent<DroppedItemScript>();
+				newdrop.SetupItem(activeSpot.GetItem());
+				RemoveItemCleanup(activeSpot);
+                break;
 		}
 	}
 
-	public void Undo()
-	{
-		InventoryUndo u = undos[undos.Count - 1];
-		if (u.addItem)
-		{
-			inventorySlots[u.spot].Clear();
-		} else
-		{
-			inventorySlots[u.spot].Populate(u.item);
-		}
-		undos.Remove(u);
-	}
+    public void RemoveActiveItem(RemoveItemOption option)
+    {
+        switch (option)
+        {
+            case RemoveItemOption.Trash:
+				RemoveItemCleanup(activeSpot);
+                break;
+            case RemoveItemOption.Drop:
+                DroppedItemScript newdrop = Instantiate(droppedItemPrefab.gameObject, PlayerScript.instance.transform.position, Quaternion.identity).GetComponent<DroppedItemScript>();
+                newdrop.SetupItem(activeSpot.GetItem());
+				RemoveItemCleanup(activeSpot);
+                break;
+        }
+    }
 
-	//private void Update()
-	//{
-	//	if (Input.GetKeyDown(KeyCode.I))
-	//	{
-	//		AddItem(test);
-	//	}
-	//	if (Input.GetKeyDown(KeyCode.O))
-	//	{
-	//		RemoveItem();
-	//	}
-	//}
+    public void RemoveItemFromSlot(RemoveItemOption option, int slot)
+    {
+        switch (option)
+        {
+            case RemoveItemOption.Trash:
+                RemoveItemCleanup(inventorySlots[slot]);
+                break;
+            case RemoveItemOption.Drop:
+                DroppedItemScript newdrop = Instantiate(droppedItemPrefab.gameObject, PlayerScript.instance.transform.position, Quaternion.identity).GetComponent<DroppedItemScript>();
+                newdrop.SetupItem(inventorySlots[slot].GetItem());
+				RemoveItemCleanup(inventorySlots[slot]);
+                break;
+        }
+    }
+
+    //public void Undo()
+    //{
+    //	InventoryUndo u = undos[undos.Count - 1];
+    //	if (u.addItem)
+    //	{
+    //		inventorySlots[u.spot].Clear();
+    //	} else
+    //	{
+    //		inventorySlots[u.spot].Populate(u.item);
+    //	}
+    //	undos.Remove(u);
+    //}
+
+    //private void Update()
+    //{
+    //	if (Input.GetKeyDown(KeyCode.I))
+    //	{
+    //		AddItem(test);
+    //	}
+    //	if (Input.GetKeyDown(KeyCode.O))
+    //	{
+    //		RemoveItem();
+    //	}
+    //}
 }

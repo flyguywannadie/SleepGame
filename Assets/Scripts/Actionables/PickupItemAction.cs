@@ -3,8 +3,9 @@ using UnityEngine;
 public class PickupItemAction : BaseWalkupAction
 {
 	[SerializeField] private ItemDataSO pickup;
+	[SerializeField] private SpriteRenderer visuals;
 
-	public override bool AreActionsCorrect()
+    public override bool AreActionsCorrect()
 	{
 		if (!InventoryScript.instance.CanAddItem())
 		{
@@ -18,6 +19,12 @@ public class PickupItemAction : BaseWalkupAction
         InventoryScript.instance.AddItem(pickup);
         gameObject.SetActive(false);
     }
+
+	public void SetPickup(ItemDataSO pickup)
+	{
+		this.pickup = pickup;
+		visuals.sprite = pickup.itemImage;
+	}
 
  //   public override void Execute()
 	//{

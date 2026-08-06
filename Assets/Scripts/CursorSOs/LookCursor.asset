@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursorUnselect: {fileID: 21300000, guid: 19478214cb6a6b94e87f90984387c875, type: 3}
   frames:
-  - frame: {fileID: 21300000, guid: 19478214cb6a6b94e87f90984387c875, type: 3}
-    frameLength: 0.1666667
   - frame: {fileID: 21300000, guid: 0b9a891f7d41d894b801e849a2af10ce, type: 3}
     frameLength: 0.1666667
   - frame: {fileID: 21300000, guid: 19478214cb6a6b94e87f90984387c875, type: 3}
     frameLength: 0.1666667
   - frame: {fileID: 21300000, guid: 099faab468b6fbb4b8ea8d4952bcf584, type: 3}
+    frameLength: 0.1666667
+  - frame: {fileID: 21300000, guid: 19478214cb6a6b94e87f90984387c875, type: 3}
     frameLength: 0.1666667
   interactAnim: {fileID: 9100000, guid: 043b6c9fac4f98347ae57308cdd53505, type: 2}

@@ -227,6 +227,11 @@ public class PlayerScript : MonoBehaviour
         StartMove();
     }
 
+	public void StopMoving()
+	{
+		MovePlayer(transform.position);
+	}
+
 	//public void MovePlayerNoUndo(Vector3 pos)
 	//{
 	//	goToPos = new Vector3(pos.x, pos.y, transform.position.z);

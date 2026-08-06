@@ -2,14 +2,21 @@ using UnityEngine;
 
 public class UseItemAction : BaseWalkupAction
 {
-	//public override void DoTheAction()
-	//{
+    [SerializeField] private int usedItemSlot = 0;
 
-	//}
+    public override void DoTheAction()
+    {
+        usedItemSlot = InventoryScript.instance.GetCurrentSlotIndex();
+        if (usedItemSlot == -1)
+        {
+            return;
+        }
+        base.DoTheAction();
+    }
 
-	protected override void Execute()
+    protected override void Execute()
 	{
-        InventoryScript.instance.UseItem();
+        InventoryScript.instance.RemoveItemFromSlot(RemoveItemOption.Trash, usedItemSlot);
         gameObject.SetActive(false);
     }
 

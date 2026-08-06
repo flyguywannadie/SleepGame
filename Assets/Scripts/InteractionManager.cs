@@ -71,13 +71,15 @@ public class InteractionManager : MonoBehaviour
 	{
 		interactionEnabled = true;
 		cursor.ShowCursor();
-	}
+        removeItemButton.gameObject.SetActive(true);
+    }
 
 	public void DisableInteractions()
 	{
 		interactionEnabled = false;
 		cursor.HideCursor();
-	}
+        removeItemButton.gameObject.SetActive(false);
+    }
 
 	public void ChangeAction(ActionButton ab)
 	{
@@ -107,4 +109,10 @@ public class InteractionManager : MonoBehaviour
 			prevNonItemAction.Press();
 		}
 	}
+
+	public void UnselectItem()
+	{
+        Debug.Log("selecting " + prevNonItemAction.GetAction().ToString());
+        prevNonItemAction.Press();
+    }
 }

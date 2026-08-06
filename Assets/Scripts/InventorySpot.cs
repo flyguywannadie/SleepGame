@@ -29,8 +29,8 @@ public class InventorySpot : ActionButton
 		{
 			return;
 		}
-		InventoryScript.instance.SetActiveInventorySpot(this, myitem.removeOption);
 		base.Press();
+		InventoryScript.instance.SetActiveInventorySpot(this, myitem.removeOption);
 	}
 
 	public override void UnPress()
